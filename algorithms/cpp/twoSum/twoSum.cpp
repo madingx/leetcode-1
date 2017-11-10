@@ -13,7 +13,7 @@
 * You may assume that each input would have exactly one solution.
 * 
 * Input: numbers={2, 7, 11, 15}, target=9
-* Output: index1=1, index2=2
+* Output: index1=0, index2=1
 * 
 *               
 **********************************************************************************/
@@ -49,21 +49,36 @@ public:
     //     so, when we checking the next num[i], if we found it is exisited in the map.
     //     which means we found the second one.
     //      
-    vector<int> twoSum(vector<int> &numbers, int target) {
+    vector<int> twoSum(vector<int> &nums, int target) {
         unordered_map<int, int> m;
         vector<int> result;
-        for(int i=0; i<numbers.size(); i++){
-            // not found the second one
-            if (m.find(numbers[i])==m.end() ) { 
-                // store the first one poisition into the second one's key
-                m[target - numbers[i]] = i; 
-            }else { 
-                // found the second one
-                result.push_back(m[numbers[i]]+1);
-                result.push_back(i+1);
+
+        // 方法一
+        // for(int i=0; i<nums.size(); i++){
+        //     // not found the second one
+        //     if (m.find(nums[i])==m.end() ) { 
+        //         // store the first one poisition into the second one's key
+        //         m[target - nums[i]] = i; 
+        //     }else { 
+        //         // found the second one
+        //         result.push_back(m[nums[i]]);
+        //         result.push_back(i);
+        //         break;
+        //     }
+        // }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            m[nums[i]] = i;
+        }
+        for (int i = 0; i < nums.size(); ++i) {
+            int t = target - nums[i];
+            if (m.count(t) && m[t] != i) {
+                result.push_back(i);
+                result.push_back(m[t]);
                 break;
             }
         }
+
         return result;
     }
 };
