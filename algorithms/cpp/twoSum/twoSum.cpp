@@ -67,6 +67,7 @@ public:
         //     }
         // }
 
+        // 方法二
         for (int i = 0; i < nums.size(); ++i) {
             m[nums[i]] = i;
         }
@@ -78,6 +79,7 @@ public:
                 break;
             }
         }
+        /////////////
 
         return result;
     }
