@@ -1,6 +1,6 @@
 // Source : https://oj.leetcode.com/problems/two-sum/
-// Author : Hao Chen
-// Date   : 2014-06-17
+// Author : Mading
+// Date   : 2017-11-10
 
 /********************************************************************************** 
 * 
