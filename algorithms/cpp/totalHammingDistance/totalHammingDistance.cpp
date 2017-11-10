@@ -3,7 +3,7 @@
 // Date   : 2017-11-10
 
 /*************************************************************************************** 
- * 461. Hamming Distance
+ * 477. Total Hamming Distance
  * 
  * The Hamming distance between two integers is the number of positions at which the 
  * corresponding bits are different.
