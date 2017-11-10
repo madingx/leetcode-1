@@ -1,8 +1,9 @@
 // Source : https://oj.leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-// Author : Hao Chen
-// Date   : 2014-12-25
+// Author : Mading
+// Date   : 2017-11-10
 
 /********************************************************************************** 
+* 167. Two Sum II - Input array is sorted
 * 
 * Given an array of integers that is already sorted in ascending order, 
 * find two numbers such that they add up to a specific target number.
@@ -32,6 +33,7 @@ public:
                 return result;
             }else{
                 numbers[low] + numbers[high] > target ? high-- : low++;
+                //从左右向中间逼近
             }
         }
         
