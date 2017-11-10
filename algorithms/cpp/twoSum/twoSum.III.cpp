@@ -1,8 +1,9 @@
 // Source : https://oj.leetcode.com/problems/two-sum-iii-data-structure-design/
-// Author : Hao Chen
-// Date   : 2014-12-29
+// Author : Mading
+// Date   : 2017-11-10
 
 /********************************************************************************** 
+* 170 Two Sum III - Data structure design 
 * 
 * Design and implement a TwoSum class. It should support the following operations: add and find.
 * 
@@ -19,12 +20,12 @@
 
 class TwoSum {
     private:
-        unordered_map<int, int> nums;
+        unordered_map<int, int> nums; //http://blog.csdn.net/hk2291976/article/details/51037095
     public:
 
         //O(1) add
         void add(int number) {
-            nums[number]++;
+            nums[number]++;//add(3):   nums[3] += 1;
         }
 
         //O(n) find
@@ -33,8 +34,8 @@ class TwoSum {
             for(auto it = nums.begin(); it != nums.end(); it++){
                 one = it->first;
                 two = value - one;
-                if ( (one == two && it->second > 1) ||
-                        (one != two && nums.find(two) != nums.end() ) ){
+                if ( (one == two && it->second > 1) ||      //同一个数出现两次
+                        (one != two && nums.find(two) != nums.end() ) ){   //能找到匹配的另一个数
                     return true;
                 }
             }
