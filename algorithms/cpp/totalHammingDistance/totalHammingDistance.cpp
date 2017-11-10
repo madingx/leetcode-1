@@ -1,9 +1,10 @@
 // Source : https://leetcode.com/problems/total-hamming-distance/
-// Author : Calinescu Valentin
-// Date   : 2017-01-09
+// Author : Mading
+// Date   : 2017-11-10
 
 /*************************************************************************************** 
- *
+ * 461. Hamming Distance
+ * 
  * The Hamming distance between two integers is the number of positions at which the 
  * corresponding bits are different.
  * 
@@ -12,7 +13,7 @@
  * 
  * Example:
  * Input: 4, 14, 2
- * 
+ *  
  * Output: 6
  * 
  * Explanation: In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just
@@ -25,7 +26,7 @@
  ***************************************************************************************/
 
 /*
-*  Solution 1 - O(N)
+*  Solution 1 - O(N)           32*n?
 *
 * The total Hamming Distance is equal to the sum of all individual Hamming Distances
 * between every 2 numbers. However, given that this depends on the individual bits of
@@ -43,6 +44,7 @@ public:
         int ones[31];
         for(int i = 0; i < 31; i++)
             ones[i] = 0;
+
         for(vector<int>::iterator it = nums.begin(); it != nums.end(); ++it)
         {
             for(int i = 0; (1 << i) <= *it; i++) //i is the position of the bit
@@ -53,4 +55,15 @@ public:
             solution += ones[i] * (nums.size() - ones[i]);
         return solution;
     }
+
+    //            4    0100
+    //           14    1110
+    //            2    0010
+    //  
+    // number of 1s    1220
+    // number of 0s    2110  
+    // 按位乘          2220
+    // 加和            6
+
+
 };
