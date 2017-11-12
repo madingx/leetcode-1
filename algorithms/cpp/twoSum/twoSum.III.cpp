@@ -1,9 +1,13 @@
-// Source : https://oj.leetcode.com/problems/two-sum-iii-data-structure-design/
-// Author : Mading
-// Date   : 2017-11-10
+// Source : https://leetcode.com/problems/two-sum-iii-data-structure-design
+// Author : Hao Chen
+// Date   : 2014-12-29
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-12
 
 /********************************************************************************** 
-* 170 Two Sum III - Data structure design 
+* 170. Two Sum III - Data structure design 
 * 
 * Design and implement a TwoSum class. It should support the following operations: add and find.
 * 

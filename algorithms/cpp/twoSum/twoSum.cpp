@@ -1,22 +1,21 @@
-// Source : https://oj.leetcode.com/problems/two-sum/
-// Author : Mading
-// Date   : 2017-11-10
+// Source : https://leetcode.com/problems/two-sum/description/
+// Author : Hao Chen
+// Date   : 2014-06-17
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-12
 
 /********************************************************************************** 
 * 1. Two Sum
 * 
-* Given an array of integers, find two numbers such that they add up to a specific target number.
+* Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+* You may assume that each input would have exactly one solution, and you may not use the same element twice.
 * 
-* The function twoSum should return indices of the two numbers such that they add up to the target, 
-* where index1 must be less than index2. Please note that your returned answers (both index1 and index2) 
-* are not zero-based.
+* Input: numbers={2, 7, 11, 15}, target=9,
+* Because nums[0] + nums[1] = 2 + 7 = 9,
+* return [0, 1].
 * 
-* You may assume that each input would have exactly one solution.
-* 
-* Input: numbers={2, 7, 11, 15}, target=9
-* Output: index1=0, index2=1
-* 
-*               
 **********************************************************************************/
 
 class Solution {
@@ -54,7 +53,7 @@ public:
         unordered_map<int, int> m;
         vector<int> result;
 
-        // 方法一
+        /*** Solultion one***/
         // for(int i=0; i<nums.size(); i++){
         //     // not found the second one
         //     if (m.find(nums[i])==m.end() ) { 
@@ -68,7 +67,7 @@ public:
         //     }
         // }
 
-        // 方法二
+        /*** Solultion two***/
         for (int i = 0; i < nums.size(); ++i) {
             m[nums[i]] = i;
         }
