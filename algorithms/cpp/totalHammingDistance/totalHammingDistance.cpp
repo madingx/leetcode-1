@@ -1,6 +1,10 @@
 // Source : https://leetcode.com/problems/total-hamming-distance/
-// Author : Mading
-// Date   : 2017-11-10
+// Author : Calinescu Valentin
+// Date   : 2017-01-09
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-11
 
 /*************************************************************************************** 
  * 477. Total Hamming Distance
