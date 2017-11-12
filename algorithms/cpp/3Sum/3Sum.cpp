@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/3sum/
+// Source : https://leetcode.com/problems/3sum/description/
 // Author : Hao Chen
 // Date   : 2014-07-22
 
 /********************************************************************************** 
-* 
+* 15. 3Sum
 * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? 
 * Find all unique triplets in the array which gives the sum of zero.
 * 
@@ -18,7 +18,7 @@
 *     (-1, 0, 1)
 *     (-1, -1, 2)
 * 
-*               
+* 找出和为零的n个数        
 **********************************************************************************/
 
 #include <stdio.h>
