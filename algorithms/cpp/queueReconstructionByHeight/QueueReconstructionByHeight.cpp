@@ -1,5 +1,9 @@
 // Source : https://leetcode.com/problems/queue-reconstruction-by-height/description/
-// Author : Mading
+// Author : Hao Chen
+// Date   : 2016-11-12
+// 
+// Latest Edition
+// Editor : Mading
 // Date   : 2017-11-12
 
 /*************************************************************************************** 

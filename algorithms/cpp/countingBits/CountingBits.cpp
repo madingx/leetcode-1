@@ -1,5 +1,9 @@
 // Source : https://leetcode.com/problems/counting-bits/description/
-// Author : Mading
+// Author : Hao Chen
+// Date   : 2016-05-30
+// 
+// Latest Edition
+// Editor : Mading
 // Date   : 2017-11-11
 
 /*************************************************************************************** 
