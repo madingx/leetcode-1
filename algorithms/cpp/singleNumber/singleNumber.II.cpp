@@ -1,8 +1,13 @@
 // Source : https://oj.leetcode.com/problems/single-number-ii/
 // Author : Hao Chen
 // Date   : 2014-06-17
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-12
 
 /********************************************************************************** 
+* 137. Single Number II
 * 
 * Given an array of integers, every element appears three times except for one. Find that single one.
 * 
@@ -63,26 +68,30 @@ public:
      *   We use three bitmasks, 
      *    1) `ones`     as a bitmask which represents the i-th bit had appeared once.
      *    2) `twos`     as a bitmask which represents the i-th bit had appeared twice.
-     *    3) `threes`   as a bit mask which represents the i-th bit had appeared three times.
+     *    3) `threes`   as a bitmask which represents the i-th bit had appeared three times.
      *
      *    When the i-th bit had appeared for the third time, clear the i-th bit of both `ones` and `twos` to 0.
      *    The final answer will be the value of `ones`
      *
      */
-    int singleNumber_2(int A[], int n) {
+    int singleNumber_2(vector<int>& nums) {  //new param form
         int ones = 0, twos = 0, threes = 0;
+        int n=nums.size();
         for (int i = 0; i < n; i++) {
-            // `ones & A[i]` the result is the bitmask which the bits appeared twice
-            twos |= ones & A[i]; 
+            // `ones & nums[i]` the result is the bitmask which the bits appeared twice
+            twos |= ones & nums[i]; 
             // XOR means remove the bit which appeared twice int `ones` 
-            ones ^= A[i];
+            ones ^= nums[i];
             // count the `three`
             threes = ones & twos;
             // clear the `ones` and `twos` if the i-th bit had appeared three times.
             ones &= ~threes;
             twos &= ~threes;
+
+            //remember '21312'
         }
         return ones;
     }
+    
 
 };
