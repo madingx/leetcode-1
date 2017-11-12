@@ -1,4 +1,4 @@
-// Source : https://oj.leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+// Source : https://leetcode.com/problems/merge-two-binary-trees/description/
 // Author : Mading
 // Date   : 2017-11-10
 
