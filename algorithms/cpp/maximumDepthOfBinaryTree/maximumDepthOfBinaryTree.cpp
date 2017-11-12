@@ -1,8 +1,13 @@
-// Source : https://oj.leetcode.com/problems/maximum-depth-of-binary-tree/
+// Source : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 // Author : Hao Chen
 // Date   : 2014-06-21
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-12
 
 /********************************************************************************** 
+* 104. Maximum Depth of Binary Tree
 * 
 * Given a binary tree, find its maximum depth.
 * 
@@ -45,6 +50,6 @@ class Solution2 {
 public:
     int maxDepth(TreeNode *root) {
         if (root==NULL) return 0;
-        return max(maxDepth(root->left), maxDepth(root->right)) + 1;
+        return max(maxDepth(root->left), maxDepth(root->right)) + 1;//find max in (left,right)
     }
 };
