@@ -1,8 +1,13 @@
 // Source : https://leetcode.com/problems/invert-binary-tree/
 // Author : Hao Chen
 // Date   : 2015-06-12
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-12
 
 /********************************************************************************** 
+ * 226. Invert Binary Tree
  * 
  * Invert a binary tree.
  *      4
@@ -24,6 +29,7 @@
  *
  *  | Google: 90% of our engineers use the software you wrote (Homebrew), 
  *  | but you can’t invert a binary tree on a whiteboard so fuck off.
+ *  本题是LeetCode上最火的一道题，大笑~~~
  *               
  **********************************************************************************/
 
@@ -38,7 +44,7 @@
  */
 class Solution {
 public:
-
+    /*** Solution one *********************/
     TreeNode* invertTree_recursive(TreeNode* root) {
         if (root==NULL) return root;
         TreeNode* node = invertTree_recursive(root->left);
@@ -47,6 +53,7 @@ public:
         return root;
     }
     
+    /*** Solution two *********************/
     TreeNode* invertTree_non_recursive(TreeNode* root) {
         if (root==NULL) return root;
         vector<TreeNode*> stack;
@@ -61,6 +68,8 @@ public:
         return root;
     }
     
+    /*************************************/
+
     TreeNode* invertTree(TreeNode* root) {
         if (rand()%2){
             return invertTree_non_recursive(root);
