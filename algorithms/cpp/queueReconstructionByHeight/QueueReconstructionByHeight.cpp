@@ -1,9 +1,10 @@
-// Source : https://leetcode.com/problems/queue-reconstruction-by-height/
-// Author : Hao Chen
-// Date   : 2016-11-12
+// Source : https://leetcode.com/problems/queue-reconstruction-by-height/description/
+// Author : Mading
+// Date   : 2017-11-12
 
 /*************************************************************************************** 
- *
+ * 406. Queue Reconstruction by Height
+ * 
  * Suppose you have a random list of people standing in a queue. Each person is 
  * described by a pair of integers (h, k), where h is the height of the person and k is 
  * the number of people in front of this person who have a height greater than or equal 
