@@ -8,7 +8,8 @@ LeetCode
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
-|617|[Total Hamming Distance](https://leetcode.com/problems/merge-two-binary-trees/description/) | [C++](./algorithms/cpp/mergetwobinarytrees/MergeTwoBinaryTrees.cpp)|Easy|
+|647|[Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/description/) | [C++](./algorithms/cpp/longestPalindromicSubstring/PalindromicSubstrings.cpp)|Medium|
+|617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/description/) | [C++](./algorithms/cpp/mergetwobinarytrees/MergeTwoBinaryTrees.cpp)|Easy|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/totalHammingDistance.cpp)|Medium|
 |461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/description/) | [C++](./algorithms/cpp/totalHammingDistance/HammingDistance.cpp)|Easy|
 |415|[Add Strings](https://leetcode.com/problems/add-strings/) | [C++](./algorithms/cpp/addStrings/AddStrings.cpp)|Easy|
