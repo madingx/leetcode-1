@@ -8,14 +8,16 @@ LeetCode
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|617|[Total Hamming Distance](https://leetcode.com/problems/merge-two-binary-trees/description/) | [C++](./algorithms/cpp/mergetwobinarytrees/MergeTwoBinaryTrees.cpp)|Easy|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/totalHammingDistance.cpp)|Medium|
+|461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/description/) | [C++](./algorithms/cpp/totalHammingDistance/HammingDistance.cpp)|Easy|
 |415|[Add Strings](https://leetcode.com/problems/add-strings/) | [C++](./algorithms/cpp/addStrings/AddStrings.cpp)|Easy|
 |414|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | [C++](./algorithms/cpp/thirdMaximumNumber/ThirdMaximumNumber.cpp)|Easy|
 |413|[Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/) | [C++](./algorithms/cpp/arithmeticSlices/ArithmeticSlices.cpp)|Medium|
 |412|[Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | [C++](./algorithms/cpp/fizzBuzz/FizzBuzz.cpp)|Easy|
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/) | [C++](./algorithms/cpp/splitArrayLargestSum/SplitArrayLargestSum.cpp)|Hard|
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/) | [C++](./algorithms/cpp/longestPalindrome/LongestPalindrome.cpp)|Easy|
-|406|[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/) | [C++](./algorithms/cpp/queueReconstructionByHeight/QueueReconstructionByHeight.cpp)|Medium|
+|406|[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/) | [C++](./algorithms/cpp/queueReconstructionByHeight/QueueReconstructionByHeight.cpp)|Easy|
 |405|[Convert a Number to Hexadecimal](https://leetcode.com/problems/convert-a-number-to-hexadecimal/) | [C++](./algorithms/cpp/convertANumberToHexadecimal/ConvertANumberToHexadecimal.cpp)|Easy|
 |404|[Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [C++](./algorithms/cpp/sumOfLeftLeaves/SumOfLeftLeaves.cpp)|Easy|
 |403|[Frog Jump](https://leetcode.com/problems/frog-jump/) | [C++](./algorithms/cpp/frogJump/FrogJump.cpp)|Hard|
