@@ -1,8 +1,13 @@
-// Source : https://leetcode.com/problems/product-of-array-except-self/
+// Source : https://leetcode.com/problems/product-of-array-except-self/description/
 // Author : Hao Chen
 // Date   : 2015-07-17
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-13
 
 /********************************************************************************** 
+ * 238. Product of Array Except Self
  * 
  * Given an array of n integers where n > 1, nums, return an array output such that 
  * output[i] is equal to the product of all the elements of nums except nums[i].
