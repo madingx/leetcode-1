@@ -1,9 +1,14 @@
-// Source : https://leetcode.com/problems/move-zeroes/
-// Author : Calinescu Valentin, Hao Chen
+// Source : https://leetcode.com/problems/move-zeroes/description/
+// Author : Calinescu Valentin, Hao Chen, Mading
 // Date   : 2015-10-21
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-13
 
 /*************************************************************************************** 
- *
+ * 283. Move Zeroes
+ * 
  * Given an array nums, write a function to move all 0's to the end of it while 
  * maintaining the relative order of the non-zero elements.
  *
@@ -82,6 +87,31 @@ public:
         
         //set ZERO for rest items 
         while ( p1<nums.size() ) nums[p1++] = 0;
+    }
+
+
+    /*
+     * Another implemtation (Mading)
+     * ===========================================================
+     * Time Complexity: O(N)
+     * Space Complexity: O(1)
+     */
+    void moveZeroes(vector<int>& nums) {
+        int m=0;
+        for(auto it=nums.begin();it<nums.end();it++){
+            
+            if(*it==0){
+                m++;
+            }
+            else{
+                *(it-m)=*it;
+            }
+        }
+        while(m>0){
+            nums[nums.size()-m]=0;
+            m--;
+        }
+        return;
     }
 
 };
