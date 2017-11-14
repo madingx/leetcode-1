@@ -8,6 +8,7 @@ LeetCode
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|723|[Candy Crush](https://leetcode.com/problems/candy-crush) | [C++](./algorithms/cpp/candyCrush/CandyCrush.cpp)|Medium|
 |647|[Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/description/) | [C++](./algorithms/cpp/longestPalindromicSubstring/PalindromicSubstrings.cpp)|Medium|
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/description/) | [C++](./algorithms/cpp/mergetwobinarytrees/MergeTwoBinaryTrees.cpp)|Easy|
 |547|[Friend Circles](https://leetcode.com/problems/friend-circles/description/) | [C++](./algorithms/cpp/friendCircles/FriendCircles.cpp)|Medium|
