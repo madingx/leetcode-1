@@ -1,8 +1,13 @@
 // Source : https://leetcode.com/problems/reverse-linked-list/
 // Author : Hao Chen
 // Date   : 2015-06-09
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+ * 206. Reverse Linked List
  * 
  * Reverse a singly linked list.
  * 

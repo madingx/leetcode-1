@@ -1,8 +1,13 @@
 // Source : https://oj.leetcode.com/problems/permutations/
-// Author : Hao Chen
-// Date   : 2014-06-21
+// Author : Hao Chen,Mading
+// Date   : 2017-11-15
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+* 46. Permutations
 * 
 * Given a collection of numbers, return all possible permutations.
 * 
@@ -110,3 +115,40 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+
+
+
+/*** Solution by Mading *******************/
+class Solution {
+public:
+    void per(vector<int>& nums,vector<vector<int>>& res,int i){
+        if(i==nums.size()-1)res.push_back(nums);
+        for(int j = i;j<nums.size();j++){
+            if(nums[i]!=nums[j]){
+                int temp = nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+                per(nums,res,i+1);
+                temp = nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+            }
+            else if(i==j){
+                per(nums,res,i+1);
+            }
+            
+        }
+        
+    }
+        
+        
+    vector<vector<int>> permute(vector<int>& nums) {
+        int row = nums.size();
+        vector<vector<int>> res;
+        
+        per(nums,res,0);
+        return res;
+        
+    }
+};
