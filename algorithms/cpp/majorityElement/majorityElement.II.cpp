@@ -1,8 +1,13 @@
 // Source : https://leetcode.com/problems/majority-element-ii/
 // Author : Hao Chen
 // Date   : 2015-07-03
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+ * 229. Majority Element II
  * 
  * Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. 
  * The algorithm should run in linear time and in O(1) space.
@@ -28,6 +33,8 @@ public:
         }
         return result;
     }
+
+
     //We know, there could be at most two numbers can be more than 1/3
     //so, same as Majority Element I problem, we can have two counters.
     vector<int> majorityElement02(vector<int>& nums) {
