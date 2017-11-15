@@ -1,8 +1,13 @@
 // Source : https://oj.leetcode.com/problems/binary-tree-inorder-traversal/
-// Author : Hao Chen
-// Date   : 2014-06-27
+// Author : Hao Chen, Mading
+// Date   : 2017-11-15
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+* 94. Binary Tree Inorder Traversal  //中序遍历
 * 
 * Given a binary tree, return the inorder traversal of its nodes' values.
 * 
@@ -62,7 +67,7 @@ public:
                 root = root->left;
             }else{
                 if (stack.size()>0) {
-                    root = stack.back();
+                    root = stack.back(); //father in the top
                     stack.pop_back();
                     v.push_back(root->val);
                     root = root->right;
@@ -70,5 +75,21 @@ public:
             }
         }
         return v;
+    }
+
+
+
+    /*** Recursive solution *******************/
+    void inorder(TreeNode* root,vector<int> &res) {
+        if(root == NULL)return;
+        inorder(root->left,res);
+        res.push_back(root->val);
+        inorder(root->right,res);
+        return;
+    }
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> res;
+        inorder(root,res);
+        return res;
     }
 };
