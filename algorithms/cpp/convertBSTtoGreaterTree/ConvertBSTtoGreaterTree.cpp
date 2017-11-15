@@ -35,6 +35,7 @@
 class Solution {
 public:
     void convert(TreeNode* root, int& sum){
+        //static int sum = 0;  //another param form
         if(root == NULL)    return;
         convert(root->right, sum); //from big to small : right->root->left
         root->val += sum;

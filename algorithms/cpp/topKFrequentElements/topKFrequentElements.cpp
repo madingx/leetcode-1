@@ -34,7 +34,7 @@ public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
         sort(nums.begin(), nums.end());
         int i = 1;
-        for(; i < nums.size(); i++)
+        for(; i < nums.size(); i++)//statistics the frequency
         {
             int freq = 1;
             while(i < nums.size() && nums[i] == nums[i - 1])

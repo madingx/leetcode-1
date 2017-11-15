@@ -83,13 +83,12 @@ bool check(vector<vector<int>>& board, vector<vector<int>>& visit){
     bool flag = false;
     for(int i=0;i<m;i++)
         for(int j=0;j<n;j++){
-            if(visit[i][j]==1)
-            {
-            flag=true;
-            for(int k=i;k>0;k--)
-            board[k][j]=board[k-1][j];
-            board[z[j]][j]=0;
-            z[j]++;
+            if(visit[i][j]==1){
+                flag=true;
+                for(int k=i;k>0;k--)
+                    board[k][j]=board[k-1][j];
+                board[z[j]][j]=0;
+                z[j]++;
             }
         }
     return flag;
