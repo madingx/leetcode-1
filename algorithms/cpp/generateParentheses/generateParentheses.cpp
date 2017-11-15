@@ -1,8 +1,13 @@
 // Source : https://oj.leetcode.com/problems/generate-parentheses/
-// Author : Hao Chen
-// Date   : 2014-06-29
+// Author : Hao Chen,Mading
+// Date   : 2017-11-15
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+* 22. Generate Parentheses
 * 
 * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 * 
@@ -58,3 +63,44 @@ int main(int argc, char** argv)
     printResult(r);
     return 0;
 }
+
+
+
+/*** Solution by Mading *******************/
+class Solution {
+public:
+    void rec(vector<char> &p,vector<string> &res,string str){
+        static vector<char> tmp;
+        if(tmp.empty() && p.empty()){
+            res.push_back(str);
+            return;
+        }
+        if(!p.empty()){
+            char a = p.back();
+            p.pop_back();
+            tmp.push_back(a);
+            rec(p,res,str+"(");
+            p.push_back(a);
+            tmp.pop_back();
+            
+        }
+        if(!tmp.empty()){
+            char a = tmp.back();
+            tmp.pop_back();
+            rec(p,res,str+")");
+            tmp.push_back(a);
+        }
+        return;
+        
+    }
+    
+    
+    vector<string> generateParenthesis(int n) {
+        vector<char> p(n,'(');
+        vector<string> res;
+        rec(p,res,"");
+        return res;
+        
+        
+    }
+};
