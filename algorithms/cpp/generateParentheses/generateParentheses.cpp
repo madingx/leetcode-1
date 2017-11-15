@@ -69,26 +69,24 @@ int main(int argc, char** argv)
 /*** Solution by Mading *******************/
 class Solution {
 public:
-    void rec(vector<char> &p,vector<string> &res,string str){
-        static vector<char> tmp;
-        if(tmp.empty() && p.empty()){
+    void rec(int n,vector<string> &res,string str){
+        static int tmp=0;
+        if(tmp ==0 && n==0){
             res.push_back(str);
             return;
         }
-        if(!p.empty()){
-            char a = p.back();
-            p.pop_back();
-            tmp.push_back(a);
-            rec(p,res,str+"(");
-            p.push_back(a);
-            tmp.pop_back();
+        if(n!=0){
+            n--;
+            tmp++;
+            rec(n,res,str+"(");
+            n++;
+            tmp--;
             
         }
-        if(!tmp.empty()){
-            char a = tmp.back();
-            tmp.pop_back();
-            rec(p,res,str+")");
-            tmp.push_back(a);
+        if(tmp!=0){
+            tmp--;
+            rec(n,res,str+")");
+            tmp++;
         }
         return;
         
@@ -96,9 +94,9 @@ public:
     
     
     vector<string> generateParenthesis(int n) {
-        vector<char> p(n,'(');
+       
         vector<string> res;
-        rec(p,res,"");
+        rec(n,res,"");
         return res;
         
         
