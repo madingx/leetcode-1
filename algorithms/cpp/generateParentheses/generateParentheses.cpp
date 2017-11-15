@@ -69,36 +69,25 @@ int main(int argc, char** argv)
 /*** Solution by Mading *******************/
 class Solution {
 public:
-    void rec(int n,vector<string> &res,string str){
-        static int tmp=0;
+    void rec(int n,vector<string> &res,string str,int tmp){
         if(tmp ==0 && n==0){
             res.push_back(str);
             return;
         }
         if(n!=0){
-            n--;
-            tmp++;
-            rec(n,res,str+"(");
-            n++;
-            tmp--;
-            
+            rec(n-1,res,str+"(",tmp+1);
         }
         if(tmp!=0){
-            tmp--;
-            rec(n,res,str+")");
-            tmp++;
+            rec(n,res,str+")",tmp-1);
         }
         return;
         
     }
     
-    
     vector<string> generateParenthesis(int n) {
        
         vector<string> res;
-        rec(n,res,"");
+        rec(n,res,"",0);
         return res;
-        
-        
     }
 };
