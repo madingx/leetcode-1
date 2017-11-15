@@ -1,8 +1,13 @@
 // Source : https://oj.leetcode.com/problems/majority-element/
-// Author : Hao Chen
-// Date   : 2014-12-25
+// Author : Hao Chen, Mading
+// Date   : 2017-11-15
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-15
 
 /********************************************************************************** 
+ * 169. Majority Element
  * 
  * Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
  * 
@@ -70,3 +75,25 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+
+
+/*** Solution by Mading *******************/
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int> m;
+        for(int i=0;i<nums.size();i++){
+            if(m.find(nums[i])!=m.end()){
+                m[nums[i]]++;
+                
+            }
+            else{
+                m[nums[i]] = 1;
+            }
+            if(m[nums[i]]>nums.size()/2)
+                    return nums[i];
+        }
+        
+    }
+};
