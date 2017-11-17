@@ -1,9 +1,14 @@
 // Source : https://leetcode.com/problems/house-robber-iii/
-// Author : Calinescu Valentin
-// Date   : 2016-04-29
+// Author : Calinescu Valentin,Mading
+// Date   : 2017-11-17
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-17
 
 /*************************************************************************************** 
- *
+ * 337. House Robber III
+ * 
  * The thief has found himself a new place for his thievery again. There is only one
  * entrance to this area, called the "root." Besides the root, each house has one and
  * only one parent house. After a tour, the smart thief realized that "all houses in
@@ -84,5 +89,32 @@ public:
             dict[root] = max(root->val + lwithout + rwithout, lwith + rwith);
         }
         return dict[root];
+    }
+};
+
+/*** Solution by Mading ******************/
+class Solution {
+public:
+    
+    int rob1(TreeNode* root,int &n1,int &n2) {
+        if(root==NULL)return 0;
+        int n11 = n1,n12 = n1;
+        int n21 = n2,n22 = n2;
+        rob1(root->left,n11,n21);
+        rob1(root->right,n12,n22);
+        n1=n11+n12;
+        n2=n21+n22;
+        int current = max(n1, n2 + root->val);   //idea from 213. House Robber II
+        n2 = n1;
+        n1 = current;
+        return current;
+        
+    }
+    
+    int rob(TreeNode* root) {
+        int n1=0,n2=0;
+        int m = rob1(root,n1,n2);
+        return m;
+        
     }
 };
