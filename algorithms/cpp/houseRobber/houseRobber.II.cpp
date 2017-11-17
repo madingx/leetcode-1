@@ -1,8 +1,13 @@
 // Source : https://leetcode.com/problems/house-robber-ii/
 // Author : Hao Chen
 // Date   : 2015-06-10
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-17
 
 /********************************************************************************** 
+ * 213. House Robber II
  * 
  * Note: This is an extension of House Robber.
  * 
