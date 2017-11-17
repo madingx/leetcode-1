@@ -91,6 +91,9 @@ public:
         return dict[root];
     }
 };
+//runtime:16ms //应该有重复计算
+
+
 
 /*** Solution by Mading ******************/
 class Solution {
@@ -118,3 +121,4 @@ public:
         
     }
 };
+//runtime:12ms
