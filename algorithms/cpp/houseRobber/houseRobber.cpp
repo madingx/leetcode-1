@@ -1,8 +1,13 @@
 // Source : https://leetcode.com/problems/house-robber/
 // Author : Hao Chen
 // Date   : 2015-04-07
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2017-11-17
 
 /********************************************************************************** 
+ * 198. House Robber
  * 
  * You are a professional robber planning to rob houses along a street. Each house has 
  * a certain amount of money stashed, the only constraint stopping you from robbing 
@@ -27,25 +32,25 @@ using namespace std;
  *
  *     dp[n] = max( 
  *                    dp[n-1],   // the previous house has been robbed. 
- *                    dp[n-2] + money[n]  // the previous house has NOT been robbed.
+ *                    dp[n-2] + nums[n]  // the previous house has NOT been robbed.
  *                )
  *                  
  * The initalization is obvious:
- *     dp[1] = money[1]
- *     dp[2] = max(money[1], money[2])
+ *     dp[1] = nums[1]
+ *     dp[2] = max(nums[1], nums[2])
  *
  */
-int rob1(vector<int> &money) {
+int rob1(vector<int> &nums) {
 
-    int n = money.size();
+    int n = nums.size();
     if (n==0) return 0;
 
     vector<int> dp(n, 0);
-    if (n>=1) dp[0] = money[0];
-    if (n>=2) dp[1] = max(money[0], money[1]);
+    if (n>=1) dp[0] = nums[0];
+    if (n>=2) dp[1] = max(nums[0], nums[1]);
 
     for (int i=2; i<n; i++){
-        dp[i] = max(dp[i-1], dp[i-2] + money[i]);
+        dp[i] = max(dp[i-1], dp[i-2] + nums[i]);
     }
     return dp[n-1];
 }
@@ -54,12 +59,12 @@ int rob1(vector<int> &money) {
  * we can only use several variables to record previous steps
  */
 
-int rob2(vector<int> &money) {
-    int n2=0; // dp[i-2];
-    int n1=0; // dp[i-1];
+int rob2(vector<int> &nums) {
+    int n2=0; // dp[i-2];   max money at i-2
+    int n1=0; // dp[i-1];   max money at i-1
 
-    for (int i=0; i<money.size(); i++){
-        int current = max(n1, n2 + money[i]);
+    for (int i=0; i<nums.size(); i++){
+        int current = max(n1, n2 + nums[i]);
         n2 = n1;
         n1 = current;
     }
@@ -82,18 +87,18 @@ void printVector( vector<int> &v ){
 
 int main(int argc, char** argv) {
     srand(time(0));
-    vector<int> money;
+    vector<int> nums;
     if (argc>1){
         for (int i=1; i<argc; i++) {
-            money.push_back(atoi(argv[i]));
+            nums.push_back(atoi(argv[i]));
         }
     }else{
-        money.push_back(2);
-        money.push_back(1);
-        money.push_back(3);
-        money.push_back(4);
+        nums.push_back(2);
+        nums.push_back(1);
+        nums.push_back(3);
+        nums.push_back(4);
     }
 
-    printVector(money);
-    cout << rob(money) << endl;
+    printVector(nums);
+    cout << rob(nums) << endl;
 }
