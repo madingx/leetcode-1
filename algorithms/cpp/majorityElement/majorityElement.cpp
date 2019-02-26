@@ -37,7 +37,7 @@ int majorityElement(vector<int> &num) {
             cnt++;
         }else{
             majority == num[i] ? cnt++ : cnt --;
-            if (cnt >= num.size()/2) return majority;
+            if (cnt > num.size()/2) return majority;
         }
     }
     return majority;
@@ -64,7 +64,8 @@ vector<int> split(const string &s, char delim) {
 
 int main(int argc, char** argv)
 {
-    string array = "1,2,1,2,1,2,1,2,1,2,1";
+    //string array = "1,2,1,2,1,2,1,2,1,2,1";
+    string array = "2,2,1,1,1";
     if (argc > 1){
         array = argv[1];
     }
