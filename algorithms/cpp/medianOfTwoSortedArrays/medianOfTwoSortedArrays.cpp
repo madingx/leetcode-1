@@ -1,16 +1,50 @@
-// Source : https://oj.leetcode.com/problems/median-of-two-sorted-arrays/
+// Source : https://leetcode.com/problems/median-of-two-sorted-arrays/
 // Author : Hao Chen
 // Date   : 2014-07-22
-
+//
+// Version: v2.0
+// Modification: add a new method in C++
+// Author : Mading
+// Date   : 2019-02-26
 /********************************************************************************** 
 * 
-* There are two sorted arrays A and B of size m and n respectively. 
+* There are two sorted arrays nums1 and nums2 of size m and n respectively.
 * Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+* You may assume nums1 and nums2 cannot be both empty.
+
+* Example 1:
+* nums1 = [1, 3]
+* nums2 = [2]
+* The median is 2.0
+
+* Example 2:
+* nums1 = [1, 2]
+* nums2 = [3, 4]
+* The median is (2 + 3)/2 = 2.5
 *               
 **********************************************************************************/
 
 #include <stdio.h>
 
+//new solution
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int m = nums1.size(), n = nums2.size();
+        return (findKth(nums1, nums2, (m + n + 1) / 2) + findKth(nums1, nums2, (m + n + 2) / 2)) / 2.0;
+    }
+    int findKth(vector<int> nums1, vector<int> nums2, int k) {
+        if (nums1.empty()) return nums2[k - 1];
+        if (nums2.empty()) return nums1[k - 1];
+        if (k == 1) return min(nums1[0], nums2[0]);
+        int i = min((int)nums1.size(), k / 2), j = min((int)nums2.size(), k / 2);
+        if (nums1[i - 1] > nums2[j - 1]) {
+            return findKth(nums1, vector<int>(nums2.begin() + j, nums2.end()), k - j);
+        } else {
+            return findKth(vector<int>(nums1.begin() + i, nums1.end()), nums2, k - i);
+        }
+        return 0;
+    }
+
+/*********************************old solution,not sure*******************************************/
 // Classical binary search algorithm, but slightly different
 // if cannot find the key, return the position where can insert the key 
 int binarySearch(int A[], int low, int high, int key){
