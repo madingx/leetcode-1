@@ -44,24 +44,24 @@ using namespace std;
  *   http://en.wikipedia.org/wiki/3SUM
  *
  */
-vector<vector<int> > threeSum(vector<int> &num) {
+vector<vector<int> > threeSum(vector<int> &nums) {
 
     vector< vector<int> > result;
 
     //sort the array, this is the key
-    sort(num.begin(), num.end());
+    sort(nums.begin(), nums.end());
 
-    int n = num.size();
+    int n = nums.size();
 
     for (int i=0; i<n-2; i++) {
         //skip the duplication
-        if (i>0 && num[i-1]==num[i]) continue;
-        int a = num[i];
+        if (i>0 && nums[i-1]==nums[i]) continue;
+        int a = nums[i];
         int low = i+1;
         int high = n-1;
         while ( low < high ) {
-            int b = num[low];
-            int c = num[high];
+            int b = nums[low];
+            int c = nums[high];
             if (a+b+c == 0) {
                 //got the soultion
                 vector<int> v;
@@ -71,17 +71,17 @@ vector<vector<int> > threeSum(vector<int> &num) {
                 result.push_back(v);
                 // Continue search for all triplet combinations summing to zero.
                 //skip the duplication
-                while(low<n-1 && num[low]==num[low+1]) low++; 
-                while(high>0 && num[high]==num[high-1]) high--; 
+                while(low<n-1 && nums[low]==nums[low+1]) low++; 
+                while(high>0 && nums[high]==nums[high-1]) high--; 
                 low++;
                 high--;
             } else if (a+b+c > 0) {
                 //skip the duplication
-                while(high>0 && num[high]==num[high-1]) high--;
+                while(high>0 && nums[high]==nums[high-1]) high--;
                 high--;
             } else{
                 //skip the duplication
-                while(low<n-1 && num[low]==num[low+1]) low++;
+                while(low<n-1 && nums[low]==nums[low+1]) low++;
                 low++;
             } 
         }
@@ -94,9 +94,9 @@ vector<vector<int> > combination(vector<int> &v, int k);
 bool isSumZero(vector<int>& v);
 int sum(vector<int>& v);
 
-vector<vector<int> > threeSum2(vector<int> &num) {
+vector<vector<int> > threeSum2(vector<int> &nums) {
     vector< vector<int> > result;
-    vector< vector<int> > r = combination(num, 3);
+    vector< vector<int> > r = combination(nums, 3);
     for (int i=0; i<r.size(); i++){
         if (isSumZero(r[i])){
             result.push_back(r[i]);
