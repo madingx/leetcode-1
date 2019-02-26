@@ -1,4 +1,4 @@
-// Source : https://oj.leetcode.com/problems/next-permutation/
+// Source : https://leetcode.com/problems/next-permutation/
 // Author : Hao Chen
 // Date   : 2014-08-21
 
