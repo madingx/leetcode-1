@@ -53,12 +53,15 @@ vector<vector<int> > threeSum(vector<int> &nums) {
 
     int n = nums.size();
 
-    for (int i=0; i<n-2; i++) {
+    for (int i=0; i<n-2; i++) {  //i index first number
         //skip the duplication
         if (i>0 && nums[i-1]==nums[i]) continue;
         int a = nums[i];
-        int low = i+1;
+        int low = i+1; 
         int high = n-1;
+
+        //[... i (... low-->...<--high...)]
+        //given the first num i,find two other num from both sides to the middle of the sublist
         while ( low < high ) {
             int b = nums[low];
             int c = nums[high];
