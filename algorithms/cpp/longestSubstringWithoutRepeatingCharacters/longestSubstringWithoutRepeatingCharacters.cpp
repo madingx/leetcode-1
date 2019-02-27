@@ -1,13 +1,25 @@
-// Source : https://oj.leetcode.com/problems/longest-substring-without-repeating-characters/
+// Source : https://leetcode.com/problems/longest-substring-without-repeating-characters/
 // Author : Hao Chen
 // Date   : 2014-07-19
 
 /********************************************************************************** 
-* 
-* Given a string, find the length of the longest substring without repeating characters. 
-* For example, the longest substring without repeating letters for "abcabcbb" is "abc", 
-* which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
-*               
+* Given a string, find the length of the longest substring without repeating characters.
+
+* Example 1:
+* Input: "abcabcbb"
+* Output: 3 
+* Explanation: The answer is "abc", with the length of 3. 
+
+* Example 2:
+* Input: "bbbbb"
+* Output: 1
+* Explanation: The answer is "b", with the length of 1.
+
+* Example 3:
+* Input: "pwwkew"
+* Output: 3
+* Explanation: The answer is "wke", with the length of 3. 
+*              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 **********************************************************************************/
 
 #include <string.h>
@@ -41,6 +53,7 @@ int lengthOfLongestSubstring1(string s) {
     return maxLen;
 }
 //don't use <map>
+//Perfect: Runtime: 16 ms, faster than 99.39% of C++;Memory Usage: 14.7 MB, less than 89.81% of C++.
 int lengthOfLongestSubstring(string s) {
     const int MAX_CHARS = 256;
     int m[MAX_CHARS];

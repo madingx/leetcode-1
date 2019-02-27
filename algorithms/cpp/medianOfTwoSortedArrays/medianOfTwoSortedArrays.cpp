@@ -43,7 +43,7 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         }
         return 0;
     }
-//new solution 2
+//new solution 2 //https://blog.csdn.net/qq_28466517/article/details/79810809
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         if(nums1.size()>nums2.size()){
             vector<int> temp=nums1;
