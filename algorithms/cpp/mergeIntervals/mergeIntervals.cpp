@@ -1,16 +1,21 @@
-// Source : https://oj.leetcode.com/problems/merge-intervals/
+// Source : https://leetcode.com/problems/merge-intervals/
 // Author : Hao Chen
 // Date   : 2014-08-26
 
 /********************************************************************************** 
-* 
+* 56. Merge Intervals
 * Given a collection of intervals, merge all overlapping intervals.
-* 
-* For example,
-* Given [1,3],[2,6],[8,10],[15,18],
-* return [1,6],[8,10],[15,18].
-* 
-*               
+
+* Example 1:
+* Input: [[1,3],[2,6],[8,10],[15,18]]
+* Output: [[1,6],[8,10],[15,18]]
+* Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+
+* Example 2:
+* Input: [[1,4],[4,5]]
+* Output: [[1,5]]
+* Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+*
 **********************************************************************************/
 
 #include <iostream>
@@ -26,14 +31,12 @@ struct Interval {
 };
 
 //Two factos sorting [start:end]
-bool compare(const Interval& lhs, const Interval& rhs){
+static bool compare(const Interval& lhs, const Interval& rhs){
     return (lhs.start==rhs.start) ? lhs.end < rhs.end : lhs.start < rhs.start;
 }
 
 vector<Interval> merge(vector<Interval> &intervals) {
-
     vector<Interval> result;
-
     if (intervals.size() <= 0) return result;
     //sort the inervals. Note: using the customized comparing function.
     sort(intervals.begin(), intervals.end(), compare);
