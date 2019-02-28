@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/intersection-of-two-linked-lists/
+// Source : https://leetcode.com/problems/intersection-of-two-linked-lists/
 // Author : Hao Chen
 // Date   : 2014-12-01
 
 /********************************************************************************** 
- * 
+ * 160. Intersection of Two Linked Lists
  * Write a program to find the node at which the intersection of two singly linked lists begins.
  * 
  * For example, the following two linked lists: 
@@ -23,6 +23,14 @@
  * The linked lists must retain their original structure after the function returns. 
  * You may assume there are no cycles anywhere in the entire linked structure.
  * Your code should preferably run in O(n) time and use only O(1) memory.
+
+ * hint:
+ *        x: lenth of x
+ *                       + z: lenth of intersection
+ *        y: lenth of y
+ * 
+ *        delta = (x+z) - (y+z) == x-y
+ *        skip the part of delta ,the distance to z head would be same.
  *               
  **********************************************************************************/
 
