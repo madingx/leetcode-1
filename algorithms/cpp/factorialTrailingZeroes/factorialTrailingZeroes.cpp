@@ -1,10 +1,20 @@
-// Source : https://oj.leetcode.com/problems/factorial-trailing-zeroes/
+// Source : https://leetcode.com/problems/factorial-trailing-zeroes/
 // Author : Hao Chen
 // Date   : 2014-12-30
 
 /********************************************************************************** 
- * 
+ * 172. Factorial Trailing Zeroes
  * Given an integer n, return the number of trailing zeroes in n!.
+
+ * Example 1:
+ * Input: 3
+ * Output: 0
+ * Explanation: 3! = 6, no trailing zero.
+
+ * Example 2:
+ * Input: 5
+ * Output: 1
+ * Explanation: 5! = 120, one trailing zero.
  * 
  * Note: Your solution should be in polynomial time complexity.
  * 
@@ -73,14 +83,12 @@ class Solution {
 
         // Alternative implementation which naturally avoid integer overflow issue.
         int trailingZeroes(int n) {
-            int sum=0;
-            int tmp=0;
-            while(n/5>0)
+            int ret = 0;
+            while(n)
             {
-                tmp=n/5;
-                sum+=tmp;
-                n=tmp;
+                ret += n/5;
+                n /= 5;
             }
-            return sum;
+            return ret;
         }
 };
