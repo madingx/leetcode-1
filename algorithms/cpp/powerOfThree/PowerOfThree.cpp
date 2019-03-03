@@ -19,11 +19,11 @@ class Solution {
 public:
     
     bool isPowerOfThree(int n) {
-        return isPowerOfThree03(n); //140ms
-        return isPowerOfThree02(n);//130ms
-        return isPowerOfThree01(n); //140ms
-        return isPowerOfThree_loop(n);  //136ms
-        return isPowerOfThree_recursive(n); //168ms
+        return isPowerOfThree03(n); //52 ms 8.6 MB
+        return isPowerOfThree02(n);//52 ms  8.1 MB
+        return isPowerOfThree01(n); //52 ms 8.2 MB
+        return isPowerOfThree_loop(n);  //52 ms 8.1 MB
+        return isPowerOfThree_recursive(n); //52 ms 8.1 MB
     }
     
     bool isPowerOfThree03(int n) {
