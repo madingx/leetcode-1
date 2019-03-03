@@ -42,6 +42,79 @@
 *               
 **********************************************************************************/
 
+// Non-recursion, not more than constant space
+// 64 ms   27.3 MB
+Node* connect(Node *root) {
+        if (!root) return root;
+        Node *start = root, *cur = NULL;
+        while (start->left) {
+            cur = start;
+            while (cur) {
+                cur->left->next = cur->right;
+                if (cur->next) cur->right->next = cur->next->left;
+                cur = cur->next;
+            }
+            start = start->left;
+        }
+        return root;
+    }
+
+
+// Recursion, more than constant space
+// 64 ms 27.1 MB
+Node* connect(Node *root) {
+        if (!root) return root;
+        if (root->left) root->left->next = root->right;
+        if (root->right) root->right->next = root->next? root->next->left : NULL;
+        connect(root->left);
+        connect(root->right);
+        return root;
+    }
+
+// Non-recursion, more than constant space
+// 64 ms 27.4 MB
+Node* connect(Node *root) {
+        if (!root) return root;
+        queue<Node*> q;
+        q.push(root);
+        q.push(NULL);
+        while (true) {
+            Node *cur = q.front();
+            q.pop();
+            if (cur) {
+                cur->next = q.front();
+                if (cur->left) q.push(cur->left);
+                if (cur->right) q.push(cur->right);
+            } else {
+                if (q.size() == 0 || q.front() == NULL) return root;
+                q.push(NULL);
+            }
+        }
+        return root;
+    }
+
+// Non-recursion 2, more than constant space
+// 64 ms 27.4 MB
+Node* connect(Node *root) {
+        if (!root) return root;
+        queue<Node*> q;
+        q.push(root);
+        while (!q.empty()) {
+            int size = q.size();
+            for (int i = 0; i < size; ++i) {
+                Node *t = q.front(); q.pop();
+                if (i < size - 1) {
+                    t->next = q.front();
+                }
+                if (t->left) q.push(t->left);
+                if (t->right) q.push(t->right);
+            }
+        }
+        return root;
+    }
+
+
+/*********Old solution in C*******************************************************/
 #include <stdio.h>
 #include <vector>
 #include <queue>
