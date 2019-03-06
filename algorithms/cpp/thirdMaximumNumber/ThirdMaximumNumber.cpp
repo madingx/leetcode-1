@@ -37,6 +37,23 @@
 
 class Solution {
 public:
+
+
+    //12 ms 10.7 MB
+    int thirdMax(vector<int>& nums) {
+        set<int> s;
+        for (int num : nums) {
+            s.insert(num);
+            if (s.size() > 3) {
+                s.erase(s.begin());
+            }
+        }
+        return s.size() == 3 ? *s.begin() : *s.rbegin();
+    }
+
+
+
+    //20 ms 10.7 MB
     int nMax(vector<int>& nums, int n) {
         set<int> topN;
         for(auto num : nums) {
