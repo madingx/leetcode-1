@@ -21,11 +21,26 @@
 
 class Solution {
 public:
+    
+    //vector
+    //28 ms   9.8 MB
+    int missingNumber_vec(vector<int>& nums) {
+        vector<bool> arr(nums.size()+1,0);
+        for(int i=0;i<nums.size();i++){
+            arr[nums[i]]=1;
+        }
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]==0)return i;
+        }
+        return 0;
+    }
+
     // This problem can be converted to the classic problem --
     //    `There is an array, all of numbers except one appears twice, and that one only appears once`
     // It means, we can combin two arrays together, one is [1..n], another one is `nums`.
     // Then, you know, we can use the XOR solve this problem.
-    
+
+    //28 ms 9.7 MB
     int missingNumber01(vector<int>& nums) {
         int result = 0;
         for(int i=0; i<nums.size(); i++){
@@ -37,6 +52,7 @@ public:
         return result;
     }
     
+    //28 ms 9.8 MB
     // We can simplify the previous solution as below
     int missingNumber02(vector<int>& nums) {
         int result = 0;
