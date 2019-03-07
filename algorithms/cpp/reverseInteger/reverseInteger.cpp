@@ -1,4 +1,4 @@
-// Source : https://oj.leetcode.com/problems/reverse-integer/
+// Source : https://leetcode.com/problems/reverse-integer/
 // Author : Hao Chen
 // Date   : 2014-06-18
 
@@ -9,7 +9,12 @@
 * Example1: x =  123, return  321
 * Example2: x = -123, return -321
 * 
-* 
+* Note:
+* Assume we are dealing with an environment which could only store integers within the 32-bit signed
+* integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns
+* 0 when the reversed *  integer overflows.
+
+
 * Have you thought about this?
 * 
 * Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!
@@ -23,7 +28,11 @@
 *   You would then have to re-design the function (ie, add an extra parameter).
 * 
 *               
+
 **********************************************************************************/
+
+
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,6 +42,8 @@
 //  http://stackoverflow.com/questions/14695118/2147483648-0-returns-true-in-c
 #define INT_MAX     2147483647
 #define INT_MIN     (-INT_MAX - 1)
+
+//12 ms 14.1 MB
 int reverse(int x) {
     int y=0;
     int n;
