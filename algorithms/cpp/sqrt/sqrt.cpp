@@ -14,7 +14,7 @@
 #include <iostream>
 using namespace std;
 
-
+//16 ms  14 MB
 int sqrt(int x) {
 
     if (x <=0 ) return 0;
@@ -37,6 +37,7 @@ int sqrt(int x) {
         
 }
 
+//20 ms 13.9 MB
 // http://en.wikipedia.org/wiki/Newton%27s_method
 int sqrt_nt(int x) {
     if (x == 0) return 0;

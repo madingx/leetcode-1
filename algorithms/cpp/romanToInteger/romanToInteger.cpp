@@ -41,6 +41,9 @@ int romanCharToInt(char ch){
     }
     return d;
 }
+
+
+//48 ms   30.9 MB   while python cost 172 ms 13.9 MB 
 int romanToInt(string s) {
     if (s.size()<=0) return 0;
     int result = romanCharToInt(s[0]);
@@ -57,6 +60,22 @@ int romanToInt(string s) {
     return result;
 }
 
+//72 ms 31.3 MB
+int romanToInt2(string s) {
+    if (s.size()<=0) return 0;
+    vector<int> arr(s.size(),0);
+    int sum1 = 0;
+    for(int i=0;i<s.size();i++){
+        arr[i] = romanCharToInt(s[i]);
+        if(i>0 && arr[i-1] < arr[i]){
+            arr[i] = arr[i] - arr[i-1] *2;
+        }
+        sum1 += arr[i];
+    }
+    
+    
+    return sum1;
+}
 int main(int argc, char**argv)
 {
     string s("XL");

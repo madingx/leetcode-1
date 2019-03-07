@@ -25,6 +25,24 @@
 #include <vector>
 using namespace std;
 
+
+//32 ms 59.7 MB
+string countAndSay(int n) {
+        if(n == 1)return "1";
+        string stra = countAndSay(n-1) + "*";
+        int count = 1; 
+        string strb = "";
+        for(int i = 0;i<stra.length()-1;i++){
+             if(stra[i] == stra[i+1])count++;
+            else {
+                strb = strb+ to_string(count) + stra[i];
+                count = 1;
+            }
+        }
+        return strb;
+    }
+
+//8 ms  9.3 MB
 string vecToStr(vector<int> v) {
     stringstream ss;
     for (int i=0; i<v.size(); i++) {

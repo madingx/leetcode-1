@@ -15,6 +15,7 @@
 using namespace std;
 
 
+//28 ms 12.4 MB
 string longestCommonPrefix(vector<string> &strs) {
     string word;
     if (strs.size()<=0) return word;

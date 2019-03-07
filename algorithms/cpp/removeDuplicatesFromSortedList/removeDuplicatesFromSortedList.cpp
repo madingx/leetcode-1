@@ -21,6 +21,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+//12 ms 9.2 MB
 ListNode *deleteDuplicates(ListNode *head) {
 
     for(ListNode *p=head; p && p->next; ){
