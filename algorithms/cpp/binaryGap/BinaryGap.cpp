@@ -40,6 +40,27 @@
  * 1 <= N <= 10^9
  ***************************************************************************************/
 
+//4 ms  9.7 MB
+int binaryGap(int N) {
+        int result = 0;
+        bitset<32> num(N);
+        int flag = -1;
+        for (int i = 0; i < 32; i++) {
+            if (num.test(i)) {
+                // 判断该数位是否为1
+                if (flag == -1) {
+                    flag = i;
+                } else {
+                    result = max(result, i - flag);
+                    flag = i;
+                }
+            }
+        }
+        return result;
+    }
+
+
+//8 ms  9.6 MB
 int binaryGap(int N) {
         int res = 0, counter = -32;
         while(N)
@@ -54,3 +75,4 @@ int binaryGap(int N) {
         }
         return res;
     }
+
