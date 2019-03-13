@@ -1,36 +1,117 @@
-// Source : https://oj.leetcode.com/problems/word-search/
+// Source : https://leetcode.com/problems/word-search/
 // Author : Hao Chen
 // Date   : 2014-07-19
+// 
+// Latest Edition
+// Editor : Mading
+// Date   : 2019-03-13
 
 /********************************************************************************** 
-* 
+* 79. Word Search [Medium]
 * Given a 2D board and a word, find if the word exists in the grid.
 * 
 * The word can be constructed from letters of sequentially adjacent cell, 
 * where "adjacent" cells are those horizontally or vertically neighboring. 
 * The same letter cell may not be used more than once.
 * 
-* For example,
-* Given board = 
-* 
+* Example:
+* board =
 * [
-*   ["ABCE"],
-*   ["SFCS"],
-*   ["ADEE"]
+*   ['A','B','C','E'],
+*   ['S','F','C','S'],
+*   ['A','D','E','E']
 * ]
-* 
-* word = "ABCCED", -> returns true,
-* word = "SEE", -> returns true,
-* word = "ABCB", -> returns false.
+* Given word = "ABCCED", return true.
+* Given word = "SEE", return true.
+* Given word = "ABCB", return false.
 * 
 *               
 **********************************************************************************/
 
+
+/********** solution from  Discuss ***********************************************/
+//https://leetcode.com/problems/word-search/discuss/27675/My-19ms-accepted-C%2B%2B-code
+//24 ms 10.7 MB
+class Solution {
+    public:
+        bool exist(vector<vector<char> > &board, string word) {
+            m=board.size();
+            n=board[0].size();
+            for(int x=0;x<m;x++)
+                for(int y=0;y<n;y++)
+                {
+                    if(isFound(board,word.c_str(),x,y))
+                        return true;
+                }
+            return false;
+        }
+    private:
+        int m;
+        int n;
+        bool isFound(vector<vector<char> > &board, const char* w, int x, int y)        {
+            if(x<0||y<0||x>=m||y>=n||board[x][y]=='\0'||*w!=board[x][y])
+                return false;
+            if(*(w+1)=='\0')
+                return true;
+            char t=board[x][y];
+            board[x][y]='\0';
+            if(isFound(board,w+1,x-1,y)||isFound(board,w+1,x+1,y)||isFound(board,w+1,x,y-1)||isFound(board,w+1,x,y+1))
+                return true; 
+            board[x][y]=t;
+            return false;
+        }
+    };
+
+
+/**********other solutions *******************************************************/
 #include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
 
+//solution 1
+//336 ms    163.6 MB
+bool exist(vector<vector<char>>& board, string word) {
+    int row = board.size();
+    int col = board[0].size();
+    vector<vector<bool>> visited(row, vector<bool>(col, false));
+    //从不同的位置开始出发，然后通过深搜寻找结果
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            if (dfs(board, word, 0, i, j, visited)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+bool dfs(vector<vector<char>>& board, string word, int index, int x, int y, vector<vector<bool>>& visited) {
+    //终止条件
+    if (index == word.size()) {
+        return true;
+    }
+    //越界
+    if (x < 0 || y < 0 || x >= board.size() || y >= board[0].size()) {
+        return false;
+    }
+    //已经访问
+    if (visited[x][y]) {
+        return false;
+    }
+    //不相等
+    if (board[x][y] != word[index]) {
+        return false;
+    }
+    visited[x][y] = true;
+    bool result = dfs(board, word, index + 1, x - 1, y, visited) || dfs(board, word, index + 1, x + 1, y, visited) || dfs(board, word, index + 1, x, y - 1, visited) || dfs(board, word, index + 1, x, y + 1, visited);//分别为上下左右地搜索.
+    visited[x][y] = false; //准备回溯,设置回未访问状态.
+    return result;
+}
+
+
+
+//solution 2
+//368 ms  232 MB
 //Recursive backtracking algorithm
 bool exist(vector<vector<char> > &board, string word, int idx, int row, int col, vector< vector<int> > &mask) {
     int i = row;
@@ -49,10 +130,8 @@ bool exist(vector<vector<char> > &board, string word, int idx, int row, int col,
         }
         mask[i][j]=0; //cannot find any successful solution, clear the mark. (backtracking)
     }
-
     return false;
 }
-
 bool exist(vector<vector<char> > &board, string word) {
     if (board.size()<=0 || word.size()<=0) return false;
     int row = board.size();
@@ -73,6 +152,7 @@ bool exist(vector<vector<char> > &board, string word) {
     }
     return false;
 }
+
 
 vector< vector<char> > buildBoard(char b[][5], int r, int c) {
     vector< vector<char> > board;
