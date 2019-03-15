@@ -56,8 +56,7 @@
 |628|[Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | [Python](./algorithms/python/MaximumProductOfThreeNumbers/maximumProduct.py)|Easy|
 |623|[Add One Row to Tree](https://leetcode.com/problems/add-one-row-to-tree/) | [Python](./algorithms/python/AddOneRowToTree/addOneRow.py)|Medium|
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/description/) | [C++](./algorithms/cpp/mergetwobinarytrees/MergeTwoBinaryTrees.cpp)|Easy|
-|581|[Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [Python](./algorithms/python/ShortestUnsortedContinuousSubarray/findUnsortedSubarray.py)|Easy|
-|581|[Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [C++](./algorithms/cpp/shortestUnsortedContinuousSubarray/ShortestUnsortedContinuousSubarray.cpp)|Easy|
+|581|[Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [C++](./algorithms/cpp/shortestUnsortedContinuousSubarray/ShortestUnsortedContinuousSubarray.cpp), [Python](./algorithms/python/ShortestUnsortedContinuousSubarray/findUnsortedSubarray.py)|Easy|
 |572|[Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) | [Python](./algorithms/python/SubtreeOfAnotherTree/isSubtree.py)|Easy|
 |563|[Binary Tree Tilt](https://leetcode.com/problems/binary-tree-tilt/) | [Python](./algorithms/python/BinaryTreeTilt/findTilt.py)|Easy|
 |559|[Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) | [C++](./algorithms/cpp/minimumDepthOfBinaryTree/maximumDepthOfnAryTree.cpp)|Easy|
