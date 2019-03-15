@@ -415,3 +415,13 @@
 |---| ----- | -------- | ---------- |
 |1|[Search in a big sorted array](http://www.lintcode.com/en/problem/search-in-a-big-sorted-array/)|[Java](./algorithms/java/src/searchInABigSortedArray/searchInABigSortedArray.java)|Medium|
 |2|[Search Range in Binary Search Tree](http://www.lintcode.com/en/problem/search-range-in-binary-search-tree/) | [Java](./algorithms/java/src/searchRangeInBinarySearchTree/searchRangeInBinarySearchTree.java)|Medium|
+
+
+### LeetCode Database
+
+
+| # | Title | Solution | Difficulty |
+|---| ----- | -------- | ---------- |
+|595|[Big Countries](https://leetcode.com/problems/big-countries/)| [MySQL](./database/BigCountries.sql)|Easy|
+|180|[Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)| [MySQL](./database/ConsecutiveNumbers.sql)|Medium|
+|1|[Trips and Users](https://leetcode.com/problems/trips-and-users/)| [MySQL](./database/TripsAndUsers.sql)|Hard|
