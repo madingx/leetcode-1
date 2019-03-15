@@ -36,6 +36,8 @@
 
 class Solution {
 public:
+
+    //8 ms  10.3 MB,faster than 100.00% of C++
     vector<string> fizzBuzz_old_school_way(int n) {
         vector<string> result;
         for (int i=1; i<=n; i++) {
