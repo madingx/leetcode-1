@@ -1,13 +1,13 @@
-// Source : https://oj.leetcode.com/problems/excel-sheet-column-title/
+// Source : https://leetcode.com/problems/excel-sheet-column-title/
 // Author : Hao Chen
 // Date   : 2014-12-25
 
 /********************************************************************************** 
- * 
+ * 168. Excel Sheet Column Title [Easy]
  * Given a positive integer, return its corresponding column title as appear in an Excel sheet.
- * 
+
  * For example:
- * 
+
  *     1 -> A
  *     2 -> B
  *     3 -> C
@@ -15,8 +15,19 @@
  *     26 -> Z
  *     27 -> AA
  *     28 -> AB 
- * 
- * Credits:Special thanks to @ifanchu for adding this problem and creating all test cases.
+    ...
+
+ * Example 1:
+ * Input: 1
+ * Output: "A"
+
+ * Example 2:
+ * Input: 28
+ * Output: "AB"
+
+ * Example 3:
+ * Input: 701
+ * Output: "ZY"
  *               
  **********************************************************************************/
 
@@ -27,6 +38,21 @@
 using namespace std;
 
 
+//4 ms    8 MB, faster than 100.00% of C++
+string convertToTitle(int n) {
+        int m= 0;
+        string a = "";
+        while(n>0){
+            m = (n-1)%26;
+            a = a.insert(0,1,'A' + m);
+            n = (n-1)/26;
+        }
+        return a;
+    }
+
+
+
+//4 ms  8.1 MB
 string base26_int2str(long long n) {
     string ret;
     while(n>0){
