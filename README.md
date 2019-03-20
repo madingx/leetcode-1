@@ -425,4 +425,5 @@
 |595|[Big Countries](https://leetcode.com/problems/big-countries/)| [MySQL](./database/BigCountries.sql)|Easy|
 |182|[Duplicate Emails](https://leetcode.com/problems/duplicate-emails/)| [MySQL](./database/ConsecutiveNumbers.sql)|Easy|
 |180|[Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)| [MySQL](./database/ConsecutiveNumbers.sql)|Medium|
+|175|[Combine Two Tables](https://leetcode.com/problems/combine-two-tables/)| [MySQL](./database/CombineTwoTables)|Easy|
 |1|[Trips and Users](https://leetcode.com/problems/trips-and-users/)| [MySQL](./database/TripsAndUsers.sql)|Hard|
