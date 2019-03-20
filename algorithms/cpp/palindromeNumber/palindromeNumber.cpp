@@ -1,23 +1,26 @@
-// Source : https://oj.leetcode.com/problems/palindrome-number/
+// Source : https://leetcode.com/problems/palindrome-number/
 // Author : Hao Chen
 // Date   : 2014-06-18
 
 /********************************************************************************** 
-* 
-* Determine whether an integer is a palindrome. Do this without extra space.
-* 
-* 
-* Some hints:
-* 
-* Could negative integers be palindromes? (ie, -1)
-* 
-* If you are thinking of converting the integer to string, note the restriction of using extra space.
-* 
-* You could also try reversing an integer. However, if you have solved the problem "Reverse Integer", 
-* you know that the reversed integer might overflow. How would you handle such case?
-* 
-* There is a more generic way of solving this problem.
-* 
+* 9. Palindrome Number [easy]
+* Determine whether an integer is a palindrome. An integer is a palindrome 
+* when it reads the same backward as forward.
+
+* Example 1:
+* Input: 121
+* Output: true
+
+* Example 2:
+* Input: -121
+* Output: false
+* Explanation: From left to right, it reads -121. From right to left, it becomes 121-.
+* Therefore it is not a palindrome.
+
+* Example 3:
+* Input: 10
+* Output: false
+* Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 *               
 **********************************************************************************/
 
@@ -26,8 +29,35 @@
 class Solution {
 public:
 
+    //108 ms  72.9 MB, faster than 97.48% of C++
     bool isPalindrome(int x) {
-        if (x<0) {
+        if(x < 0 || (x % 10 == 0 && x != 0)) return false;
+        int revertedNumber = 0;
+        while(x > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + x % 10;
+            x /= 10;                         //注意这个过程
+        }
+        //input=12321;  here:x=12 ,revertedNumber=123
+        //input=1221;  here:x=12 ,revertedNumber=12
+        return x == revertedNumber || x == revertedNumber/10;        
+    }
+
+
+    //108 ms    73 MB, faster than 97.48% of C++
+    bool isPalindrome(int x) {
+        if(x<0)return false;
+        long n = 0; //long int is a tricky method 
+        long m = x;
+        while(m>0){
+            n = n*10 + m%10;
+            m /= 10;
+        }
+        return n==x;
+    }
+
+    //112 ms    73.1 MB, faster than 84.19% of C++
+    bool isPalindrome(int x) {
+        if (x<0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
         
