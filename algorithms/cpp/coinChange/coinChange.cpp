@@ -41,18 +41,19 @@
  * can return -1.
  * 
  */
+//56 ms 9.4 MB, faster than 64.76% of C++
 class Solution {
 public:
     
     int coinChange(vector<int>& coins, int amount) {
-        int sol[amount + 1];
+        int sol[amount + 1]; //sol[i] is min coins of amount i.
         sol[0] = 0;
         for(int i = 1; i <= amount; i++)
             sol[i] = amount + 1;
         for(int i = 0; i < coins.size(); i++)
         {
             for(int j = coins[i]; j <= amount; j++)
-                sol[j] = min(sol[j], sol[j - coins[i]] + 1);
+                sol[j] = min(sol[j], sol[j - coins[i]] + 1);  
         }
         if(sol[amount] != amount + 1)
             return sol[amount];
@@ -61,7 +62,31 @@ public:
     }
 };
 
+// input
+// [5，1]
+// 11
+// stdout  
+// i   j sol[j]
+// 0   5  1
+// 0   6  12
+// 0   7  12
+// 0   8  12
+// 0   9  12
+// 0   10  2
+// 0   11  12
+// 1   1  1
+// 1   2  2
+// 1   3  3
+// 1   4  4
+// 1   5  1
+// 1   6  2
+// 1   7  3
+// 1   8  4
+// 1   9  5
+// 1   10  2
+// 1   11  3
 
+//52 ms 13.6 MB, faster than 72.62% of C++
 //Another DP implmentation, same idea above 
 class Solution {
 public:

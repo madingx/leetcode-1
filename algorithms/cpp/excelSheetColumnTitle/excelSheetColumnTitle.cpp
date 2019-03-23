@@ -4,6 +4,7 @@
 
 /********************************************************************************** 
  * 168. Excel Sheet Column Title [Easy]
+ * Related to question 171. Excel Sheet Column Number
  * Given a positive integer, return its corresponding column title as appear in an Excel sheet.
 
  * For example:
@@ -49,7 +50,6 @@ string convertToTitle(int n) {
         }
         return a;
     }
-
 
 
 //4 ms  8.1 MB
