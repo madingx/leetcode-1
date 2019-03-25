@@ -3,7 +3,7 @@
 // Date   : 2015-06-08
 
 /********************************************************************************** 
- * 
+ * 202. Happy Number [Easy]
  * Write an algorithm to determine if a number is "happy".
  * 
  * A happy number is a number defined by the following process: Starting with any positive integer, 
@@ -26,6 +26,33 @@
 #include <map>
 using namespace std;
 
+//there must be a circle for any number?
+
+//4 ms  8 MB,faster than 100.00% of C++
+int digitSquareSum(int n) {
+    int sum = 0, tmp;
+    while (n) {
+        tmp = n % 10;
+        sum += tmp * tmp;
+        n /= 10;
+    }
+    return sum;
+}
+
+bool isHappy(int n) {
+    int slow, fast;
+    slow = fast = n;
+    do {
+        slow = digitSquareSum(slow);
+        fast = digitSquareSum(fast);
+        fast = digitSquareSum(fast);
+    } while(slow != fast);
+    if (slow == 1) return 1;
+    else return 0;
+}
+
+
+//4 ms  8.5 MB, faster than 100.00% of C++
 int squares(int n) {
     int result = 0;
     int sq = 0;
