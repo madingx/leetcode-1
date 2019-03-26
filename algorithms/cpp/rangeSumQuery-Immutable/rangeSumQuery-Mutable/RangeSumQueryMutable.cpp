@@ -3,7 +3,7 @@
 // Date   : 2015-11-24
 
 /*************************************************************************************** 
- *
+ * 307. Range Sum Query - Mutable [Medium]
  * Given an integer array nums, find the sum of the elements between indices i and j (i 
  * ≤ j), inclusive.
  * 
@@ -31,6 +31,8 @@
 // 1) http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
 // 2) http://cs.stackexchange.com/questions/10538/bit-what-is-the-intuition-behind-a-binary-indexed-tree-and-how-was-it-thought-a
 
+
+//36 ms    19.1 MB, faster than 98.94% of C++
 class NumArray {
 private:
     int _sz;
