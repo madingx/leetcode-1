@@ -31,11 +31,12 @@ class NumArray {
  * Note: we can add a dummy sum at then beginning to simplify the code
  * 
  */
+//36 ms 17 MB, faster than 98.73% of C++
 private:
     int size;
     vector <long long> sums;
 public:
-    NumArray(vector<int> &nums): size(nums.size()), sums(size+1, 0) {
+    NumArray(vector<int> nums): size(nums.size()), sums(size+1, 0) {
         for(int i=0; i<size; i++) {
             sums[i+1] = sums[i] + nums[i];
         } 
