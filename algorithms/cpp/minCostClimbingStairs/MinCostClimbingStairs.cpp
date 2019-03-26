@@ -4,7 +4,7 @@
 
 /***************************************************************************************************** 
  *
- * 
+ * 746. Min Cost Climbing Stairs [Easy] 
  * On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
  * 
  * Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to 
@@ -32,14 +32,16 @@
 
 class Solution {
 public:
+    //16 ms   8.7 MB, faster than 18.93% of C++
     int minCostClimbingStairs(vector<int>& cost) {
-        vector<int> dp(cost.size() , 0);
-        dp[0] = cost[0];
-
-        for (int i=1; i<cost.size(); i++) {
-            dp[i] = min( cost[i] + dp[i-1], cost[i] + dp[i-2] );
+        vector<int> dyncost(cost.size()+2,0);
+        int i=2;
+        for(;i<dyncost.size()-1;i++){
+            dyncost[i+1] = min(dyncost[i]+cost[i-1],dyncost[i-1]+cost[i-2]);
         }
-
-        return min( dp[dp.size()-1], dp[dp.size()-2]);
+        return dyncost[i];
+        //cost   [1,2,3,4]
+        //dyn  [0,0,0,1,2,4]
     }
+
 };
