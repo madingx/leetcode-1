@@ -36,6 +36,7 @@
 *               
 **********************************************************************************/
 
+//4 ms  8.5 MB, faster than 100.00% of C++
 class Solution {
 public:
     bool stoneGame(vector<int>& piles) {
