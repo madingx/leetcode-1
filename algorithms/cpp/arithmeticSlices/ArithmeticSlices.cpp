@@ -3,7 +3,7 @@
 // Date   : 2016-11-13
 
 /*************************************************************************************** 
- *
+ * 413. Arithmetic Slices [Medium]
  * A sequence of number is called arithmetic if it consists of at least three elements 
  * and if the difference between any two consecutive elements is the same.
  * 
@@ -33,7 +33,8 @@
 
 class Solution {
 public:
-    //
+
+    // 4 ms  8.5 MB, faster than 100.00% of C++, less than 100.00% of C++
     // It's easy to find out how many 3-length slices in an arithmetic array with N length.
     //
     //   len = 3, then  1 slices, sum(1)
@@ -51,7 +52,6 @@ public:
     //                       2
     // Then, we could have the solution - O(n) Time with O(1) Space
     //
-    
     int sum1toN(int n) {
         return n * (n+1) / 2;
     }

@@ -50,7 +50,7 @@
 #  * 
 #  ******************************************************************************************************/
 
-#40 ms 13.1 MB,
+#40 ms 13.1 MB,Your runtime beats 90.47 % of python3
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         dpdays = [0]*(len(days)+1)
