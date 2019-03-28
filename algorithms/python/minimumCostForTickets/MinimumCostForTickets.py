@@ -1,6 +1,6 @@
 # // Source : https://leetcode.com/problems/minimum-cost-for-tickets/
-# // Author : Hao Chen
-# // Date   : 2019-01-29
+# // Author : Mading
+# // Date   : 2019-03-28
 
 # /***************************************************************************************************** 
 #  * 983. Minimum Cost For Tickets [Medium]
