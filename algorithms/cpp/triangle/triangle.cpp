@@ -1,19 +1,19 @@
-// Source : https://oj.leetcode.com/problems/triangle/
+// Source : https://leetcode.com/problems/triangle/
 // Author : Hao Chen
 // Date   : 2014-06-18
 
 /********************************************************************************** 
-* 
+* 120. Triangle [Medium]
 * Given a triangle, find the minimum path sum from top to bottom. 
 * Each step you may move to adjacent numbers on the row below.
 * 
 * For example, given the following triangle
 * 
 * [
-*      [2],
-*     [3,4],
-*    [6,5,7],
-*   [4,1,8,3]
+*      [2*],
+*     [3*,4],
+*    [6,5*,7],
+*   [4,1*,8,3]
 * ]
 * 
 * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
@@ -27,6 +27,20 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
+//8 ms, faster than 99.67% of C++,  9.8 MB, less than 99.44% of C++
+Memory Usage: 9.8 MB, less than 99.44% of C++ online submissions for Triangle.
+class Solution {
+public:
+    int minimumTotal(vector<vector<int>>& triangle) {
+        vector<int> minPath= triangle[triangle.size()-1];     //minPath[j] is min cost from tri[i][j] to bottom
+        for ( int i = triangle.size() - 2; i>= 0 ; --i )
+            for ( int j = 0; j < triangle[i].size() ; ++ j )  
+                minPath[j] = triangle[i][j] + min(minPath[j],minPath[j+1]);
+        return minPath[0];
+    }
+};
+
 
 class Solution {
     
