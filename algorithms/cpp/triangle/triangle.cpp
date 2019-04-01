@@ -29,7 +29,6 @@
 using namespace std;
 
 //8 ms, faster than 99.67% of C++,  9.8 MB, less than 99.44% of C++
-Memory Usage: 9.8 MB, less than 99.44% of C++ online submissions for Triangle.
 class Solution {
 public:
     int minimumTotal(vector<vector<int>>& triangle) {
