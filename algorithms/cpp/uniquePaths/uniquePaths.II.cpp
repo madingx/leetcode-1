@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/unique-paths-ii/
+// Source : https://leetcode.com/problems/unique-paths-ii/
 // Author : Hao Chen
 // Date   : 2014-06-25
 
 /********************************************************************************** 
-* 
+* 63. Unique Paths II [Medium]
 * Follow up for "Unique Paths":
 * 
 * Now consider if some obstacles are added to the grids. How many unique paths would there be?
@@ -22,39 +22,81 @@
 * The total number of unique paths is 2.
 * 
 * Note: m and n will be at most 100.
-*               
+
+* Example 1:
+* Input:
+* [
+*   [0,0,0],
+*   [0,1,0],
+*   [0,0,0]
+* ]
+* Output: 2
+* Explanation:
+* There is one obstacle in the middle of the 3x3 grid above.
+* There are two ways to reach the bottom-right corner:
+* 1. Right -> Right -> Down -> Down
+* 2. Down -> Down -> Right -> Right          
+*     
 **********************************************************************************/
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
-//As same as DP solution with "Unique Path I", just need to consider the obstacles.
-int uniquePathsWithObstacles(vector<vector<int> > &obstacleGrid) {
-    vector< vector<int> > v = obstacleGrid;
-    unsigned int max=0;
-    for (int i=0; i<obstacleGrid.size(); i++){
-        for (int j=0; j<obstacleGrid[i].size(); j++){
-            if(obstacleGrid[i][j] == 1){
-                max = v[i][j] = 0;
-            } else {
-                if (i>0 && j>0) {
-                    max= v[i][j] = v[i-1][j] + v[i][j-1];
-                }else if(i>0){
-                    max = v[i][j] = v[i-1][j];
-                }else if(j>0){
-                    max = v[i][j] = v[i][j-1];
-                }else{
-                    max = v[i][j] = 1 ;
-                }
+// 4 ms, faster than 100.00% of C++ , 9.1 MB, less than 76.47% of C++
+int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        int m = obstacleGrid.size();
+        if(m==0)return 0;
+        int n = obstacleGrid[0].size();
+        if(n==0)return 0;
+        
+        vector<vector<unsigned int>> dp(m,vector<unsigned int>(n,1));
+        for(int i = 0;i<m;i++){
+            for(int j = 0;j<n;j++){
+                if(obstacleGrid[i][j] == 1)   
+                    dp[i][j] = 0;
+                else 
+                    if(i==0&&j==0)dp[i][j]=1;
+                    else dp[i][j] = (i>0?dp[i-1][j]:0) + (j>0?dp[i][j-1]:0) ;
             }
         }
+        return dp[m-1][n-1];
+    }
+
+// As same as DP solution with "Unique Path I", just need to consider the obstacles.
+// 4 ms, faster than 100.00% of C++， 9.1 MB, less than 77.31% of C++
+int uniquePathsWithObstacles(vector<vector<int> > &obstacleGrid) {
+    int m = obstacleGrid.size();
+    if(m==0)return 0;
+    int n = obstacleGrid[0].size();
+    if(n==0)return 0;
+
+
+    vector< vector<unsigned int > > v(m,vector<unsigned int>(n,1));
+    unsigned int max=0;
+    for (int i=0; i<obstacleGrid.size(); i++){
+    for (int j=0; j<obstacleGrid[i].size(); j++){
+        if(obstacleGrid[i][j] == 1){
+            max = v[i][j] = 0;
+        } else {
+            if (i>0 && j>0) {
+                max= v[i][j] = v[i-1][j] + v[i][j-1];
+            }else if(i>0){
+                max = v[i][j] = v[i-1][j];
+            }else if(j>0){
+                max = v[i][j] = v[i][j-1];
+            }else{
+                max = v[i][j] = 1 ;
+            }
+        }
+    }
     }
     return max;
 }
 
 // the previous implemetation has too many if-else
 // the following dynamic programming is much more easy to read
+// 4 ms, faster than 100.00% of C++, 9.1 MB, less than 78.15% of C++
 int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
     int row = obstacleGrid.size();
     int col = obstacleGrid[0].size();
