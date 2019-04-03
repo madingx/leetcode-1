@@ -3,7 +3,7 @@
 // Date   : 2019-01-30
 
 /***************************************************************************************************** 
- *
+ * 931. Minimum Falling Path Sum [Medium]
  * Given a square array of integers A, we want the minimum sum of a falling path through A.
  * 
  * A falling path starts at any element in the first row, and chooses one element from each row.  The 
@@ -37,6 +37,7 @@ private:
         return min(min(x, y),z);
     }
 public:
+    //12 ms 9.8 MB, faster than 98.93% of C++
     int minFallingPathSum(vector<vector<int>>& A) {
         int m = INT_MAX;
         
@@ -60,5 +61,24 @@ public:
         }
         
         return m;
+    }
+
+
+    //16 ms 10 MB, faster than 95.59% of C++
+    int minFallingPathSum(vector<vector<int>>& A) {
+        vector<vector<int>>  dp(A);        
+        for(int i=1;i<A.size();i++){
+            for(int k=0;k<A[0].size();k++){
+                if(k==0){
+                    dp[i][k] = A[i][k]+ min(dp[i-1][k],dp[i-1][k+1]); 
+                }else if(k==A.size()-1){
+                    dp[i][k] = A[i][k]+ min(dp[i-1][k],dp[i-1][k-1]);
+                }else{
+                    dp[i][k] = A[i][k]+ min(dp[i-1][k],min(dp[i-1][k-1],dp[i-1][k+1]));
+                }
+            }
+        }
+        
+        return *min_element(&dp[A.size()-1][0],&dp[A.size()-1][A.size()]);
     }
 };

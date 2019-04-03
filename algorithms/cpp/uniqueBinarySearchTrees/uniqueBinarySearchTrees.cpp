@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/unique-binary-search-trees/
+// Source : https://leetcode.com/problems/unique-binary-search-trees/
 // Author : Hao Chen
 // Date   : 2014-06-25
 
 /********************************************************************************** 
-* 
+* 96. Unique Binary Search Trees [Medium]
 * Given n, how many structurally unique BST's (binary search trees) that store values 1...n?
 * 
 * For example,
@@ -27,6 +27,7 @@ int numTrees(int n) {
     return numTrees1(n);
 }
 
+//4 ms, faster than 100.00% of C++ ,8.3 MB, less than 20.63% of C++ 
 int numTrees1(int n) {
     int *cnt = (int*)malloc((n+1)*sizeof(int));
     memset(cnt, 0, (n+1)*sizeof(int));
@@ -44,7 +45,7 @@ int numTrees1(int n) {
 }
 
 
-
+//1780 ms, faster than 8.76% of C++ , 8.2 MB, less than 53.36% of C++
 int numTrees2(int n) {
     if (n<=0) return 0;
     if (n == 1 ) return 1;

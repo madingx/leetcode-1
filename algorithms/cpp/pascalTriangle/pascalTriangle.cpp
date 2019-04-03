@@ -1,10 +1,11 @@
-// Source : https://oj.leetcode.com/problems/pascals-triangle/
+// Source : https://leetcode.com/problems/pascals-triangle/submissions/
 // Author : Hao Chen
 // Date   : 2014-06-18
 
 /********************************************************************************** 
-* 
+* 118. Pascal's Triangle [Easy]
 * Given numRows, generate the first numRows of Pascal's triangle.
+* In Pascal's triangle, each number is the sum of the two numbers directly above it.
 * 
 * For example, given numRows = 5,
 * Return
@@ -25,6 +26,7 @@
 #include <iostream>
 using namespace std;
 
+//4 ms  8.6 MB, faster than 100.00% of C++
 vector<vector<int> > generate(int numRows) 
 {
     vector<vector<int> > pascalTriangle;

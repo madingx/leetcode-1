@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/unique-paths/
+// Source : https://leetcode.com/problems/unique-paths/
 // Author : Hao Chen
 // Date   : 2014-06-25
 
 /********************************************************************************** 
- * 
+ * 62. Unique Paths [Medium]
  * A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
  * 
  * The robot can only move either down or right at any point in time. The robot is trying to reach 
@@ -29,6 +29,19 @@
  * Above is a 3 x 7 grid. How many possible unique paths are there?
  * 
  * Note: m and n will be at most 100.
+
+ * Example 1:
+ * Input: m = 3, n = 2
+ * Output: 3
+ * Explanation:
+ * From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+ * 1. Right -> Right -> Down
+ * 2. Right -> Down -> Right
+ * 3. Down -> Right -> Right
+
+ * Example 2:
+ * Input: m = 7, n = 3
+ * Output: 28
  *               
  **********************************************************************************/
 
@@ -36,6 +49,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 
 void printMatrix(int*a, int m, int n)
 {
@@ -82,6 +96,7 @@ int uniquePaths(int m, int n) {
 using namespace std;
 
 // using C++ STL vector , the code is much easy to read
+// 4 ms, faster than 100.00% of C++,8.7 MB, less than 27.04% of C++ 
 int uniquePaths(int m, int n) {
     vector< vector <int> >  dp (n, vector<int>(m, 1));
     for (int row=1; row<n; row++) {

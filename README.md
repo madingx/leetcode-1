@@ -25,6 +25,7 @@
 |931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/) | [C++](./algorithms/cpp/minimumFallingPathSum/MinimumFallingPathSum.cpp)|Medium|
 |914|[X of a Kind in a Deck of Cards](https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/) | [Python](./algorithms/python/XOfAKindInADeckOfCards/hasGroupsSizeX.py)|Easy|
 |905|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/) | [C++](./algorithms/cpp/sortArrayByParity/SortArrayByParity.cpp)|Easy|
+|877|[Stone Game](https://leetcode.com/problems/stone-game/) | [C++](./algorithms/cpp/stoneGame/StoneGame.cpp)|Medium|
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [C++](./algorithms/cpp/leaf-SimilarTrees/leaf-SimilarTrees.cpp)|Easy|
 |868|[Binary Gap](https://leetcode.com/problems/binary-gap/) | [C++](./algorithms/cpp/binaryGap/BinaryGap.cpp)|Easy|
 |859|[Buddy Strings](https://leetcode.com/problems/buddy-strings/description/) | [C++](./algorithms/cpp/buddyStrings/BuddyStrings.cpp)|Easy|
@@ -52,6 +53,7 @@
 |655|[Print Binary Tree](https://leetcode.com/problems/print-binary-tree/) | [Python](./algorithms/python/PrintBinaryTree/printTree.py)|Medium|
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/) | [Python](./algorithms/python/FindDuplicateSubtrees/findDuplicateSubtrees.py)|Medium|
 |647|[Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) | [C++](./algorithms/cpp/palindromicSubstrings/PalindromicSubstrings.cpp)|Medium|
+|646|[Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/) | [C++](./algorithms/cpp/maximumLengthofPairChain/MaximumLengthofPairChain.cpp)|Medium|
 |643|[Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/description/) | [C++](./algorithms/cpp/maximumAverageSubarray/MaximumAverageSubarray.I.cpp), [Python](./algorithms/python/MaximumAverageSubarrayI/findMaxAverage.py)|Easy|
 |628|[Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | [Python](./algorithms/python/MaximumProductOfThreeNumbers/maximumProduct.py)|Easy|
 |623|[Add One Row to Tree](https://leetcode.com/problems/add-one-row-to-tree/) | [Python](./algorithms/python/AddOneRowToTree/addOneRow.py)|Medium|

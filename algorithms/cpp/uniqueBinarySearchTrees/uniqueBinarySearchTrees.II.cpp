@@ -1,36 +1,30 @@
-// Source : https://oj.leetcode.com/problems/unique-binary-search-trees-ii/
+// Source : https://leetcode.com/problems/unique-binary-search-trees-ii/
 // Author : Hao Chen
 // Date   : 2014-06-25
 
 /********************************************************************************** 
-* 
-* Given n, generate all structurally unique BST's (binary search trees) that store values 1...n.
-* 
-* For example,
-* Given n = 3, your program should return all 5 unique BST's shown below.
-* 
+* 95. Unique Binary Search Trees II [Medium]
+* Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1 ... n.
+
+* Example:
+
+* Input: 3
+* Output:
+* [
+*   [1,null,3,2],
+*   [3,2,null,1],
+*   [3,1,null,null,2],
+*   [2,1,3],
+*   [1,null,2,null,3]
+* ]
+* Explanation:
+* The above output corresponds to the 5 unique BST's shown below:
+
 *    1         3     3      2      1
 *     \       /     /      / \      \
 *      3     2     1      1   3      2
-* 
-* confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
-* 
-* OJ's Binary Tree Serialization:
-* 
-* The serialization of a binary tree follows a level order traversal, where '#' signifies 
-* a path terminator where no node exists below.
-* 
-* Here's an example:
-* 
-*    1
-*   / \
-*  2   3
-*     /
-*    4
-*     \
-*      5
-* 
-* The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}". 
+*     /     /       \                 \
+*    2     1         2                 3
 * 
 *               
 **********************************************************************************/
@@ -48,63 +42,44 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-vector<TreeNode*> generateTrees(int low, int high);
 
-vector<TreeNode*> generateTrees(int n) {
-
-    vector<TreeNode*> v;
-    v = generateTrees(1, n);
-    return v;
-}
-
-vector<TreeNode*> generateTrees(int low, int high){
-    vector<TreeNode*> v;
-    if (low > high || low<=0 || high<=0){
-        v.push_back(NULL);
-        return v;
+//16 ms, faster than 100.00% of C++ ,12.4 MB, less than 98.33% of C++ 
+class Solution {
+public:
+    vector<TreeNode*> generateTrees(int n) {
+        vector<TreeNode*> tree;
+        if (n == 0) {
+            return tree;
+        }
+        vector<vector<vector<TreeNode*>>> dp(n,vector<vector<TreeNode*>>(n));
+        helper(1, n , tree, dp);
+        return tree;
     }
-    if (low==high){
-        TreeNode* node = new TreeNode(low);
-        v.push_back(node); 
-        return v;
-    }
-    for (int i=low; i <= high; i++){
-        vector<TreeNode*> vleft = generateTrees(low, i-1);
-        vector<TreeNode*> vright = generateTrees(i+1, high);
-        for (int l=0; l<vleft.size(); l++){
-            for (int r=0; r<vright.size(); r++){
-                TreeNode *root = new TreeNode(i);
-                root->left = vleft[l];
-                root->right = vright[r];
-                v.push_back(root);
+private:
+    void helper(int start, int end, vector<TreeNode*> &tree,vector<vector<vector<TreeNode*>>> &dp) {
+        if (start > end) {
+            tree.push_back(NULL); 
+            return;
+        }
+        if (!dp[start - 1][end - 1].empty())  {
+            tree = dp[start - 1][end - 1];
+            return;
+        }
+        for (int i = start; i <= end; ++i) {
+            vector<TreeNode*> left, right;
+            helper(start, i - 1, left, dp);
+            helper(i + 1, end, right, dp);
+            for(int j = 0; j < left.size(); ++j) {
+                for (int k = 0; k < right.size(); ++k) {
+                    TreeNode* node = new TreeNode(i);
+                    node->left = left[j];
+                    node->right = right[k];
+                    tree.push_back(node);
+                }
             }
         }
+        dp[start - 1][end - 1] = tree;
     }
-    return v;
-}
 
-void printTree(TreeNode *root){
-    if (root == NULL){
-        printf("# ");
-        return;
-    }
-    printf("%d ", root->val );
-
-    printTree(root->left);
-    printTree(root->right);
-}
-
-
-int main(int argc, char** argv) 
-{
-    int n=2;
-    if (argc>1){
-        n = atoi(argv[1]);
-    }
-    vector<TreeNode*> v = generateTrees(n);
-    for(int i=0; i<v.size(); i++){
-        printTree(v[i]);
-        printf("\n");
-    }
-    return 0;
-}
+    
+};
