@@ -3,7 +3,7 @@
 // Date   : 2019-02-03
 
 /***************************************************************************************************** 
- *
+ * 980. Unique Paths III [Hard]
  * On a 2-dimensional grid, there are 4 types of squares:
  * 
  * 	1 represents the starting square.  There is exactly one starting square.
@@ -45,6 +45,8 @@
  * 	1 <= grid.length * grid[0].length <= 20
  * 
  ******************************************************************************************************/
+
+// 4 ms, faster than 100.00% of C++,8.8 MB, less than 84.21% of C++
 class Solution {
 public:
     int uniquePathsIII(vector<vector<int>>& grid) {
@@ -76,13 +78,9 @@ public:
         return true;
     }
     
-    
     void uniquePathsHelper(vector<vector<int>> &grid, int x, int y, int& path ) {
-        
         if (x < 0 || y < 0 || x>= grid.size() || y>=grid[0].size()) return;
-        
         if ( grid[x][y] < 0)  return;
- 
         if ( grid[x][y] == 2) {  
             if (check(grid)) path++;
             return;
@@ -98,3 +96,12 @@ public:
     
     }
 };
+
+// backtracking method
+// 4 ms, faster than 100.00% of C++, 8.4 MB, less than 100.00% of C++
+// https://blog.csdn.net/fuxuemingzhu/article/details/86564010
+
+
+// Python Concise DFS
+// Runtime: 60 ms, faster than 79.29% of Python3, 13.2 MB, less than 10.42% of Python3 
+// https://leetcode.com/problems/unique-paths-iii/discuss/267191/Python-Concise-DFS
