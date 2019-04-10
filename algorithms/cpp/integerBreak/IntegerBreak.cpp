@@ -77,5 +77,9 @@ public:
         13 - 3,3,3,4
 */
 
+
+// math behind this problem
+//https://leetcode.com/problems/integer-break/discuss/80721/Why-factor-2-or-3-The-math-behind-this-problem.
+
 };
 
