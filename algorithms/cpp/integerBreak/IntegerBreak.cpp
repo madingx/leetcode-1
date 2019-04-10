@@ -16,7 +16,7 @@
  * Input: 10
  * Output: 36
  * Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
- 
+
  * Note: You may assume that n is not less than 2 and not larger than 58.
  ***************************************************************************************/
 
@@ -30,7 +30,7 @@ public:
     // n = 11, 3*3*3*2 = 54
     //
     // we can see we can break the number by 3 if it is greater than 4;
-    //
+    // O(n) solution
     // Runtime: 4 ms, faster than 100.00% of C++, 8.3 MB, less than 69.32% of C++
     int integerBreak(int n) {
         if ( n == 2 ) return 1;
@@ -42,22 +42,6 @@ public:
         }
         result *= n;
         return result;
-    }
-
-    // O(n) solution
-    // 4 ms, faster than 100.00% of C++ , 8.3 MB, less than 70.45% of C++ 
-    int integerBreak(int n) {
-        int dp[n>4? n + 1:5];
-        dp[0] = 0;
-        dp[1] = 1;
-        dp[2] = 1;
-        dp[3] = 2;
-        dp[4] = 4;
-        for (int i = 5; i <= n; ++i) {
-            dp[i] = 3 * max(i - 3, dp[i - 3]);
-        }
-        return dp[n];
-        
     }
 
     // O(1) solution
