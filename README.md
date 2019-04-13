@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|999|[Available Captures for Rook](https://leetcode.com/problems/available-captures-for-rook/) | [C++](./algorithms/cpp/availableCapturesforRook/AvailableCapturesforRook.cpp)|Easy|
 |988|[Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) | [C++](./algorithms/cpp/smallestStringStartingFromLeaf/SmallestStringStartingFromLeaf.cpp)|Medium|
 |987|[Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/) | [C++](./algorithms/cpp/verticalOrderTraversalOfABinaryTree/VerticalOrderTraversalOfABinaryTree.cpp)|Medium|
 |986|[Interval List Intersections](https://leetcode.com/problems/interval-list-intersections/) | [C++](./algorithms/cpp/intervalListIntersectons/IntervalListIntersections.cpp)|Medium|
@@ -61,6 +62,7 @@
 |581|[Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [C++](./algorithms/cpp/shortestUnsortedContinuousSubarray/ShortestUnsortedContinuousSubarray.cpp), [Python](./algorithms/python/ShortestUnsortedContinuousSubarray/findUnsortedSubarray.py)|Easy|
 |572|[Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) | [Python](./algorithms/python/SubtreeOfAnotherTree/isSubtree.py)|Easy|
 |563|[Binary Tree Tilt](https://leetcode.com/problems/binary-tree-tilt/) | [Python](./algorithms/python/BinaryTreeTilt/findTilt.py)|Easy|
+|561|[Array Partition I](https://leetcode.com/problems/array-partition-i/) | [C++](./algorithms/cpp/arrayPartitionI/ArrayPartitionI.cpp)|Easy|
 |559|[Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) | [C++](./algorithms/cpp/minimumDepthOfBinaryTree/maximumDepthOfnAryTree.cpp)|Easy|
 |547|[Friend Circles](https://leetcode.com/problems/friend-circles/description/) | [C++](./algorithms/cpp/friendCircles/FriendCircles.cpp)|Medium|
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | [Python](./algorithms/python/DiameterOfBinaryTree/diameterOfBinaryTree.py)|Easy|
