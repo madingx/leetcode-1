@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|1002|[Find Common Characters](https://leetcode.com/problems/find-common-characters/) | [C++](./algorithms/cpp/findCommonCharacters/FindCommonCharacters.cpp)|Easy|
 |999|[Available Captures for Rook](https://leetcode.com/problems/available-captures-for-rook/) | [C++](./algorithms/cpp/availableCapturesforRook/AvailableCapturesforRook.cpp)|Easy|
 |988|[Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) | [C++](./algorithms/cpp/smallestStringStartingFromLeaf/SmallestStringStartingFromLeaf.cpp)|Medium|
 |987|[Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/) | [C++](./algorithms/cpp/verticalOrderTraversalOfABinaryTree/VerticalOrderTraversalOfABinaryTree.cpp)|Medium|
