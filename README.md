@@ -35,6 +35,7 @@
 |849|[Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/) | [Python](./algorithms/python/MaximizeDistanceToClosestPerson/maxDistToClosest.py)|Easy|
 |844|[Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/description/) | [C++](./algorithms/cpp/backspaceStringCompare/BackspaceStringCompare.cpp)|Easy|
 |837|[Most Common Word](https://leetcode.com/problems/most-common-word/) | [C++](./algorithms/cpp/mostCommonWord/MostCommonWord.cpp)|Easy|
+|832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](./algorithms/cpp/flippinganImage/FlippinganImage.cpp)|Easy|
 |830|[Positions of Large Groups](https://leetcode.com/problems/positions-of-large-groups/) | [Python](./algorithms/python/PositionsOfLargeGroups/largeGroupPositions.py)|Easy|
 |804|[Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/description/) | [C++](./algorithms/cpp/uniqueMorseCodeWords/UniqueMorseCodeWords.cpp)|Easy|
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/description) | [C++](./algorithms/cpp/jewelsAndStones/JewelsAndStones.cpp)|Easy|
