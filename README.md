@@ -22,7 +22,7 @@
 |969|[Pancake Sorting](https://leetcode.com/problems/pancake-sorting/) | [Python](./algorithms/python/PancakeSorting/pancakeSort.py)|Medium|
 |958|[Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) | [Python](./algorithms/python/CheckCompletenessOfABinaryTree/isCompleteTree.py)|Medium|
 |951|[Flip Equivalent Binary Trees](https://leetcode.com/problems/flip-equivalent-binary-trees/) | [Python](./algorithms/python/FlipEquivalentBinaryTrees/flipEquiv.py)|Medium|
-|950|[Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/) | [Python](./algorithms/python/RevealCardsInIncreasingOrder/deckRevealedIncreasing.py)|Medium|
+|950|[Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/) | [C++](./algorithms/cpp/revealCardsInIncreasingOrder/RevealCardsInIncreasingOrder.cpp),[Python](./algorithms/python/RevealCardsInIncreasingOrder/deckRevealedIncreasing.py)|Medium|
 |941|[Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array/) | [Python](./algorithms/python/ValidMountainArray/validMountainArray.py)|Easy|
 |931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/) | [C++](./algorithms/cpp/minimumFallingPathSum/MinimumFallingPathSum.cpp)|Medium|
 |914|[X of a Kind in a Deck of Cards](https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/) | [Python](./algorithms/python/XOfAKindInADeckOfCards/hasGroupsSizeX.py)|Easy|
