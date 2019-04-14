@@ -80,6 +80,7 @@
 |450|[DeleteNodeInABST](https://leetcode.com/problems/delete-node-in-a-bst/) | [Python](./algorithms/python/DeleteNodeInABST/deleteNode.py)|Medium|
 |449|[Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst/) | [Python](./algorithms/python/SerializeAndDeserializeBST/serialize.py)|Medium|
 |448|[Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | [C++](./algorithms/cpp/FindAllNumbersDisappearedinanArray/FindAllNumbersDisappearedinanArray.cpp)|Easy|
+|442|[Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/) | [C++](./algorithms/cpp/findAllDuplicatesinanArray/FindAllDuplicatesinanArray.cpp)|Medium|
 |437|[Path Sum III](https://leetcode.com/problems/path-sum-iii/) | [Python](./algorithms/python/PathSumIII/pathSum.py)|Medium|
 |418|[SentenceScreenFitting](https://leetcode.com/problems/sentence-screen-fitting/) &hearts; | [C++](./algorithms/cpp/sentenceScreenFitting/sentenceScreenFitting.cpp)|Easy|
 |416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/description/) | [C++](./algorithms/cpp/partitionEqualSubsetSum/PartitionEqualSubsetSum.cpp)|Medium|
