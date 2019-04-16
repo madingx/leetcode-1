@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/path-sum/
+// Source : https://leetcode.com/problems/path-sum/
 // Author : Hao Chen
 // Date   : 2014-06-22
 
 /********************************************************************************** 
-* 
+* 112. Path Sum [Easy]
 * Given a binary tree and a sum, determine if the tree has a root-to-leaf path 
 * such that adding up all the values along the path equals the given sum.
 * 
@@ -45,6 +45,8 @@ public:
         return hasPathSum2(root, sum);
     }
     
+    // traversal
+    // 16 ms, faster than 99.55% of C++, 19.8 MB, less than 78.79% of C++
     bool hasPathSum1(TreeNode *root, int sum) {
         if (root==NULL) return false;
         vector<TreeNode*> v;
@@ -67,32 +69,15 @@ public:
             }
         }
         return false;
-        
-    }
-    
-    bool hasPathSum2(TreeNode *root, int sum) {
-        
-        if (root==NULL) return false;
-        
-        if (root->left==NULL && root->right==NULL ){
-            return (root->val==sum);
-        }
-        
-        if (root->left){
-            root->left->val += root->val;
-            if (hasPathSum2(root->left, sum)){
-                return true;
-            }
-        }
-        
-        if (root->right){
-            root->right->val += root->val;
-            if (hasPathSum2(root->right, sum)){
-                return true;
-            }
-        }
-        
-        return false;
+    }    
+
+    // recursion
+    // 16 ms, faster than 99.55% of C++, 19.7 MB, less than 93.69% of C++ 
+    bool hasPathSum2(TreeNode* root, int sum) {
+        if(!root)  return false;
+        if(!root->left && !root->right)  return (root->val == sum)
+        else  return hasPathSum2(root->left,sum-root->val)  ||  hasPathSum2(root->right,sum-root->val);
+        return false;        
     }
 
 };
