@@ -63,7 +63,20 @@ bool validate(TreeNode* node, TreeNode* &prev) {
     prev = node;
     return validate(node->right, prev);
 }
+/*********
+     1
+    / \
+   2   3
 
+
+   prev   node
+1  null   1
+2  null   2
+3  null   null
+4  2      null
+5  2      1      ->false
+
+*********/
 
 // 20 ms, faster than 99.10% of C++, 20.8 MB, less than 21.53% of C++ 
 bool isValidBST(TreeNode *root) {
