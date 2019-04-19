@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/binary-tree-preorder-traversal/
+// Source : https://leetcode.com/problems/binary-tree-preorder-traversal/
 // Author : Hao Chen
 // Date   : 2014-07-21
 
 /********************************************************************************** 
-* 
+* 144. Binary Tree Preorder Traversal [Medium]
 * Given a binary tree, return the preorder traversal of its nodes' values.
 * 
 * For example:
@@ -47,6 +47,7 @@ vector<int> preorderTraversal(TreeNode *root) {
     return preorderTraversal2(root);
 }
 
+// 8 ms, faster than 21.07% of C++, 9 MB, less than 98.18% of C++
 vector<int> preorderTraversal1(TreeNode *root) {
     vector<int> v;
     vector<TreeNode*> stack;
@@ -67,6 +68,8 @@ vector<int> preorderTraversal1(TreeNode *root) {
     return v;
 }
 
+
+// 8 ms, faster than 21.07% of C++ , 8.9 MB, less than 99.54% of C++ 
 vector<int> preorderTraversal2(TreeNode *root) {
     vector<int> v;
     vector<TreeNode*> stack;
@@ -87,6 +90,26 @@ vector<int> preorderTraversal2(TreeNode *root) {
     }
     return v;
 }
+
+
+// 4 ms, faster than 100.00% of C++, 9.3 MB, less than 47.61% of C++ 
+class Solution {
+public:
+    void preorderRescurion(TreeNode* root,vector<int> &res) {
+        if(!root)return;
+        res.push_back(root->val);
+        preorderRescurion(root->left,res);
+        preorderRescurion(root->right,res);
+        return;
+        
+    }
+    
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> res;
+        preorderRescurion(root,res);
+        return res;
+    }
+};
 
 TreeNode* createTree(int a[], int n)
 {
@@ -146,4 +169,7 @@ int main()
 
     return 0;
 }
+
+
+
 
