@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/binary-tree-postorder-traversal/
+// Source : https://leetcode.com/problems/binary-tree-postorder-traversal/
 // Author : Hao Chen
 // Date   : 2014-07-21
 
 /********************************************************************************** 
-* 
+* 145. Binary Tree Postorder Traversal [Hard]
 * Given a binary tree, return the postorder traversal of its nodes' values.
 * 
 * For example:
@@ -53,7 +53,7 @@ vector<int> postorderTraversal(TreeNode *root) {
     return postorderTraversal2(root);
 }
 
-
+//Runtime: 4 ms, faster than 100.00% of C++, 9.1 MB, less than 92.07% of C++
 vector<int> postorderTraversal1(TreeNode *root) {
     vector<int> v;
     vector<TreeNode*> stack;
@@ -75,6 +75,7 @@ vector<int> postorderTraversal1(TreeNode *root) {
     return v;
 }
 
+// 4 ms, faster than 100.00% of C++, 8.9 MB, less than 98.30% of C++
 // traditional and standard way.
 // using the stack to simulate the recursive function stack.
 vector<int> postorderTraversal2(TreeNode *root) {
