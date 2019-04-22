@@ -3,7 +3,7 @@
 // Date   : 2015-10-23
 
 /*************************************************************************************** 
- *
+ * 257. Binary Tree Paths [Easy]
  * Given a binary tree, return all root-to-leaf paths.
  * 
  * For example, given the following binary tree:
@@ -31,6 +31,9 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+
+// 8 ms, faster than 91.82% of C++, 11.6 MB, less than 91.86% of C++ 
 class Solution {
 public:
     vector<string> TreePaths;
@@ -63,6 +66,7 @@ public:
 
 // Another more clear DFS implementation
 
+// 8 ms, faster than 91.82% of C++, 12.4 MB, less than 80.81% of C++ 
 class Solution {
 public:
     void binaryTreePathsHelper(TreeNode* root, vector<int> solution, vector<string>& result ) {
@@ -91,5 +95,43 @@ public:
         vector<int> solution;
         binaryTreePathsHelper(root, solution, result);
         return result;
+    }
+};
+
+
+
+
+
+//Runtime: 8 ms, faster than 91.82% of C++, 11.7 MB, less than 91.86% of C++ 
+
+class Solution {
+public:
+    void binaryTreeResc(TreeNode* root,vector<string> &arr,vector<string> &res) {
+        if(!root)return ;
+        arr.push_back( to_string(root->val));
+        if(!root->left and !root->right){
+            stringstream stream;
+            if(arr.size()>0){
+                stream<<arr[0];
+                for(int i=1;i<arr.size();i++){
+                    stream <<"->"<< arr[i];
+                }
+            }
+            string str = stream.str();
+            res.push_back(str);
+            arr.pop_back();
+            return;
+        }
+        binaryTreeResc(root->left,arr,res);
+        binaryTreeResc(root->right,arr,res);
+        arr.pop_back();
+        return;
+    }
+    
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string> arr;
+        vector<string> res;
+        binaryTreeResc(root,arr,res);
+        return res;
     }
 };
