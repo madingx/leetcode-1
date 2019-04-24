@@ -3,7 +3,7 @@
 // Date   : 2016-11-12
 
 /*************************************************************************************** 
- *
+ * 404. Sum of Left Leaves [Easy]
  * Find the sum of all left leaves in a given binary tree.
  * 
  * Example:
@@ -30,7 +30,7 @@
 class Solution {
 public:
 
-    
+    // 8 ms, faster than 100.00% of C++, 13.3 MB, less than 100.00% of C++
     void sumOfLeftLeaves_recursion_v1(TreeNode* root, int& result) {
         if (root == NULL ) {
             return;
@@ -43,17 +43,17 @@ public:
         sumOfLeftLeaves_recursion_v1(root->right, result);
         
     }
-    
+
+    //Runtime: 8 ms, faster than 100.00% of C++, 13.4 MB, less than 100.00% of C++
     int sumOfLeftLeaves_recursion_v2(TreeNode* root) {
-        if (root == NULL ) {
-            return 0;
-        }
-        int result = 0;
-        if (root->left && root->left->left == NULL && root->left->right == NULL) {
-            result = root->left->val;
-        }
-        result += sumOfLeftLeaves_recursion_v2(root->left) + sumOfLeftLeaves_recursion_v2(root->right);
-        return result;
+        if(!root) return 0;
+        int left = 0;
+        if(root->left && !root->left->left && !root->left->right)
+            left =  root->left->val;
+        else
+            left = sumOfLeftLeaves_recursion_v2(root->left);
+        int right = sumOfLeftLeaves_recursion_v2(root->right);
+        return left + right;
     }    
     
 
@@ -69,3 +69,4 @@ public:
         
     }
 };
+
