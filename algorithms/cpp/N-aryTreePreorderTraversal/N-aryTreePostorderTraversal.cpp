@@ -49,3 +49,26 @@ public:
         return posttra;
     }
 };
+
+// 160 ms, faster than 80.09% of C++, 33.2 MB, less than 60.80% of C++
+class Solution {
+public:
+     vector<int> postorder(Node* root) {
+        if (!root) {
+            return {};
+        }
+        std::stack<std::pair<Node *, int>> s;
+        std::vector<int> res;
+        s.emplace(root, 0);
+        while (!s.empty()) {
+            auto &[node, index] = s.top();
+            if (index == node->children.size()) {
+                res.push_back(node->val);
+                s.pop();
+            } else {
+                s.emplace(node->children[index++], 0);
+            }
+        }
+        return res;
+    }
+};
