@@ -3,7 +3,7 @@
 // Date   : 2015-06-09
 
 /********************************************************************************** 
- * 
+ * 205. Isomorphic Strings [Easy]
  * Given two strings s and t, determine if they are isomorphic.
  * 
  * Two strings are isomorphic if the characters in s can be replaced to get t.
@@ -25,7 +25,7 @@
  *               
  **********************************************************************************/
 
-
+// 4 ms, faster than 99.97% of C++ 9.2 MB, less than 8.95% of C++
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
@@ -46,6 +46,31 @@ public:
                 continue;
             }
             return false;
+        }
+        return true;
+    }
+};
+
+// 12 ms, faster than 68.30% of C++, 9.4 MB, less than 7.37% of C++
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        if(s.size() != t.size())return false;
+        unordered_map<char,char> map1,map2; 
+        for(int i=0;i<s.size();i++){
+            if(map1.find(s[i])!=map1.end()){
+                if(map1[s[i]] != t[i]) return false;
+            }
+            else{
+                map1[s[i]] = t[i];         
+            }
+            
+            if(map2.find(t[i])!=map2.end()){
+                if(map2[t[i]] != s[i]) return false;
+            }
+            else{
+                map2[t[i]] = s[i];        
+            }
         }
         return true;
     }
