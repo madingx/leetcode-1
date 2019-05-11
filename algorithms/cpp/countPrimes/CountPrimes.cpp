@@ -3,9 +3,15 @@
 // Date   : 2015-06-09
 
 /********************************************************************************** 
- * 
+ * 204. Count Primes [Easy]
  * Description:
  * Count the number of prime numbers less than a non-negative number, n.
+
+ * Example:
+ * Input: 10
+ * Output: 4
+ * Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+
  * 
  * Credits:Special thanks to @mithmatt for adding this problem and creating all test cases.
  * 
@@ -114,6 +120,7 @@
 #include <vector>
 using namespace std;
 
+// 64 ms, faster than 63.44% of C++, 8.8 MB, less than 38.08% of C++
 int countPrimes(int n) {
     vector<bool> isPrimer(n, true);
 
@@ -147,3 +154,43 @@ int main(int argc, char**argv)
 
     return 0;
 }
+
+
+// 84 ms, faster than 42.50 % of C++, 8.8 MB, less than 36.42 % of C++
+class Solution {
+public:
+    int countPrimes(int n) {
+        if(n<2)return 0;
+        vector<bool> prime(n, true);
+        prime[0] = false, prime[1] = false;
+        for (int i = 0; i < sqrt(n); ++i) {
+            if (prime[i]) {
+                for (int j = i*i; j < n; j += i) {
+                    prime[j] = false;
+                }    
+            }    
+        }
+        return count(prime.begin(), prime.end(), true);
+    }
+};
+
+
+// 296 ms, faster than 17.84% of C++, 11 MB, less than 28.48% of C++
+class Solution {
+public:
+    int countPrimes(int n) {
+        if(n<2)return 0;
+        vector<int> pri;
+        for(int i=2;i<n;i++){
+            bool flag = true;
+            for(int j=0;j<pri.size() && pri[j]<=sqrt(i);j++){
+                if(i % pri[j] == 0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag)pri.push_back(i);
+        }
+        return pri.size();
+    }
+};
