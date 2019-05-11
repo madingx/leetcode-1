@@ -156,25 +156,6 @@ int main(int argc, char**argv)
 }
 
 
-// 84 ms, faster than 42.50 % of C++, 8.8 MB, less than 36.42 % of C++
-class Solution {
-public:
-    int countPrimes(int n) {
-        if(n<2)return 0;
-        vector<bool> prime(n, true);
-        prime[0] = false, prime[1] = false;
-        for (int i = 0; i < sqrt(n); ++i) {
-            if (prime[i]) {
-                for (int j = i*i; j < n; j += i) {
-                    prime[j] = false;
-                }    
-            }    
-        }
-        return count(prime.begin(), prime.end(), true);
-    }
-};
-
-
 // 296 ms, faster than 17.84% of C++, 11 MB, less than 28.48% of C++
 class Solution {
 public:
