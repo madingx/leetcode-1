@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/copy-list-with-random-pointer/
+// Source : https://leetcode.com/problems/copy-list-with-random-pointer/
 // Author : Hao Chen
 // Date   : 2014-06-18
 
 /********************************************************************************** 
-* 
+* 138. Copy List with Random Pointer [Medium]
 * A linked list is given such that each node contains an additional random pointer 
 * which could point to any node in the list or null.
 * 
@@ -66,6 +66,7 @@
  *    
  */
 
+// 24 ms, faster than 99.98% of C++, 22.1 MB, less than 5.21% of C++ 
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
@@ -144,13 +145,15 @@ public:
  *      new->random = v [ map[node->random] ]
  *
  */ 
-class MySolution {
-public:
-    RandomListNode *copyRandomList(RandomListNode *head) {
 
-        RandomListNode *p = NULL, *h=NULL, *t=NULL;
+// 32 ms, faster than 99.23% of C++, 22.3 MB, less than 5.21% of C++
+class Solution {
+public:
+    Node *copyRandomList(Node *head) {
+
+        Node *p = NULL, *h=NULL, *t=NULL;
         //using a map to store the random pointer's postion.
-        map<RandomListNode*, int> m;
+        map<Node*, int> m;
         //construct the map
         int pos =0;
         for ( p = head; p != NULL; p = p->next, pos++){
@@ -159,9 +162,9 @@ public:
         
         //clone the linked list  (only consider the next pointer)
         //and using a vector to store each node's postion.
-        vector<RandomListNode*> v;
+        vector<Node*> v;
         for (p = head; p != NULL; p = p->next){
-            RandomListNode *node = new RandomListNode(p->label);
+            Node *node = new Node(p->val,NULL,NULL);
             v.push_back(node);
             if (h==NULL){
                 h = t = node;
@@ -183,6 +186,37 @@ public:
         }
         
         return h;
+        
+    }
+};
+
+
+// 36 ms, faster than 97.96% of C++, 22.5 MB, less than 5.21% of C++
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        if(!head)return NULL;
+        Node* cur = head;
+        Node* head2 = new Node(0,NULL,NULL);
+        Node* cur2 = head2;
+        unordered_map<Node*,Node*> map1;        
+        while(cur){
+            cur2->next = new Node(cur->val,NULL,NULL);
+            cur2 = cur2->next;
+            map1[cur] = cur2; 
+            cur = cur->next;
+        }
+        cur = head;
+        cur2 = head2->next;
+        while(cur){
+            if(cur->random){
+                cur2->random = map1[cur->random];
+            }
+            cur = cur->next;
+            cur2 = cur2->next;
+
+        }
+        return head2->next;
         
     }
 };
