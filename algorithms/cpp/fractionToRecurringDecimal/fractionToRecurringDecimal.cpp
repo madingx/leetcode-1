@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/fraction-to-recurring-decimal/
+// Source : https://leetcode.com/problems/fraction-to-recurring-decimal/
 // Author : Hao Chen
 // Date   : 2014-12-16
 
 /********************************************************************************** 
-* 
+* 166. Fraction to Recurring Decimal [Medium]
 * Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
 * 
 * If the fractional part is repeating, enclose the repeating part in parentheses.
@@ -43,6 +43,7 @@ using namespace std;
  *    > 1/17 = 0.(0588235294117647)
  */
 
+// 0 ms, faster than 100.00% of C++, 8.8 MB, less than 96.19% of C++
 string fractionToDecimal(int numerator, int denominator) {
     string result;
     //deal with the `ZERO` cases
@@ -126,3 +127,37 @@ int main(int argc, char** argv)
     }
     return 0;
 }
+
+
+// 4 ms, faster than 98.83% of C++, 8.9 MB, less than 69.52% of C++
+class Solution {
+public:
+    string fractionToDecimal(int numerator, int denominator) {
+        if (!numerator) {
+            return "0";
+        }
+        string ans;
+        if (numerator > 0 ^ denominator > 0) {
+            ans += '-';
+        }
+        long n = labs(numerator), d = labs(denominator), r = n % d;
+        ans += to_string(n / d);
+        if (!r) {
+            return ans;
+        }
+        ans += '.';
+        unordered_map<long, int> rs;
+        while (r) {
+            if (rs.find(r) != rs.end()) {
+                ans.insert(rs[r], "(");
+                ans += ')';
+                break;
+            }
+            rs[r] = ans.size();
+            r *= 10;
+            ans += to_string(r / d);
+            r %= d;
+        }
+        return ans;
+    }
+};
