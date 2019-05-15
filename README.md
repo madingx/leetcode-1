@@ -76,6 +76,7 @@
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [Python](./algorithms/python/ConvertBSTtoGreaterTree/convertBST.py)|Easy|
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/) | [C++](./algorithms/cpp/diameterofBinaryTree/DiameterofBinaryTree.cpp)|Easy|
 |532|[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | [Python](./algorithms/python/K-diffPairsInAnArray/findPairs.py)|Easy|
+|525|[Contiguous Array](https://leetcode.com/problems/contiguous-array/) | [C++](./algorithms/cpp/contiguousArray/ContiguousArray.cpp)|Medium|
 |520|[Detect Capital](https://leetcode.com/problems/detect-capital/) | [C++](./algorithms/cpp/detectCapital/DetectCapital.cpp)|Easy|
 |513|[Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/) | [C++](./algorithms/cpp/findBottomLeftTreeValue/FindBottomLeftTreeValue.cpp)|Medium|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](./algorithms/cpp/fibonacciNumber/FibonacciNumber.cpp),[Python](./algorithms/python/FibonacciNumber/fib.py)|Easy|
