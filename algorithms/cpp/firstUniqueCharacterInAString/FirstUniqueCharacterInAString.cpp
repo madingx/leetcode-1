@@ -3,7 +3,7 @@
 // Date   : 2016-08-23
 
 /*************************************************************************************** 
- *
+ * 387. First Unique Character in a String [Easy]
  * Given a string, find the first non-repeating character in it and return it's index. 
  * If it doesn't exist, return -1.
  * 
@@ -18,6 +18,7 @@
  * Note: You may assume the string contain only lowercase letters.
  ***************************************************************************************/
 
+// 36 ms, faster than 93.34% of C++, 12.9 MB, less than 77.38% of C++
 class Solution {
 public:
     int firstUniqChar(string s) {
@@ -51,5 +52,18 @@ public:
             }
         }
         return pos == INT_MAX ? -1 : pos;
+    }
+};
+
+
+// 52 ms, faster than 60.64% of C++, 13.2 MB, less than 59.16% of C++
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        unordered_map<char,int> mapx;
+        for(auto c:s)mapx[c] ++;
+        for(int i=0;i<s.size();i++)
+            if(mapx[s[i]] == 1)return i;
+        return -1;
     }
 };
