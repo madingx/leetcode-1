@@ -72,11 +72,14 @@
 |563|[Binary Tree Tilt](https://leetcode.com/problems/binary-tree-tilt/) | [Python](./algorithms/python/BinaryTreeTilt/findTilt.py)|Easy|
 |561|[Array Partition I](https://leetcode.com/problems/array-partition-i/) | [C++](./algorithms/cpp/arrayPartitionI/ArrayPartitionI.cpp)|Easy|
 |559|[Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) | [C++](./algorithms/cpp/minimumDepthOfBinaryTree/maximumDepthOfnAryTree.cpp)|Easy|
+|554|[Brick Wall](https://leetcode.com/problems/brick-wall/) | [C++](./algorithms/cpp/brickWall/BrickWall.cpp)|Medium|
 |547|[Friend Circles](https://leetcode.com/problems/friend-circles/description/) | [C++](./algorithms/cpp/friendCircles/FriendCircles.cpp)|Medium|
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | [Python](./algorithms/python/DiameterOfBinaryTree/diameterOfBinaryTree.py)|Easy|
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [Python](./algorithms/python/ConvertBSTtoGreaterTree/convertBST.py)|Easy|
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/) | [C++](./algorithms/cpp/diameterofBinaryTree/DiameterofBinaryTree.cpp)|Easy|
+|535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/) | [Python](./algorithms/python/K-diffPairsInAnArray/findPairs.py)|Easy|
 |532|[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | [Python](./algorithms/python/K-diffPairsInAnArray/findPairs.py)|Easy|
+|525|[Contiguous Array](https://leetcode.com/problems/contiguous-array/) | [C++](./algorithms/cpp/contiguousArray/ContiguousArray.cpp)|Medium|
 |520|[Detect Capital](https://leetcode.com/problems/detect-capital/) | [C++](./algorithms/cpp/detectCapital/DetectCapital.cpp)|Easy|
 |513|[Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/) | [C++](./algorithms/cpp/findBottomLeftTreeValue/FindBottomLeftTreeValue.cpp)|Medium|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](./algorithms/cpp/fibonacciNumber/FibonacciNumber.cpp),[Python](./algorithms/python/FibonacciNumber/fib.py)|Easy|
@@ -85,6 +88,7 @@
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/totalHammingDistance.cpp)|Medium|
 |463|[Island Perimeter](https://leetcode.com/problems/island-perimeter/) | [C++](./algorithms/cpp/islandPerimeter/IslandPerimeter.cpp)|Easy|
 |461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/HammingDistance.cpp)|Easy|
+|451|[Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) | [C++](./algorithms/cpp/sortCharactersByFrequency/SortCharactersByFrequency.cpp)|Medium|
 |450|[DeleteNodeInABST](https://leetcode.com/problems/delete-node-in-a-bst/) | [C++](./algorithms/cpp/deleteNodeInABST/DeleteNodeInABST.cpp), [Python](./algorithms/python/DeleteNodeInABST/deleteNode.py)|Medium|
 |449|[Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst/) | [C++](./algorithms/cpp/serializeAndDeserializeBinaryTree/SerializeandDeserializeBST.cpp),[Python](./algorithms/python/SerializeAndDeserializeBST/serialize.py)|Medium|
 |448|[Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | [C++](./algorithms/cpp/FindAllNumbersDisappearedinanArray/FindAllNumbersDisappearedinanArray.cpp)|Easy|

@@ -3,7 +3,7 @@
 // Date   : 2019-02-04
 
 /***************************************************************************************************** 
- *
+ * 463. Island Perimeter [Easy]
  * You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 
  * represents water.
  * 
@@ -27,6 +27,8 @@
  * Explanation: The perimeter is the 16 yellow stripes in the image below:
  * 
  ******************************************************************************************************/
+
+// 68 ms, faster than 97.83% of C++, 16.2 MB, less than 72.40% of C++
 class Solution {
 public:
     int edge(vector<vector<int>> &grid, int x, int y) {
@@ -52,5 +54,28 @@ public:
             }
         }
         return perimeter;
+    }
+};
+
+
+
+// 56 ms, faster than 99.78% of C++, 16.1 MB, less than 88.02% of C++
+class Solution {
+public:
+    int islandPerimeter(vector<vector<int>>& grid) {
+        int count=0, repeat=0;
+        for(int i=0;i<grid.size();i++)
+        {
+            for(int j=0; j<grid[i].size();j++)
+                {
+                    if(grid[i][j]==1)
+                    {
+                        count ++;
+                        if(i!=0 && grid[i-1][j] == 1) repeat++;
+                        if(j!=0 && grid[i][j-1] == 1) repeat++;
+                    }
+                }
+        }
+        return 4*count-repeat*2;
     }
 };

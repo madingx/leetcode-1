@@ -3,7 +3,7 @@
 // Date   : 2015-10-22
 
 /*************************************************************************************** 
- *
+ * 274. H-Index [Medium]
  * Given an array of citations (each citation is a non-negative integer) of a 
  * researcher, write a function to compute the researcher's h-index.
  * 
@@ -43,6 +43,7 @@ public:
     int hIndex(vector<int>& citations) {
         return hIndex02(citations);
         return hIndex01(citations);
+        return hIndex03(citations);
     }
     int hIndex01(vector<int>& citations) {
         sort(citations.begin(), citations.end());
@@ -54,6 +55,7 @@ public:
     }
 
     // same solution but a bit different implemtation
+    // 4 ms, faster than 98.83% of C++, 9 MB, less than 100.00% of C++
     int hIndex02(vector<int>& citations) {
         sort(citations.begin(), citations.end());
         int n = citations.size();
@@ -64,5 +66,32 @@ public:
         }
         return 0;
     }
+
+    // O(n) with hash
+    // 0 ms, faster than 100.00% of C++, 8.9 MB, less than 100.00% of C++ 
+    int hIndex03(vector<int>& citations) {
+        if(citations.empty())
+            return 0;
+        int n = citations.size();
+        vector<int> hash(n + 1, 0);
+        for(int i = 0; i < n; ++i){
+            if(citations[i] >= n)
+                hash[n]++;
+            else
+                hash[citations[i]]++;
+        }
+        int paper = 0;
+        for(int i = n; i >= 0; --i){
+            paper += hash[i];
+            if(paper >= i)
+                return i;
+        }
+        return 0;
+    }
+
+    // citations [3,0,6,1,5]
+    // hash      [1,1,0,1,0,2]
+    // paper     [2,2,3,(3),4,5]
+
 
 };
