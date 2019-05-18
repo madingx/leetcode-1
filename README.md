@@ -67,6 +67,7 @@
 |590|[N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal/) | [C++](./algorithms/cpp/N-aryTreePreorderTraversal/N-aryTreePostorderTraversal.cpp)|Easy|
 |589|[N-ary Tree Preorder Traversal](https://leetcode.com/problems/n-ary-tree-preorder-traversal/) | [C++](./algorithms/cpp/N-aryTreePreorderTraversal/N-aryTreePreorderTraversal.cpp)|Easy|
 |581|[Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [C++](./algorithms/cpp/shortestUnsortedContinuousSubarray/ShortestUnsortedContinuousSubarray.cpp), [Python](./algorithms/python/ShortestUnsortedContinuousSubarray/findUnsortedSubarray.py)|Easy|
+|575|[Distribute Candies](https://leetcode.com/problems/distribute-candies/) | [C++](./algorithms/cpp/distributeCandies/DistributeCandies.cpp)|Easy|
 |572|[Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) | [Python](./algorithms/python/SubtreeOfAnotherTree/isSubtree.py)|Easy|
 |563|[Binary Tree Tilt](https://leetcode.com/problems/binary-tree-tilt/) | [Python](./algorithms/python/BinaryTreeTilt/findTilt.py)|Easy|
 |561|[Array Partition I](https://leetcode.com/problems/array-partition-i/) | [C++](./algorithms/cpp/arrayPartitionI/ArrayPartitionI.cpp)|Easy|
