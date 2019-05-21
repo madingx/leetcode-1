@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/gray-code/
+// Source : https://leetcode.com/problems/gray-code/
 // Author : Hao Chen
 // Date   : 2014-06-20
 
 /********************************************************************************** 
-* 
+* 89. Gray Code [Medium]
 * The gray code is a binary numeral system where two successive values differ in only one bit.
 * 
 * Given a non-negative integer n representing the total number of bits in the code, 
@@ -99,6 +99,7 @@ vector<int> grayCode01(int n) {
  * The mathematical way is: (num >> 1) ^ num; 
  * Please refer to http://en.wikipedia.org/wiki/Gray_code
  */
+// 4 ms, faster than 98.01% of C++ , 8.7 MB, less than 52.07% of C++ 
 vector<int> grayCode02(int n) {
     vector<int> ret;   
     int size = 1 << n;   
@@ -107,6 +108,64 @@ vector<int> grayCode02(int n) {
     }
     return ret;   
 }
+
+
+
+
+/********************
+ gry  add   bit    i     gray = (i>>1) ^ i 
+ 000
+ 001  +1     1    001    00 ^ 001
+ 011  +2     2    010    01 ^ 010
+ 010  -1     1    011    01 ^ 011
+
+ 110  +4     3    100    10 ^ 100
+ 111  +1     1    101    10 ^ 101
+ 101  +2     2    110    11 ^ 110
+ 100  -1     1    111    11 ^ 111
+
+1100  +8     4
+1101  +1     1
+1111  +2     2
+1110  -1     1
+1010  -4     3
+1011  +1     1
+1001  -2     2
+1000  -1     1
+
+********************/
+// 4 ms, faster than 98.01% of C++, 8.8 MB, less than 31.37% of C++
+vector<int> grayCode03(int n) {
+    int m = 0;
+    int flag = 1;
+    vector<int> res;
+    for(int i=1;i<=(1 << n);i++){
+        res.push_back(m);
+        flag = 1;
+        for(int j = i;j>0;j = j>>1){
+            if(j%2 == 1)break;
+            flag = flag<<1;
+        }
+        m ^= flag;
+    }
+    return res;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //random invoker
 vector<int> grayCode(int n) {
