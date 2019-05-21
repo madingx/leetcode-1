@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/permutations-ii/
+// Source : https://leetcode.com/problems/permutations-ii/
 // Author : Hao Chen
 // Date   : 2014-06-21
 
 /********************************************************************************** 
-* 
+* 47. Permutations II [Medium]
 * Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 * 
 * For example,
@@ -24,17 +24,18 @@ using namespace std;
 // To deal with the duplication number, we need do those modifications:
 //    1) sort the array [pos..n].
 //    2) skip the same number.
+// 24 ms, faster than 92.01% of C++, 10.4 MB, less than 53.97% of C++
 vector<vector<int> > permute(vector<int> &num) {
 
     vector<vector<int> > vv;
-    vv.push_back(num);
+    vv.push_back(nums);
 
-    if (num.size() <2){
+    if (nums.size() <2){
         return vv;
     }
         
     int pos=0;
-    while(pos<num.size()-1){
+    while(pos<nums.size()-1){
         int size = vv.size();
         for(int i=0; i<size; i++){
             //sort the array, so that the same number will be together
@@ -56,6 +57,46 @@ vector<vector<int> > permute(vector<int> &num) {
     }
     return vv;
 }
+
+// recursion
+// 24 ms, faster than 92.01% of C++, 10.6 MB, less than 37.68% of C++
+class Solution {
+public:
+    void permuteUniqueResc(vector<int>& nums , vector<vector<int>> &res,int k) {
+        if(k == nums.size() -1 ){
+            res.push_back(vector<int>(nums));
+            return;
+        }
+        set<int> sets;
+        for(int i=k;i<nums.size();i++){
+            if( !sets.insert(nums[i]).second )continue;
+            int temp = nums[i];
+            nums[i] = nums[k];
+            nums[k] = temp;
+            
+            permuteUniqueResc(nums,res,k+1);
+            
+            temp = nums[i];
+            nums[i] = nums[k];
+            nums[k] = temp;   
+        }
+        return;
+    }
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        vector<vector<int>> res;
+        permuteUniqueResc(nums,res,0);
+        return res;
+    }
+};
+
+
+
+
+
+
+
+
+
 
 void printVector( vector<int>&  pt)
 {
