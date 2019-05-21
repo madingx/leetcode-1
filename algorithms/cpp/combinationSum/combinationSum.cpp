@@ -40,8 +40,7 @@
 #include <algorithm>
 using namespace std;
 
-//Runtime: 12 ms, faster than 97.88% of C++ online submissions for Combination Sum.
-Memory Usage: 13.3 MB, less than 39.32% of C++ online submissions for Combination Sum.
+// 12 ms, faster than 97.88% of C++, 13.3 MB, less than 39.32% of C++
 class Solution {
 public:
     void combinationSumResc(vector<int>& candidates, int target,int i,vector<int> &line,vector<vector<int>> &res){
