@@ -3,7 +3,7 @@
 // Date   : 2016-11-05
 
 /*************************************************************************************** 
- *
+ * 401. Binary Watch [Easy]
  * A binary watch has 4 LEDs on the top which represent the hours (0-11), and the 6 
  * LEDs on the bottom represent the minutes (0-59).
  * Each LED represents a zero or one, with the least significant bit on the right.
@@ -26,6 +26,7 @@
  * "10:2" is not valid, it should be "10:02".
  ***************************************************************************************/
 
+// 0 ms, faster than 100.00% of C++, 9.3 MB, less than 7.26% of C++
 class Solution {
 private:
     void combination(int nLED, int nLight, int max, bool zero,
@@ -107,5 +108,38 @@ public:
             
         }
         return result;
+    }
+};
+
+
+
+
+
+
+
+
+// 4 ms, faster than 94.34% of C++, 9 MB, less than 24.63% of C++
+class Solution {
+public:
+    void readBinaryWatchResc(int num,int k,int hourminute,vector<string> &res) {
+        if(num > 10-k  || (hourminute & 15)>11 || (hourminute >> 4)>59 )return;
+        if(num == 0){            
+            char ch[6] = "";
+            sprintf(ch,"%d:%02d",(hourminute & 15),(hourminute >> 4) );     
+            res.push_back(ch);
+            return;
+        }
+        
+        readBinaryWatchResc( num, k+1, hourminute, res );
+        hourminute += 1<<k;        
+        readBinaryWatchResc( num-1, k+1, hourminute, res );
+        
+        return;
+    }
+    vector<string> readBinaryWatch(int num) {
+        vector<string> res;
+        int hourminute = 0;
+        readBinaryWatchResc(num,0,hourminute,res);
+        return res;
     }
 };
