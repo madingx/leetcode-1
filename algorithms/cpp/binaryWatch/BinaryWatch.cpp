@@ -116,8 +116,11 @@ public:
 
 
 
-
-
+/*************************
+hourminue  
+000000 0000
+  <60   <12
+*************************/
 // 4 ms, faster than 94.34% of C++, 9 MB, less than 24.63% of C++
 class Solution {
 public:
