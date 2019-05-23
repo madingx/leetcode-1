@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/permutation-sequence/
-// Author : Hao Chen
-// Date   : 2014-08-22
+// Source : https://leetcode.com/problems/permutation-sequence/
+// Author : Mading
+// Date   : 2019-05-23
 
 /********************************************************************************** 
-* 
+* 60. Permutation Sequence [Medium]
 * The set [1,2,3,…,n] contains a total of n! unique permutations.
 * 
 * By listing and labeling all of the permutations in order,
@@ -18,7 +18,17 @@
 * 
 * Given n and k, return the kth permutation sequence.
 * 
-* Note: Given n will be between 1 and 9 inclusive.
+* Note:
+* Given n will be between 1 and 9 inclusive.
+* Given k will be between 1 and n! inclusive.
+
+* Example 1:
+* Input: n = 3, k = 3
+* Output: "213"
+
+* Example 2:
+* Input: n = 4, k = 9
+* Output: "2314"
 *               
 **********************************************************************************/
 
@@ -29,6 +39,34 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+
+
+// 4 ms, faster than 96.18% of C++, 8.5 MB, less than 60.10% of C++
+class Solution {
+public:
+    string getPermutation(int n, int k) {
+        string s = "";
+        vector<int> dp;
+        int njie = 1;
+        for(int i=1;i<=n;i++){
+            dp.push_back(i);
+            njie *= i;
+        }
+        k--;
+        while(n>0){
+            njie /= n;
+            s += to_string(dp[k/njie]);
+            dp.erase(dp.begin()+k/njie);
+            k%=njie;
+            n--;
+        }
+        return s;
+        
+    }
+};
+
+
 
 
 /*
@@ -43,6 +81,7 @@ using namespace std;
 void nextPermutation(vector<int>& num); 
 
 /* Extreamly Optimized */
+// 0 ms, faster than 100.00% of C++, 8.5 MB, less than 59.70% of C++
 string getPermutation(int n, int k) {
     vector<int> num;
     int total = 1;
@@ -80,6 +119,7 @@ string getPermutation(int n, int k) {
 
 
 /* Optimization by determining the group */
+// 28 ms, faster than 22.74% of C++, 8.3 MB, less than 65.62% of C++
 string getPermutation_0(int n, int k) {
     vector<int> num;
     int total = 1;
