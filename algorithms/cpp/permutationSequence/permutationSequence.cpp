@@ -1,6 +1,6 @@
 // Source : https://leetcode.com/problems/permutation-sequence/
-// Author : Mading
-// Date   : 2019-05-23
+// Author : Hao Chen
+// Date   : 2014-08-22
 
 /********************************************************************************** 
 * 60. Permutation Sequence [Medium]
