@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/restore-ip-addresses/
+// Source : https://leetcode.com/problems/restore-ip-addresses/
 // Author : Hao Chen
 // Date   : 2014-08-26
 
 /********************************************************************************** 
-* 
+* 93. Restore IP Addresses [Medium]
 * Given a string containing only digits, restore it by returning all possible valid IP address combinations.
 * 
 * For example:
@@ -20,6 +20,39 @@
 #include <vector>
 using namespace std;
 
+
+// 0 ms, faster than 100.00% of C++, 8.8 MB, less than 35.09% of C++
+class Solution {
+public:
+    void restoreIpAddressesResc(string s,string tmp,vector<string> &res,int k) {
+        if(s.size() < 4-k || s.size() > (4-k)*3)return;
+        if(k==4 && s.size()==0){
+            res.push_back(tmp);
+            return;
+        }
+        if(k>0)tmp += ".";
+        int n = 0;
+        for(int i=0;i<3 && i<s.size();i++){
+            n += s[i]-'0';
+            if(n>255)break;
+            restoreIpAddressesResc(string(s,i+1,s.size()-i-1),tmp+to_string(n),res,k+1);
+            if(n==0)break;
+            n *= 10;
+        }
+        return;
+        
+    }
+    vector<string> restoreIpAddresses(string s) {
+        vector<string> res;
+        restoreIpAddressesResc(s,"",res,0);
+        return res;
+    }
+};
+
+
+
+
+// 0 ms, faster than 100.00% of C++, 8.7 MB, less than 37.29% of C++
 void restoreIpAddressesHelper(string& s, int start, int partNum, string ip, vector<string>& result);
 
 vector<string> restoreIpAddresses(string s) {
