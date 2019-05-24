@@ -3,7 +3,7 @@
 // Date   : 2015-06-10
 
 /********************************************************************************** 
- * 
+ * 211. Add and Search Word - Data structure design [Medium]
  * Design a data structure that supports the following two operations:
  * 
  * void addWord(word)
@@ -35,6 +35,80 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+
+// 116 ms, faster than 62.29% of C++, 46.9 MB, less than 44.10% of C++
+class TrieNode {
+public:
+    bool has;
+    vector<TrieNode*> children;
+    TrieNode(){
+        has = false;
+        children = vector<TrieNode*>(26,NULL);
+    }
+    ~TrieNode(){
+        for(auto i:children){
+            delete i;
+        }
+    }
+};
+
+class WordDictionary {
+    TrieNode* root;
+public:
+    /** Initialize your data structure here. */
+    WordDictionary() {
+        root  = new TrieNode();
+    }
+    
+    /** Adds a word into the data structure. */
+    void addWord(string word) {
+        TrieNode* cur = root;
+        for(auto c:word){
+            
+            if(!cur->children[c-'a'])cur->children[c-'a'] = new TrieNode();
+            cur = cur->children[c-'a'];
+        }
+        cur->has = true;
+        return ;
+    }
+    
+    /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+    bool search(string word) {
+        TrieNode* cur = root;
+        return searchResc(cur,word);
+    }
+private:
+    bool searchResc(TrieNode* cur,string word) {
+        if(!cur)return false;
+        for(int i = 0;i<word.size();i++){
+            if(word[i] == '.'){
+                for(auto pt:cur->children)
+                    if( searchResc(pt,string(word,i+1,word.size()-i-1)) )return true;
+                return false;
+            }
+            else{
+               if(!cur->children[word[i]-'a'])return false;
+                cur = cur->children[word[i]-'a']; 
+            }
+        }
+        return cur->has;
+    }
+};
+
+/**
+ * Your WordDictionary object will be instantiated and called as such:
+ * WordDictionary* obj = new WordDictionary();
+ * obj->addWord(word);
+ * bool param_2 = obj->search(word);
+ */
+
+
+
+
+
+
+// 84 ms, faster than 97.84% of C++, 44.9 MB, less than 58.80% of C++
 
 const int MAX_CHARS = 26;
 
@@ -143,6 +217,13 @@ private:
 // WordDictionary wordDictionary;
 // wordDictionary.addWord("word");
 // wordDictionary.search("pattern");
+
+
+
+
+
+
+
 
 int main()
 {
