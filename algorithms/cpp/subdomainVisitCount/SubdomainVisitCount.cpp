@@ -46,33 +46,10 @@
 *               
 **********************************************************************************/
 
-// 20 ms, faster than 93.80% of C++ , 13.4 MB, less than 59.10% of C++
+// 16 ms, faster than 98.34% of C++, 13.2 MB, less than 77.37% of C++
 class Solution {
 public:
     vector<string> subdomainVisits(vector<string>& cpdomains) {
-        unordered_map<string,int> count;
-        vector<string> res;
-        for(auto cp : cpdomains){
-            int n = 0,dot = 0;
-            for(int i=0;i<cp.size();i++){
-                if(cp[i] == ' '){
-                    n = atoi(string(cp,0,i+1).c_str());
-                    count[ string(cp,i+1,cp.size()-i-1) ] += n;
-                }
-                if(cp[i] == '.'){
-                    count[ string(cp,i+1,cp.size()-i-1) ] += n;
-                }
-            }
-        }
-        for(unordered_map<string,int>::iterator it = count.begin();it!=count.end();it++){
-            res.push_back(to_string(it->second) +" "+ it->first);
-        }
-        return res;
-    }
-};
-
-// 16 ms, faster than 98.34% of C++, 13.2 MB, less than 77.37% of C++
-vector<string> subdomainVisits(vector<string>& cpdomains) {
         unordered_map<string, int> c;
         for (auto cd : cpdomains) {
             int i = cd.find(" ");
@@ -88,3 +65,4 @@ vector<string> subdomainVisits(vector<string>& cpdomains) {
             res.push_back (to_string(k.second) + " " + k.first);
         return res;
     }
+};
