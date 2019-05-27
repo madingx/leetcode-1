@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/evaluate-reverse-polish-notation/
+// Source : https://leetcode.com/problems/evaluate-reverse-polish-notation/
 // Author : Hao Chen
 // Date   : 2014-06-16
 
 /********************************************************************************** 
-* 
+* 150. Evaluate Reverse Polish Notation [Medium]
 * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 * 
 * Valid operators are +, -, *, /. Each operand may be an integer or another expression.
@@ -24,7 +24,7 @@
 #include <iostream>
 using namespace std;
 
-
+// 12 ms, faster than 98.18% of C++, 11.6 MB, less than 50.49% of C++
 class Solution {
 public:
     int evalRPN(vector<string> &tokens) {
@@ -86,6 +86,31 @@ private:
     }
 };
 
+// 8 ms, faster than 99.90% of C++, 11.7 MB, less than 20.51% of C++ 
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> mystack;
+        for( auto op : tokens){
+            if( op[op.size()-1] >= '0' && op[op.size()-1] <= '9' ){
+                mystack.push(atoi(op.c_str()));
+            }
+            else{
+                int n = mystack.top();
+                mystack.pop();
+                int m = mystack.top();
+                mystack.pop();
+                int k = 0;
+                if(op == "+") k = m+n;
+                else if(op == "*") k = m*n;
+                else if(op == "-") k = m-n;
+                else if(op == "/") k = m/n;
+                mystack.push(k);
+            }
+        }
+        return mystack.top();
+    }
+};
 
 int main()
 {
