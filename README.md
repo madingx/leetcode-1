@@ -6,6 +6,7 @@
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
 |1023|[Camelcase Matching](https://leetcode.com/problems/camelcase-matching/) | [C++](./algorithms/cpp/CamelcaseMatching/CamelcaseMatching.cpp)|Medium|
+|1018|[Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/) | [C++](./algorithms/cpp/binaryPrefixDivisibleBy5/BinaryPrefixDivisibleBy5.cpp)|Easy|
 |1002|[Find Common Characters](https://leetcode.com/problems/find-common-characters/) | [C++](./algorithms/cpp/findCommonCharacters/FindCommonCharacters.cpp)|Easy|
 |999|[Available Captures for Rook](https://leetcode.com/problems/available-captures-for-rook/) | [C++](./algorithms/cpp/availableCapturesforRook/AvailableCapturesforRook.cpp)|Easy|
 |988|[Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) | [C++](./algorithms/cpp/smallestStringStartingFromLeaf/SmallestStringStartingFromLeaf.cpp)|Medium|
