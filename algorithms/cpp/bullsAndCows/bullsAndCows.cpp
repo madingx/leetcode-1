@@ -3,7 +3,7 @@
 // Date   : 2015-11-04
 
 /*************************************************************************************** 
- *
+ * 299. Bulls and Cows [Medium]
  * You are playing the following Bulls and Cows game with your friend: You write a 
  * 4-digit secret number and ask your friend to guess it. Each time your friend guesses
  * a number, you give a hint. The hint tells your friend how many digits are in the
@@ -41,6 +41,7 @@ public:
         return getHint01(secret, guess);
     }
 
+    // 0 ms, faster than 100.00% of C++, 8.9 MB, less than 45.23% of C++
     string getHint01(string secret, string guess) {
         int appears_in_secret[10] = {0}, appears_in_guess[10] = {0}, bulls[10] = {0};
         int total_bulls = 0, total_cows = 0;
@@ -61,6 +62,7 @@ public:
     }
 
     // Another implemntation - to save more space
+    // 4 ms, faster than 98.83% of C++, 8.9 MB, less than 36.17% of C++ 
     string getHint02(string secret, string guess) {
         
         const int digital_num = 10;
@@ -86,5 +88,33 @@ public:
         }
         
         return to_string(bull) + "A" + to_string(cow) + "B";
+    }
+    // unordered_map
+    // 8 ms, faster than 72.66% of C++, 9.2 MB, less than 10.47% of C++
+    string getHint03(string secret, string guess) {
+        int sz = secret.size();
+        vector<char> guess2;
+        int A=0,B=0;
+        unordered_map<char,int> mymap;
+        for(int i = 0;i<sz;i++){
+            if(secret[i] == guess[i]){
+                A++;
+            }
+            else{
+                mymap[secret[i]] ++;
+                guess2.push_back(guess[i]);
+            }
+        }        
+        
+        for(int i = 0;i<guess2.size();i++){
+            if(mymap.find(guess2[i]) != mymap.end() ){
+                if( mymap[guess2[i]] >0 ){
+                    mymap[guess2[i]]--;
+                    B++;
+                }                
+            }
+        }
+        return to_string(A)+"A"+to_string(B)+"B";
+        
     }
 };
