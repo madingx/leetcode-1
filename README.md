@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|1030|[Matrix Cells in Distance Order](https://leetcode.com/problems/matrix-cells-in-distance-order/) | [C++](./algorithms/cpp/matrixCellsinDistanceOrder/MatrixCellsinDistanceOrder.cpp)|Easy|
 |1023|[Camelcase Matching](https://leetcode.com/problems/camelcase-matching/) | [C++](./algorithms/cpp/CamelcaseMatching/CamelcaseMatching.cpp)|Medium|
 |1018|[Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/) | [C++](./algorithms/cpp/binaryPrefixDivisibleBy5/BinaryPrefixDivisibleBy5.cpp)|Easy|
 |1002|[Find Common Characters](https://leetcode.com/problems/find-common-characters/) | [C++](./algorithms/cpp/findCommonCharacters/FindCommonCharacters.cpp)|Easy|
