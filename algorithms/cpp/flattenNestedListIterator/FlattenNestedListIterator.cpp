@@ -3,7 +3,7 @@
 // Date   : 2016-05-30
 
 /*************************************************************************************** 
- *
+ * 341. Flatten Nested List Iterator [Medium]
  * Given a nested list of integers, implement an iterator to flatten it.
  * 
  * Each element is either an integer, or a list -- whose elements may also be integers 
@@ -39,6 +39,7 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
+// 24 ms, faster than 66.08% of C++, 19.1 MB, less than 19.94% of C++
 class NestedIterator {
 private:
     vector<int> v;
@@ -64,6 +65,40 @@ public:
 
     bool hasNext() {
         return (index < v.size() );
+    }
+};
+
+
+
+
+// 20 ms, faster than 94.25% of C++, 18.9 MB, less than 25.73% of C++ 
+class NestedIterator {
+    int idx;
+    vector<int> vec;
+    void flatResc(vector<NestedInteger> &nestedList){
+        if( nestedList.empty() )return;
+        for(auto nl : nestedList){
+            if( nl.isInteger() ){
+                vec.push_back( nl.getInteger() );
+            }
+            else{
+                flatResc(nl.getList());
+            }
+        }
+        return;
+    }
+public:
+    NestedIterator(vector<NestedInteger> &nestedList) {
+        flatResc(nestedList);
+        idx = 0;
+    }
+
+    int next() {
+        return vec[idx++];
+    }
+
+    bool hasNext() {
+        return idx < vec.size(); 
     }
 };
 
