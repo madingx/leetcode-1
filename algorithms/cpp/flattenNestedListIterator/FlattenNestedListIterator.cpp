@@ -39,38 +39,6 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
-// 24 ms, faster than 66.08% of C++, 19.1 MB, less than 19.94% of C++
-class NestedIterator {
-private:
-    vector<int> v;
-    int index;
-    void flatten(vector<NestedInteger> &nestedList) {
-        for (auto item : nestedList){
-            if (item.isInteger()){
-                v.push_back( item.getInteger() );
-            }else{
-                flatten( item.getList() );
-            }
-        }
-    }
-public:
-    NestedIterator(vector<NestedInteger> &nestedList) {
-        flatten(nestedList);
-        index = 0;
-    }
-
-    int next() {
-        return v[index++];
-    }
-
-    bool hasNext() {
-        return (index < v.size() );
-    }
-};
-
-
-
-
 // 20 ms, faster than 94.25% of C++, 18.9 MB, less than 25.73% of C++ 
 class NestedIterator {
     int idx;
