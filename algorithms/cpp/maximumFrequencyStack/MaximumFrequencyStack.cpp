@@ -48,8 +48,8 @@
 
 // 236 ms, faster than 95.94% of C++, 75 MB, less than 47.55% of C++
 class FreqStack {
-    unordered_map<int, int> freq;
-    unordered_map<int, stack<int>> m;
+    unordered_map<int, int> freq;        // x and frequency
+    unordered_map<int, stack<int>> m;    // frequency and stack
     int maxfreq = 0;
 public:
     FreqStack() {
@@ -63,10 +63,23 @@ public:
     int pop() {
         int x = m[maxfreq].top();
         m[maxfreq].pop();
-        if (!m[freq[x]--].size()) maxfreq--;
+        if ( m[freq[x]--].empty() ) maxfreq--;
         return x;
     }
 };
+
+/******************************************
+input  ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"]
+       [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
+
+frequency     0     1     2     3
+
+                    4           
+                    7  ↓  7  ↓    
+stack               5     5     5      
+
+output  5,7,5,4,7,5
+******************************************/
 
 
 
