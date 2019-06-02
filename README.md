@@ -143,6 +143,7 @@
 |382|[Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/) | [C++](./algorithms/cpp/linkedListRandomNode/LinkedListRandomNode.cpp)|Medium|
 |381|[Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/) | [C++](./algorithms/cpp/insertDeleteGetRandom/InsertDeleteGetrandomO1DuplicatesAllowed.cpp)|Hard|
 |380|[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | [C++](./algorithms/cpp/insertDeleteGetRandom/InsertDeleteGetrandomO1.cpp)|Hard|
+|378|[Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) | [C++](./algorithms/cpp/kthSmallestElementinaSortedMatrix/KthSmallestElementinaSortedMatrix.cpp)|Medium|
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | [C++](./algorithms/cpp/combinationSumIV/combinationSumIV.cpp)|Medium|
 |376|[Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/) | [C++](./algorithms/cpp/wiggleSubsequence/wiggleSubsequence.cpp)|Medium|
 |371|[Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/description/) | [C++](./algorithms/cpp/sumOfTwoIntegers/SumOfTwoIntegers.cpp)|Easy|
