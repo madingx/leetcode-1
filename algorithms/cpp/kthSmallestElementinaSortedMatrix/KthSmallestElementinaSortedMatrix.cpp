@@ -56,7 +56,7 @@ public:
         int mid = 0;
         
         while(left < right){
-            mid = left + (right - left)/2;
+            mid = left + (right - left)/2;     //(left + right)/2
             int num = 0;
             for(int i = 0; i < n; i++){
                 int pos = upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();
