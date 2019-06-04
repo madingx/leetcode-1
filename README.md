@@ -55,6 +55,7 @@
 |767|[Reorganize String](https://leetcode.com/problems/reorganize-string/) | [C++](./algorithms/cpp/reorganizeString/ReorganizeString.cpp)|Medium|
 |747|[Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/) | [Python](./algorithms/python/LargestNumberAtLeastTwiceOfOthers/dominantIndex.py)|Easy|
 |746|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | [C++](./algorithms/cpp/minCostClimbingStairs/MinCostClimbingStairs.cpp), [Python](./algorithms/python/MinCostClimbingStairs/minCostClimbingStairs.py)|Easy|
+|743|[Network Delay Time](https://leetcode.com/problems/network-delay-time/) | [C++](./algorithms/cpp/networkDelayTime/NetworkDelayTime.cpp)|Medium|
 |739|[Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [C++](./algorithms/cpp/dailyTemperatures/DailyTemperatures.cpp)|Medium|
 |723|[Candy Crush](https://leetcode.com/problems/candy-crush) | [C++](./algorithms/cpp/candyCrush/CandyCrush.cpp)|Medium|
 |717|[1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) | [Python](./algorithms/python/1-bitAnd2-bitCharacters/isOneBitCharacter.py)|Easy|
