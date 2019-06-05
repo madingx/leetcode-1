@@ -1,4 +1,4 @@
-// Source :https://leetcode.com/problems/network-delay-time/
+// Source : https://leetcode.com/problems/network-delay-time/
 // Author : Mading
 // Date   : 2019-06-04
 
@@ -31,24 +31,23 @@
  ***************************************************************************************/
 
 
-// 972 ms, faster than 9.84% of C++, 263.1 MB, less than 5.00% of C++ 
+
+// 112 ms, faster than 63.71% of C++, 24.2 MB, less than 94.30% of C++
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int N, int K) {
-        vector<int> dist(N + 1, INT_MAX);
-        dist[K] = 0;
-        for (int i = 0; i < N; i++) {
-            for (vector<int> e : times) {
-                int u = e[0], v = e[1], w = e[2];
-                if (dist[u] != INT_MAX && dist[v] > dist[u] + w) {
-                    dist[v] = dist[u] + w;
-                }
+        if (times.empty()) return -1;
+        vector<int> dp(N+1,INT_MAX);
+        dp[K] = 0;
+        for (int i=1; i<=N; ++i)
+            for(auto& edge : times) {
+                int u = edge[0], v = edge[1], w = edge[2];
+                if (dp[u]!=INT_MAX && dp[u]+w < dp[v])
+                    dp[v] = dp[u]+w;
             }
-        }
-
-        int maxwait = 0;
-        for (int i = 1; i <= N; i++)
-            maxwait = max(maxwait, dist[i]);
-        return maxwait == INT_MAX ? -1 : maxwait;
+        int res = 0;
+        for (int i=1; i<=N; ++i)
+            res = max(res, dp[i]);
+        return res == INT_MAX? -1 : res;
     }
 };
