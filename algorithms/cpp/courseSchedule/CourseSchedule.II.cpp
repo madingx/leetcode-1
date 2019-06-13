@@ -109,7 +109,7 @@ public:
         return true;
     }
 
-    vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         
         vector<int> result;
         vector<int> enterance (numCourses, true);
@@ -118,8 +118,8 @@ public:
         //the bool in pair means it is explored or not
         unordered_map<int, vector<int>> graph;
         for(int i=0; i<prerequisites.size(); i++){
-            graph[prerequisites[i].first].push_back( prerequisites[i].second );
-            enterance[prerequisites[i].second] = false;
+            graph[prerequisites[i][0]].push_back( prerequisites[i][1] );
+            enterance[prerequisites[i][1]] = false;
         }
 
         //explored[] is used to record the node already checked!
@@ -139,6 +139,3 @@ public:
         return result;
     }
 };
-
-
-
