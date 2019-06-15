@@ -61,14 +61,14 @@ private:
         return false;
     }
 public:
-    vector<double> calcEquation(vector<pair<string, string>> equations, 
+    vector<double> calcEquation(vector<vector<string>> equations, 
                                 vector<double>& values, 
-                                vector<pair<string, string>> queries) {
+                                vector<vector<string>> queries) {
         
         unordered_map<string, unordered_map<string, double>> m;
         for(int i=0; i<equations.size(); i++) {
-           auto first = equations[i].first;
-           auto second = equations[i].second;
+           auto first = equations[i][0];
+           auto second = equations[i][1];
            m[first][second] = values[i];
            m[second][first] = 1.0 / values[i];
         }
@@ -76,8 +76,8 @@ public:
         
         vector<double> result;
         for(auto q : queries) {
-            string start = q.first;
-            string end = q.second;
+            string start = q[0];
+            string end = q[1];
             
             unordered_map<string, bool> visited;
             visited[start] = true;
