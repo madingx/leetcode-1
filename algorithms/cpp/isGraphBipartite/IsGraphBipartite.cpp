@@ -23,7 +23,7 @@
  * |    |
  * 3----2
  * We can divide the vertices into two groups: {0, 2} and {1, 3}.
- 
+
  * Example 2:
  * Input: [[1,2,3], [0,2], [0,1,3], [0,2]]
  * Output: false
@@ -44,6 +44,7 @@
  * The graph is undirected: if any element j is in graph[i], then i will be in graph[j].
  ***************************************************************************************/
 
+// https://leetcode.com/problems/is-graph-bipartite/discuss/301889/C%2B%2B-union-find-solution
 // 24 ms, faster than 92.62% of C++, 11.4 MB, less than 54.98% of C++
 class Solution {
     vector<int> f, d;
