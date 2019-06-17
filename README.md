@@ -53,6 +53,7 @@
 |830|[Positions of Large Groups](https://leetcode.com/problems/positions-of-large-groups/) | [Python](./algorithms/python/PositionsOfLargeGroups/largeGroupPositions.py)|Easy|
 |811|[Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) | [C++](./algorithms/cpp/subdomainVisitCount/SubdomainVisitCount.cpp)|Easy|
 |804|[Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/description/) | [C++](./algorithms/cpp/uniqueMorseCodeWords/UniqueMorseCodeWords.cpp)|Easy|
+|802|[Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) | [C++](./algorithms/cpp/findEventualSafeStates/FindEventualSafeStates.cpp)|Medium|
 |785|[Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) | [C++](./algorithms/cpp/isGraphBipartite/IsGraphBipartite.cpp)|Medium|
 |781|[Rabbits in Forest](https://leetcode.com/problems/rabbits-in-forest/) | [C++](./algorithms/cpp/rabbitsinForest/RabbitsinForest.cpp)|Medium|
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/description) | [C++](./algorithms/cpp/jewelsAndStones/JewelsAndStones.cpp)|Easy|
