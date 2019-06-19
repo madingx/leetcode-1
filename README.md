@@ -11,6 +11,7 @@
 |1018|[Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/) | [C++](./algorithms/cpp/binaryPrefixDivisibleBy5/BinaryPrefixDivisibleBy5.cpp)|Easy|
 |1002|[Find Common Characters](https://leetcode.com/problems/find-common-characters/) | [C++](./algorithms/cpp/findCommonCharacters/FindCommonCharacters.cpp)|Easy|
 |999|[Available Captures for Rook](https://leetcode.com/problems/available-captures-for-rook/) | [C++](./algorithms/cpp/availableCapturesforRook/AvailableCapturesforRook.cpp)|Easy|
+|990|[Satisfiability of Equality Equations](https://leetcode.com/problems/satisfiability-of-equality-equations/) | [C++](./algorithms/cpp/satisfiabilityofEqualityEquations/SatisfiabilityofEqualityEquations.cpp)|Medium|
 |988|[Smallest String Starting From Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/) | [C++](./algorithms/cpp/smallestStringStartingFromLeaf/SmallestStringStartingFromLeaf.cpp)|Medium|
 |987|[Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/) | [C++](./algorithms/cpp/verticalOrderTraversalOfABinaryTree/VerticalOrderTraversalOfABinaryTree.cpp)|Medium|
 |986|[Interval List Intersections](https://leetcode.com/problems/interval-list-intersections/) | [C++](./algorithms/cpp/intervalListIntersectons/IntervalListIntersections.cpp)|Medium|
