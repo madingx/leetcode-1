@@ -45,8 +45,8 @@
 *               
 **********************************************************************************/
 
-
-// 8 ms, faster than 86.44% of C++, 9.4 MB, less than 86.05% of C++
+// Union-Find
+// 8 ms, faster than 86.44% of C++, 9.2 MB, less than 97.44% of C++
 class Solution {
 public:
     int uf[26];
