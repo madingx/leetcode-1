@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/partition-list/
+// Source : https://leetcode.com/problems/partition-list/
 // Author : Hao Chen
 // Date   : 2014-06-21
 
 /********************************************************************************** 
-* 
+* 86. Partition List [Medium]
 * Given a linked list and a value x, partition it such that all nodes less than x come 
 * before nodes greater than or equal to x.
 * 
@@ -16,6 +16,50 @@
 *               
 **********************************************************************************/
 
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
+// 4 ms, faster than 98.79% of C++, 8.9 MB, less than 5.20% of C++
+class Solution {
+public:
+    ListNode* partition(ListNode* head, int x) {
+        vector<ListNode*> little;
+        vector<ListNode*> big;
+        ListNode* cur = head;
+        while(cur){
+            if(cur->val < x){
+                if(!little.empty())
+                    little.back()->next = cur;
+                little.push_back(cur);
+            }
+            else{
+                if(!big.empty())
+                    big.back()->next = cur;
+                big.push_back(cur);
+            }
+            cur = cur->next;
+        }
+        if( !little.empty() ){
+            head = little[0];
+            if( !big.empty() ){
+                little.back()->next = big[0];
+                big.back()->next = NULL;
+            }
+        }
+        return head;
+    }
+};
+
+
+
+
 #include <stdio.h>
 
 struct ListNode {
@@ -24,6 +68,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+// 4 ms, faster than 98.79% of C++, 8.5 MB, less than 87.35% of C++
 ListNode *partition(ListNode *head, int x) {
     ListNode fakeHead(0);
     fakeHead.next = head;
