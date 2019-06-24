@@ -3,7 +3,7 @@
 // Date   : 2016-08-24
 
 /*************************************************************************************** 
- *
+ * 383. Ransom Note [Easy]
  *  Given  an  arbitrary  ransom  note  string  and  another  string  containing 
  *  letters from  all  the  magazines,  write  a  function  that  will  return  true 
  *  if  the  ransom  
@@ -21,17 +21,17 @@
  * canConstruct("aa", "aab") -> true
  ***************************************************************************************/
 
+// 32 ms, faster than 44.98% of C++ 10.9 MB, less than 67.15% of C++
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char, int> m;
-        for(int i=0; i<magazine.size(); i++) {
-            m[magazine[i]]++;
+        unordered_map<char,int> mymap;
+        for(auto c : magazine){
+            mymap[c]++;
         }
-        for (int i=0; i<ransomNote.size(); i++) {
-            char c = ransomNote[i];
-            if (m[c] <=0 ) return false;
-            m[c]--;
+        for(auto c: ransomNote){
+            if(mymap.find(c) == mymap.end() || mymap[c] == 0)return false;
+            mymap[c]--;
         }
         return true;
     }
