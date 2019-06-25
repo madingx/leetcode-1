@@ -3,7 +3,7 @@
 // Date   : 2015-07-17
 
 /********************************************************************************** 
- * 
+ * 235. Lowest Common Ancestor of a Binary Search Tree [Easy]
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given 
  * nodes in the BST.
  * 
@@ -36,6 +36,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+// 40 ms, faster than 75.48% of C++, 25.6 MB, less than 89.82% of C++
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
@@ -53,5 +54,29 @@ public:
             
         }
         return NULL;
+    }
+};
+
+
+// 44 ms, faster than 60.57% of C++, 25.7 MB, less than 84.07% of C++ 
+class Solution {
+public:
+    int LCAResc(TreeNode* root, TreeNode* p, TreeNode* q,TreeNode* &res) {
+        if( !root )return 0;  
+        int has = 0;
+        has += (root == p)?1:0; 
+        has += (root == q)?2:0;         
+        has += LCAResc(root->left,p,q,res);
+        has += LCAResc(root->right,p,q,res);
+        if(has == 3){
+            res = root;
+            return 4;
+        }
+        return has;
+    }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        TreeNode* res = NULL;
+        LCAResc(root,p,q,res);
+        return res;
     }
 };
