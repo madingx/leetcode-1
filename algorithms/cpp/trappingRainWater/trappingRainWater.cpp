@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/trapping-rain-water/
+// Source : https://leetcode.com/problems/trapping-rain-water/
 // Author : Hao Chen
 // Date   : 2014-07-02
 
 /********************************************************************************** 
-* 
+* 42. Trapping Rain Water [Hard]
 * Given n non-negative integers representing an elevation map where the width of each bar is 1, 
 * compute how much water it is able to trap after raining. 
 * 
@@ -81,3 +81,38 @@ int main()
     TEST(b);
     return 0;
 }
+
+
+
+
+
+
+
+// 8 ms, faster than 76.86% of C++, 9.1 MB, less than 59.24% of C++ 
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int left = 0,right = 0;
+        vector<int> dp(height.size(),0);
+        for(int i = 0;i<height.size();i++){
+            if(height[i] > left){
+                dp[i] = 0;
+                left = height[i];
+            }   
+            else{
+                dp[i] = left - height[i];
+            }
+        }
+        int res = 0;
+        for(int i = height.size() - 1;i > 0;i--){
+            if(height[i] > right){
+                right = height[i];
+            }   
+            dp[i] = min(right-height[i],dp[i]);
+            res += dp[i];
+        }
+        
+        return res;
+        
+    }
+};
