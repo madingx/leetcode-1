@@ -41,6 +41,7 @@
 |905|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/) | [C++](./algorithms/cpp/sortArrayByParity/SortArrayByParity.cpp)|Easy|
 |895|[Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) | [C++](./algorithms/cpp/maximumFrequencyStack/MaximumFrequencyStack.cpp)|Hard|
 |877|[Stone Game](https://leetcode.com/problems/stone-game/) | [C++](./algorithms/cpp/stoneGame/StoneGame.cpp)|Medium|
+|876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [C++](./algorithms/cpp/middleoftheLinkedList/MiddleoftheLinkedList.cpp)|Easy|
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [C++](./algorithms/cpp/leaf-SimilarTrees/leaf-SimilarTrees.cpp)|Easy|
 |868|[Binary Gap](https://leetcode.com/problems/binary-gap/) | [C++](./algorithms/cpp/binaryGap/BinaryGap.cpp)|Easy|
 |859|[Buddy Strings](https://leetcode.com/problems/buddy-strings/description/) | [C++](./algorithms/cpp/buddyStrings/BuddyStrings.cpp)|Easy|
