@@ -72,7 +72,7 @@
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](./algorithms/cpp/kthLargestElementinaStream/KthLargestElementinaStream.cpp)|Medium|
 |692|[Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | [C++](./algorithms/cpp/topKFrequentWords/TopKFrequentWords.cpp)|Medium|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [Python](./algorithms/python/LongestUnivaluePath/longestUnivaluePath.py)|Easy|
-|684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [Python](./algorithms/python/RedundantConnection/findRedundantConnection.py)|Medium|
+|684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [C++](./algorithms/cpp/redundantConnection/RedundantConnection.cpp),[Python](./algorithms/python/RedundantConnection/findRedundantConnection.py)|Medium|
 |674|[Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) | [Python](./algorithms/python/LongestContinuousIncreasingSubsequence/findLengthOfLCIS.py)|Easy|
 |671|[Second Minimum Node In a Binary Tree](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/) | [Python](./algorithms/python/SecondMinimumNodeInABinaryTree/findSecondMinimumValue.py)|Easy|
 |665|[Non-decreasing Array](https://leetcode.com/problems/non-decreasing-array/) | [Python](./algorithms/python/Non-decreasingArray/checkPossibility.py)|Easy|
