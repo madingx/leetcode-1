@@ -70,6 +70,7 @@
 |714|[Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee) | [C++](./algorithms/cpp/bestTimeToBuyAndSellStock/BestTimeToBuyAndSellStockWithTransactionFee.cpp)|Medium|
 |712|[Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) | [C++](./algorithms/cpp/minimumASCIIDeleteSumForTwoStrings/MinimumAsciiDeleteSumForTwoStrings.cpp)|Medium|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](./algorithms/cpp/kthLargestElementinaStream/KthLargestElementinaStream.cpp)|Medium|
+|700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](./algorithms/cpp/searchinaBinarySearchTree/SearchinaBinarySearchTree.cpp)|Easy|
 |692|[Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | [C++](./algorithms/cpp/topKFrequentWords/TopKFrequentWords.cpp)|Medium|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [Python](./algorithms/python/LongestUnivaluePath/longestUnivaluePath.py)|Easy|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [C++](./algorithms/cpp/redundantConnection/RedundantConnection.cpp),[Python](./algorithms/python/RedundantConnection/findRedundantConnection.py)|Medium|
