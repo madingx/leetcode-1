@@ -3,7 +3,7 @@
 // Date   : 2019-02-04
 
 /***************************************************************************************************** 
- *
+ * 520. Detect Capital [Easy]
  * 
  * Given a word, you need to judge whether the usage of capitals in it is right or not.
  * 
@@ -28,6 +28,8 @@
  * Note:
  * The input will be a non-empty word consisting of uppercase and lowercase latin letters.
  ******************************************************************************************************/
+
+// 4 ms, faster than 67.26% of C++ 8.3 MB, less than 6.97% of C++
 class Solution {
     bool is_lower(char ch) {
         return ch >='a' && ch <='z';
@@ -46,5 +48,22 @@ public:
             if (is_upper(word[i])) all_lower = false;
         }
         return all_lower || first && all_upper; 
+    }
+};
+
+
+// 4 ms, faster than 67.26% of C++, 8 MB, less than 98.36% of C++
+class Solution {
+public:
+    bool isupper(char a){
+        return a -'Z' <= 0;
+    }
+    bool detectCapitalUse(string word) {
+        bool back = isupper(word.back());
+        for(int i=word.size()-2; i>0; i--){
+            if(isupper(word[i]) != back)return false;
+        }
+        if(!back)return true;
+        else return isupper(word[0]);
     }
 };
