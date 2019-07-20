@@ -42,6 +42,53 @@
  * 
  **********************************************************************************/
 
+
+// 148 ms, faster than 61.59% of C++, 39.3 MB, less than 62.20% of C++
+class Solution {
+public:
+    vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
+        unordered_map<string, vector<int>> m;
+        // initialize
+        for (int i=0; i<accounts.size(); i++) {
+            for (int j=1; j<accounts[i].size(); j++) 
+                m[accounts[i][j]].push_back(i);
+        }
+        unordered_set<int> visited_row_index;
+        vector<vector<string>> result;
+        // dfs function
+        function<void(set<string>&, int)> dfs = [&](set<string>& ans, int idx){
+            visited_row_index.insert(idx);
+            for (int i=1; i<accounts[idx].size(); i++) {
+                ans.insert(accounts[idx][i]);
+                auto it = m.find(accounts[idx][i]);
+                if (it != m.end()) {
+                    for (int j=0; j<it->second.size(); j++) {
+                        if (it->second[j] != idx && 
+                        visited_row_index.count(it->second[j]) == 0)
+                        dfs(ans, it->second[j]);
+                    }
+                }
+            }
+        };
+
+        for (int i=0; i<accounts.size(); i++) {
+            if (visited_row_index.count(i) > 0) continue;
+            set<string> ans;
+            dfs(ans, i);
+            vector<string> temp(1, accounts[i][0]);
+            for (auto& s : ans) temp.push_back(s);
+            result.push_back(temp);
+        }
+        return result;
+    }
+};
+
+
+
+
+
+
+
 // 1216 ms, faster than 7.36% of C++， 46.9 MB, less than 27.45% of C++
 class Solution {
 public:
@@ -49,17 +96,20 @@ public:
         map<string, string> owner;
         map<string, string> parents;
         map<string, set<string>> unions;
+        // Initialize
         for (int i = 0; i < acts.size(); i++) {
             for (int j = 1; j < acts[i].size(); j++) {
                 parents[acts[i][j]] = acts[i][j];
                 owner[acts[i][j]] = acts[i][0];
             }
         }
+        // find same account and union
         for (int i = 0; i < acts.size(); i++) {
             string p = find(acts[i][1], parents);
             for (int j = 2; j < acts[i].size(); j++)
                 parents[find(acts[i][j], parents)] = p;
         }
+        // 
         for (int i = 0; i < acts.size(); i++)
             for (int j = 1; j < acts[i].size(); j++)
                 unions[find(acts[i][j], parents)].insert(acts[i][j]);
