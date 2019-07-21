@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/surrounded-regions/
+// Source : https://leetcode.com/problems/surrounded-regions/
 // Author : Hao Chen
 // Date   : 2014-10-12
 
 /********************************************************************************** 
-* 
+* 130. Surrounded Regions [Medium]
 * Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
 * 
 * A region is captured by flipping all 'O's into 'X's in that surrounded region.
@@ -24,6 +24,58 @@
 * 
 *               
 **********************************************************************************/
+
+// 32 ms, faster than 64.58% of C++, 30.3 MB, less than 5.18% of C++
+class Solution {
+public:
+    int surround(vector<vector<char>>& board,int i,int j,vector<pair<int,int>> &vec) {
+        if(i<0 || i>=board.size() || j<0 || j>=board[i].size())return 0;
+        if(board[i][j] == 'X')return 1;
+        vec.push_back(pair<int,int>(i,j));
+        board[i][j] = 'X';
+        int up = surround(board,i-1,j,vec); 
+        int down = surround(board,i+1,j,vec);
+        int left = surround(board,i,j-1,vec);
+        int right = surround(board,i,j+1,vec);
+        if(up + down + left + right == 4){
+            return 1;
+        }            
+        return 0;
+    }
+    void solve(vector<vector<char>>& board) {
+        vector<vector<pair<int,int>>> cancels;
+        for(int i=0;i<board.size();i++){
+            for(int j=0;j<board[i].size();j++){
+                vector<pair<int,int>> vec;
+                int issurrounded = surround(board,i,j,vec);
+                if(issurrounded == 0)cancels.push_back(vec);
+            }
+        }
+        for(int i=0;i<cancels.size();i++){
+            for(int j=0;j<cancels[i].size();j++){
+                int ii = cancels[i][j].first;
+                int jj = cancels[i][j].second;
+                board[ii][jj] = 'O';
+            }
+        }
+        return;        
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #include <stdlib.h>
 #include <time.h>
