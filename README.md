@@ -42,6 +42,7 @@
 |908|[Smallest Range I](https://leetcode.com/problems/smallest-range-i/) | [C++](./algorithms/cpp/smallestRange/SmallestRangeI.cpp)|Easy|
 |905|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/) | [C++](./algorithms/cpp/sortArrayByParity/SortArrayByParity.cpp)|Easy|
 |895|[Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) | [C++](./algorithms/cpp/maximumFrequencyStack/MaximumFrequencyStack.cpp)|Hard|
+|883|[Projection Area of 3D Shapes](https://leetcode.com/problems/projection-area-of-3d-shapes/) | [C++](./algorithms/cpp/projectionAreaof3DShapes/ProjectionAreaof3DShapes.cpp)|Easy|
 |877|[Stone Game](https://leetcode.com/problems/stone-game/) | [C++](./algorithms/cpp/stoneGame/StoneGame.cpp)|Medium|
 |876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [C++](./algorithms/cpp/middleoftheLinkedList/MiddleoftheLinkedList.cpp)|Easy|
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [C++](./algorithms/cpp/leaf-SimilarTrees/leaf-SimilarTrees.cpp)|Easy|
