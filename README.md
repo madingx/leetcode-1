@@ -122,6 +122,7 @@
 |508|[Most Frequent Subtree Sum](https://leetcode.com/problems/most-frequent-subtree-sum/) | [C++](./algorithms/cpp/mostFrequentSubtreeSum/MostFrequentSubtreeSum.cpp)|Medium|
 |494|[Target Sum](https://leetcode.com/problems/target-sum/description/) | [C++](./algorithms/cpp/targetSum/TargetSum.cpp)|Medium|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/totalHammingDistance.cpp)|Medium|
+|470|[Implement Rand10 Using Rand7](https://leetcode.com/problems/implement-rand10-using-rand7/) | [C++](./algorithms/cpp/implementRand10UsingRand7/ImplementRand10UsingRand7.cpp)|Medium|
 |463|[Island Perimeter](https://leetcode.com/problems/island-perimeter/) | [C++](./algorithms/cpp/islandPerimeter/IslandPerimeter.cpp)|Easy|
 |461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/) | [C++](./algorithms/cpp/totalHammingDistance/HammingDistance.cpp)|Easy|
 |455|[Assign Cookies](https://leetcode.com/problems/assign-cookies/) | [C++](./algorithms/cpp/assignCookies/AssignCookies.cpp)|Easy|
