@@ -114,6 +114,7 @@
 |535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/) | [Python](./algorithms/python/K-diffPairsInAnArray/findPairs.py)|Easy|
 |532|[K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | [Python](./algorithms/python/K-diffPairsInAnArray/findPairs.py)|Easy|
 |530|[Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/) | [C++](./algorithms/cpp/minimumAbsoluteDifferenceinBST/MinimumAbsoluteDifferenceinBST.cpp)|Easy|
+|528|[Random Pick with Weight](https://leetcode.com/problems/random-pick-with-weight/) | [C++](./algorithms/cpp/randomPickIndex/RandomPickwithWeight.cpp)|Medium|
 |526|[Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/) | [C++](./algorithms/cpp/beautifulArrangement/BeautifulArrangement.cpp)|Medium|
 |525|[Contiguous Array](https://leetcode.com/problems/contiguous-array/) | [C++](./algorithms/cpp/contiguousArray/ContiguousArray.cpp)|Medium|
 |524|[Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/) | [C++](./algorithms/cpp/longestWordinDictionarythroughDeleting/LongestWordinDictionarythroughDeleting.cpp)|Medium|
