@@ -48,6 +48,7 @@
 |876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [C++](./algorithms/cpp/middleoftheLinkedList/MiddleoftheLinkedList.cpp)|Easy|
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [C++](./algorithms/cpp/leaf-SimilarTrees/leaf-SimilarTrees.cpp)|Easy|
 |868|[Binary Gap](https://leetcode.com/problems/binary-gap/) | [C++](./algorithms/cpp/binaryGap/BinaryGap.cpp)|Easy|
+|861|[Score After Flipping Matrix](https://leetcode.com/problems/score-after-flipping-matrix/) | [C++](./algorithms/cpp/scoreAfterFlippingMatrix/ScoreAfterFlippingMatrix.cpp)|Medium|
 |859|[Buddy Strings](https://leetcode.com/problems/buddy-strings/description/) | [C++](./algorithms/cpp/buddyStrings/BuddyStrings.cpp)|Easy|
 |858|[Mirror Reflection](https://leetcode.com/problems/mirror-reflection/description/) | [C++](./algorithms/cpp/mirrorReflection/MirrorReflection.cpp)|Medium|
 |852|[Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/description/) | [C++](./algorithms/cpp/peakIndexInAMountainArray/PeakIndexInAMountainArray.cpp)|Easy|
