@@ -8,19 +8,19 @@
 
 
 ## [763. Partition Labels](/algorithms/cpp/partitionLabels/PartitionLabels.cpp) **Medium**
-======
+
 将字符串进行切割，使得每个字母只出现在一个substring。
 1. 只要统计好每个字母最后出现的位置map[i]。
 2. 然后使用贪心算法最小化子串：
-    1. 从左至右遍历字母，
-    2. 对于字母i如果map[i]大于当前边界，就将边界j扩大到map[i]，
-    3. 如果已经遍历到当前边界j，则切割此子串。
+    1. 从左至右遍历字母
+    2. 对于字母i如果map[i]大于当前边界，就将边界j扩大到map[i]
+    3. 如果已经遍历到当前边界j，则切割此子串
 
 
 
 
 ## [861. Score After Flipping Matrix](/algorithms/cpp/scoreAfterFlippingMatrix/ScoreAfterFlippingMatrix.cpp) **Medium**
-******
+
 一个只包含0和1的矩阵，每次可以翻转一行或1列，若干次操作后返回矩阵的最大值。
 将每行视为一个二进制数，将每行相加得到矩阵值。
 
