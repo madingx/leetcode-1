@@ -9,7 +9,7 @@
 
 ## [763. Partition Labels](/algorithms/cpp/partitionLabels/PartitionLabels.cpp) **Medium**
 
-将字符串进行切割，使得每个字母只出现在一个substring。
+>将字符串进行切割，使得每个字母只出现在一个substring。
 1. 只要统计好每个字母最后出现的位置map[i]。
 2. 然后使用贪心算法最小化子串(在尽量靠前的位置切割出子串)：
     1. 从左至右遍历字母
@@ -21,7 +21,7 @@
 
 ## [861. Score After Flipping Matrix](/algorithms/cpp/scoreAfterFlippingMatrix/ScoreAfterFlippingMatrix.cpp) **Medium**
 
-一个只包含0和1的矩阵，每次可以翻转一行或1列，若干次操作后返回矩阵的最大值。
+>一个只包含0和1的矩阵，每次可以翻转一行或1列，若干次操作后返回矩阵的最大值。
 将每行视为一个二进制数，将每行相加得到矩阵值。
 
 由于每行是一个二进制数，则越高位权重越大，贪心体现在我们需要尽可能让高位为1。
