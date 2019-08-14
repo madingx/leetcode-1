@@ -40,6 +40,7 @@
 |938|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/) | [C++](./algorithms/cpp/rangeSumofBST/RangeSumofBST.cpp)|Easy|
 |931|[Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/) | [C++](./algorithms/cpp/minimumFallingPathSum/MinimumFallingPathSum.cpp)|Medium|
 |914|[X of a Kind in a Deck of Cards](https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/) | [Python](./algorithms/python/XOfAKindInADeckOfCards/hasGroupsSizeX.py)|Easy|
+|912|[Sort an Array](https://leetcode.com/problems/sort-an-array/) | [C++](./algorithms/cpp/sortanArray/SortanArray.cpp)|Medium|
 |908|[Smallest Range I](https://leetcode.com/problems/smallest-range-i/) | [C++](./algorithms/cpp/smallestRange/SmallestRangeI.cpp)|Easy|
 |905|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/) | [C++](./algorithms/cpp/sortArrayByParity/SortArrayByParity.cpp)|Easy|
 |895|[Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/) | [C++](./algorithms/cpp/maximumFrequencyStack/MaximumFrequencyStack.cpp)|Hard|
