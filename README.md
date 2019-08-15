@@ -28,7 +28,7 @@
 |975|[Odd Even Jump](https://leetcode.com/problems/odd-even-jump/) | [C++](./algorithms/cpp/oddEvenJump/OddEvenJump.cpp)|Hard|
 |973|[K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | [C++](./algorithms/cpp/kClosestPointstoOrigin/KClosestPointstoOrigin.cpp)|Medium|
 |971|[Flip Binary Tree To Match Preorder Traversal](https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/) | [Python](./algorithms/python/FlipBinaryTreeToMatchPreorderTraversal/flipMatchVoyage.py)|Medium|
-|969|[Pancake Sorting](https://leetcode.com/problems/pancake-sorting/) | [Python](./algorithms/python/PancakeSorting/pancakeSort.py)|Medium|
+|969|[Pancake Sorting](https://leetcode.com/problems/pancake-sorting/) |[C++](./algorithms/cpp/pancakeSorting/PancakeSorting.cpp), [Python](./algorithms/python/PancakeSorting/pancakeSort.py)|Medium|
 |968|[Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/) | [C++](./algorithms/cpp/binaryTreeCameras/BinaryTreeCameras.cpp)|Hard|
 |959|[Regions Cut By Slashes](https://leetcode.com/problems/regions-cut-by-slashes/) | [C++](./algorithms/cpp/regionsCutBySlashes/RegionsCutBySlashes.cpp)|Medium|
 |958|[Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) | [Python](./algorithms/python/CheckCompletenessOfABinaryTree/isCompleteTree.py)|Medium|
