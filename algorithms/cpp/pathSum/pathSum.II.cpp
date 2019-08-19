@@ -1,5 +1,5 @@
 // Source : https://leetcode.com/problems/path-sum-ii/submissions/
-// Author : Hao Chen
+// Author : Hao Chen, Mading
 // Date   : 2014-07-01
 
 /********************************************************************************** 
@@ -37,41 +37,6 @@
  * };
  */
 
-// 32 ms, faster than 37.17% of C++, 32.9 MB, less than 36.13% of C++
-class Solution {
-public:
-    vector<vector<int> > pathSum(TreeNode *root, int sum) {
-        vector<vector<int> > result;
-        vector<int> v;
-        generatePathSum(root, sum, v, result);
-        return result;
-    }
-    
-    void generatePathSum(TreeNode *root, int sum, vector<int> v, vector<vector<int> >& result) {
-        if (root==NULL) {
-            return;
-        }
-        
-        if (root->left==NULL && root->right==NULL) {
-            if (root->val == sum){
-                v.push_back(root->val);
-                result.push_back(v);
-            }
-            return;
-        }
-        
-        v.push_back(root->val);
-        if (root->left) {
-            generatePathSum(root->left, sum - root->val, v, result);
-        }
-        if (root->right) {
-            generatePathSum(root->right, sum - root->val, v, result);
-        }
-    }
-};
-
-
-
 // 16 ms, faster than 99.97% of C++, 19.8 MB, less than 91.61% of C++
 class Solution {
 public:
@@ -92,3 +57,35 @@ private:
         path.pop_back();
     }
 };
+
+
+
+
+// 28 ms, faster than 20.29% of C++, 36.6 MB, less than 18.42% of C++
+class Solution {
+public:
+    vector<vector<int> > pathSum(TreeNode *root, int sum) {
+        vector<vector<int> > result;
+        vector<int> v;
+        generatePathSum(root, sum, 0, v, result);
+        return result;
+    }
+
+    void generatePathSum(TreeNode *root, int sum, int s, vector<int> v, vector<vector<int> >& result) {
+        if (root==NULL) return ;
+        s += root->val;
+        v.push_back(root->val);
+
+        if ( root->left==NULL && root->right==NULL) {
+            if (s == sum) result.push_back(v);
+            return;
+        }
+        generatePathSum(root->left, sum, s, v, result);
+        generatePathSum(root->right, sum, s, v, result);
+    }
+};
+
+
+
+
+

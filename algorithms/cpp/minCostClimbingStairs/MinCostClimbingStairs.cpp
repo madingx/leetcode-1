@@ -1,9 +1,8 @@
 // Source : https://leetcode.com/problems/min-cost-climbing-stairs/
-// Author : Hao Chen
+// Author : Mading, Hao Chen
 // Date   : 2019-02-04
 
 /***************************************************************************************************** 
- *
  * 746. Min Cost Climbing Stairs [Easy] 
  * On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
  * 
@@ -30,9 +29,10 @@
  * 
  ******************************************************************************************************/
 
+//16 ms   8.7 MB, faster than 18.93% of C++
 class Solution {
 public:
-    //16 ms   8.7 MB, faster than 18.93% of C++
+    
     int minCostClimbingStairs(vector<int>& cost) {
         vector<int> dyncost(cost.size()+2,0);
         int i=2;
@@ -43,5 +43,33 @@ public:
         //cost   [1,2,3,4]
         //dyn  [0,0,0,1,2,4]
     }
+};
 
+
+// 8 ms, faster than 59.52% of C++, 8.7 MB, less than 93.02% of C++
+class Solution {
+    public:
+        int minCostClimbingStairs(vector<int>& cost) {
+            return minCostClimbingStairs02(cost); 
+            return minCostClimbingStairs01(cost); 
+        }
+        int minCostClimbingStairs01(vector<int>& cost) {
+            vector<int> dp(cost.size() , 0);
+            dp[0] = cost[0];
+            dp[1] = cost[1];
+            for (int i=2; i<cost.size(); i++) {
+                dp[i] = min( dp[i-1], dp[i-2] ) + cost[i];
+            }
+            return min(dp[dp.size()-1], dp[dp.size()-2]);
+        }
+
+        int minCostClimbingStairs02(vector<int>& cost) {
+            int dp1 = cost[0], dp2 = cost[1];
+            for (int i=2; i<cost.size(); i++) {
+                int dp = min( dp1, dp2 ) + cost[i];
+                dp1 = dp2;
+                dp2 = dp;
+            }
+            return min (dp1, dp2);
+        }
 };

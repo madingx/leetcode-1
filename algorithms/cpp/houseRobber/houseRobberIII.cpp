@@ -1,9 +1,5 @@
 // Source : https://leetcode.com/problems/house-robber-iii/
-// Author : Calinescu Valentin,Mading
-// Date   : 2017-11-17
-// 
-// Latest Edition
-// Editor : Mading
+// Author : Calinescu Valentin, Hao Chen, Mading
 // Date   : 2017-11-17
 
 /*************************************************************************************** 
@@ -70,6 +66,9 @@
  * algorithm takes O(N log N) time to finish.
  * 
  */
+
+
+// 28 ms, faster than 30.81% of C++, 23.5 MB, less than 33.33% of C++
 class Solution {
 public:
     map<TreeNode*, int> dict;
@@ -90,12 +89,15 @@ public:
         }
         return dict[root];
     }
-};
-//runtime:16ms //应该有重复计算
+};//应该有重复计算
+
+
+
 
 
 
 /*** Solution by Mading ******************/
+// 16 ms, faster than 80.90% of C++, 20.6 MB, less than 100.00% of C++
 class Solution {
 public:
     
@@ -121,4 +123,53 @@ public:
         
     }
 };
-//runtime:12ms
+
+
+
+
+
+
+// Another implementation - Hao Chen
+// 4 ms, faster than 99.96% of C++, 20.6 MB, less than 100.00% of C++
+class Solution {
+public:
+    int max(int a, int b) {
+        return a > b ? a: b;
+    }
+    int max(int a, int b, int c) {
+        return max(a, max(b,c));
+    }
+    int max(int a, int b, int c, int d) {
+        return max(a, max(b, max(c,d)));
+    }
+
+    void rob_or_not(TreeNode* root, int& max_robbed, int& max_not_robbed) {
+        // NULL room return 0;
+        if (root == NULL) {
+            max_robbed = max_not_robbed = 0;
+            return ;
+        }
+
+        // we have two options, rob current room or not.
+        int max_left_robbed, max_left_not_robbed;
+        int max_right_robbed, max_right_not_robbed;
+        rob_or_not(root->left, max_left_robbed, max_left_not_robbed);
+        rob_or_not(root->right, max_right_robbed, max_right_not_robbed);
+
+        // If root is robbed, then both left and right must not be robbed.
+        max_robbed = root->val + max_left_not_robbed + max_right_not_robbed;
+
+        // If root is not robbed, then 4 combinations are possible:
+		//     left is robbed or not and right is either robbed or not robbed,
+        max_not_robbed = max(max_left_robbed + max_right_robbed,
+                             max_left_robbed + max_right_not_robbed,
+                             max_left_not_robbed + max_right_robbed,
+                             max_left_not_robbed + max_right_not_robbed);
+
+    }
+    int rob(TreeNode* root) {
+        int robbed, not_robbed;
+        rob_or_not(root, robbed, not_robbed);
+        return max(robbed, not_robbed);
+    }
+};

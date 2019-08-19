@@ -1,5 +1,5 @@
 // Source : https://leetcode.com/problems/palindrome-number/
-// Author : Hao Chen
+// Author : Hao Chen, Mading
 // Date   : 2014-06-18
 
 /********************************************************************************** 
@@ -26,9 +26,9 @@
 
 #include <stdio.h>
 
+
 class Solution {
 public:
-
     //108 ms  72.9 MB, faster than 97.48% of C++
     bool isPalindrome(int x) {
         if(x < 0 || (x % 10 == 0 && x != 0)) return false;
@@ -41,8 +41,6 @@ public:
         //input=1221;  here:x=12 ,revertedNumber=12
         return x == revertedNumber || x == revertedNumber/10;        
     }
-
-
     //108 ms    73 MB, faster than 97.48% of C++
     bool isPalindrome(int x) {
         if(x<0)return false;
@@ -54,13 +52,11 @@ public:
         }
         return n==x;
     }
-
     //112 ms    73.1 MB, faster than 84.19% of C++
     bool isPalindrome(int x) {
         if (x<0 || (x % 10 == 0 && x != 0)) {
             return false;
-        }
-        
+        }        
         int len=1;
         for (len=1; (x/len) >= 10; len*=10 );
         
@@ -76,12 +72,10 @@ public:
             len /= 100;
         }
         return true;
-    }
-    
+    }    
     bool isPalindrome2(int x) {
         return (x>=0 && x == reverse(x));
     }
-
 private:    
     int reverse(int x) {
         int y=0;
@@ -89,12 +83,16 @@ private:
         int n;
         while( x!=0 ){
             n = x%10;
+
+
+
             y = y*10 + n;
             x /= 10;
         }
         return y;
     }
 };
+
 
 
 

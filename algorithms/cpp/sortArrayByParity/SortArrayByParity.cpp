@@ -1,5 +1,5 @@
 // Source : https://leetcode.com/problems/sort-array-by-parity/
-// Author : Mading
+// Author : Mading,Hao Chen
 // Date   : 2019-03-15
 
 /********************************************************************************** 
@@ -32,6 +32,28 @@ public:
             int tmp = A[i];
             A[i] = A[j];
             A[j] = tmp;
+        }
+        return A;
+    }
+};
+
+
+
+
+
+class Solution {
+public:
+    bool isEven(int& x) {
+        return x % 2 == 0;
+    }
+    vector<int> sortArrayByParity(vector<int>& A) {
+        //two pointer, one from left to right, another from right to left
+        // if left is odd number and right is even number, switch them
+        int l=0, r=A.size()-1;
+        while ( l < r ) {
+            if ( !isEven(A[l]) && isEven(A[r]) ) swap(A[l], A[r]);
+            if ( isEven(A[l]) ) l++;
+            if ( !isEven(A[r]) ) r--;
         }
         return A;
     }

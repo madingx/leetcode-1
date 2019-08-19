@@ -1,5 +1,5 @@
 // Source : https://leetcode.com/problems/maximum-product-subarray/
-// Author : Hao Chen
+// Author : Hao Chen, Mading
 // Date   : 2014-10-09
 
 /********************************************************************************** 
@@ -23,6 +23,19 @@
 #include <algorithm>
 using namespace std;
 
+int max(int x, int y) {
+    return x>y?x:y;
+}
+int min(int x, int y){
+    return x<y?x:y;
+}
+int max(int x, int y, int z) {
+    return max(x, max(y,z));
+}
+int min(int x, int y, int z) {
+    return min(x, min(y, z));
+}
+
 // The idea is similar with "Find the subarray wich has the largest sum"
 // (See: http://en.wikipedia.org/wiki/Maximum_subarray_problem)
 // 
@@ -30,6 +43,7 @@ using namespace std;
 // ending with the previous element multiplied by this element. For example, in array {12, 2, -3, -5, -6, -2}, 
 // when we are at element -2, the maximum product is multiplication of, minimum product ending with -6 and -2.
 
+// 4 ms, faster than 100.00% of C++, 9 MB, less than 80.36% of C++
 // 4 ms, faster than 100.00% of C++, 9 MB, less than 80.36% of C++
 int maxProduct(vector<int>& nums) {
     // To remember the max/min product for previous position

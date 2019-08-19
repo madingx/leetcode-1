@@ -101,7 +101,7 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
     int row = obstacleGrid.size();
     int col = obstacleGrid[0].size();
 
-    vector< vector <int> >  dp (row, vector<int>(col, 0));
+    vector< vector <unsigned int> >  dp (row, vector<unsigned int>(col, 0));
 
     dp[0][0] =  obstacleGrid[0][0]  ?  0 : 1;
     for (int r=1; r<row; r++) {

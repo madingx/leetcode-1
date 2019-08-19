@@ -1,10 +1,6 @@
 // Source : https://leetcode.com/problems/word-search/
-// Author : Hao Chen
+// Author : Hao Chen,Mading
 // Date   : 2014-07-19
-// 
-// Latest Edition
-// Editor : Mading
-// Date   : 2019-03-13
 
 /********************************************************************************** 
 * 79. Word Search [Medium]
@@ -63,11 +59,7 @@ class Solution {
     };
 
 
-/**********other solutions *******************************************************/
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+
 
 //solution 1
 //336 ms    163.6 MB
@@ -132,19 +124,17 @@ bool exist(vector<vector<char> > &board, string word, int idx, int row, int col,
     }
     return false;
 }
+
+
 bool exist(vector<vector<char> > &board, string word) {
     if (board.size()<=0 || word.size()<=0) return false;
     int row = board.size();
     int col = board[0].size();
-    //using a mask to mark which char has been selected.
-    //do not use vector<bool>, it has big performance issue, could cause Time Limit Error
-    vector< vector<int> > mask(row, vector<int>(col, 0));
 
     for(int i=0; i<board.size(); i++) {
         for(int j=0; j<board[i].size(); j++){
-            if ( board[i][j]==word[0] ){
-                vector< vector<int> > m = mask;
-                if( exist(board, word, 0, i, j, m) ){
+            if ( board[i][j]==word[0]  ){
+                if( exist(board, word, 0, i, j) ){
                     return true;
                 }
             }
@@ -152,6 +142,7 @@ bool exist(vector<vector<char> > &board, string word) {
     }
     return false;
 }
+
 
 
 vector< vector<char> > buildBoard(char b[][5], int r, int c) {
@@ -173,10 +164,10 @@ int main(int argc, char** argv)
 
     s = "SEE";
     cout << s << ":" << exist(board, s) << endl; 
-    
+
     s = "ABCCED";
     cout << s << ":" << exist(board, s) << endl; 
-    
+
     s = "ABCB";
     cout << s << ":" << exist(board, s) << endl; 
 

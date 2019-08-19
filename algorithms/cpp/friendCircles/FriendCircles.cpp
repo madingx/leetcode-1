@@ -1,9 +1,9 @@
 // Source : https://leetcode.com/problems/friend-circles/description/
-// Author : Mading
+// Author : Mading,Hao Chen
 // Date   : 2017-11-13
 
 /*************************************************************************************** 
- * 547. Friend Circles
+ * 547. Friend Circles [Medium]
  * 
  * There are N students in a class. Some of them are friends, while some are not.
  * Their friendship is transitive in nature. For example, if A is a direct friend of B, 
@@ -29,17 +29,19 @@
  *  [1,1,1],
  *  [0,1,1]]
  * Output: 1
- * Explanation:  The 0th and 1st students are direct friends, the 1st and 2nd students are direct friends, 
- * so the 0th and 2nd students are indirect friends. All of them are in the same friend circle, so return 1.
+ * Explanation:The 0th and 1st students are direct friends, the 1st and 2nd students are direct 
+ * friends, so the 0th and 2nd students are indirect friends. All of them are in the same friend 
+ * circle, so return 1.
+ * 
  * Note:
- * 1. N is in range [1,200].
- * 2. M[i][i] = 1 for all students.
- * 3. If M[i][j] = 1, then M[j][i] = 1.
- *                
- ***************************************************************************************/
+ * 
+ * N is in range [1,200].
+ * M[i][i] = 1 for all students.
+ * If M[i][j] = 1, then M[j][i] = 1.
+ * 
+ ******************************************************************************************************/
 
 //http://blog.csdn.net/gmr_vhp/article/details/68957821
-
 class Solution {
 public:
     int findCircleNum(vector<vector<int>>& M) {
@@ -68,5 +70,82 @@ private:
             }
         }
         return a;
+    }
+};
+
+
+
+
+
+class Solution {
+public:
+
+    // -----------------------------------------------------------------------------
+    //DFS solution is quite easy to understand, just like the "Number of Island"
+    int findCircleNum_DFS(vector<vector<int>>& M) {
+        int n = 0;
+        for (int i=0; i<M.size(); i++) {
+            for (int j=0; j<M[0].size(); j++) {
+                if ( M[i][j] == 1 ) {
+                    n++;
+                    M[i][j] = 2;
+                    mark(M, j);
+                }
+            }
+        }
+        return n;
+    }
+
+    void mark(vector<vector<int>>& M, int i ) {
+        for ( int j=0;  j<M[i].size(); j++ ){
+            if ( M[i][j] == 1 ) {
+                M[i][j] = 2;
+                mark(M, j);
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    //Union Find Solution
+    int findCircleNum_UF(vector<vector<int>>& M) {
+
+        vector<int> relations(M.size());
+        for (int i=0; i<relations.size(); i++){
+            relations[i] = i;
+        }
+
+        int n = M.size(); //by default, there are N friend cicles
+        for (int i=0; i<M.size(); i++) {
+            for (int j=0; j<M[0].size(); j++) {
+                if ( M[i][j] == 1 && i != j ) {
+                    if ( join(relations, i, j) ) n--;
+                }
+            }
+        }
+        return n;
+    }
+
+    //find the tail node.
+    //   if a -> b -> c -> d, then find(a),find(b) or find(c) would return d;
+    int find(vector<int>& relations, int i ) {
+        while( relations[i] != i ) {
+            i = relations[i];
+        }
+        return i;
+    }
+    // join the x cicle with y cicle,
+    // if x and y are already in same friend cicle, then return false, else return true;
+    bool join(vector<int> &relations, int x, int y) {
+        int tx = find(relations, x);
+        int ty = find(relations, y);
+        if ( tx != ty ) relations[tx] = ty;
+        return tx != ty;
+    }
+
+    // -----------------------------------------------------------------------------
+    
+    int findCircleNum(vector<vector<int>>& M) {
+        return findCircleNum_UF(M);
+        return findCircleNum_DFS(M);
     }
 };
