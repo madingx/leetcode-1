@@ -1,9 +1,9 @@
 // Source : https://leetcode.com/problems/longest-palindrome/
-// Author : Hao Chen
+// Author : Hao Chen, Mading
 // Date   : 2016-11-13
 
 /*************************************************************************************** 
- *
+ * 409. Longest Palindrome [Easy]
  * Given a string which consists of lowercase or uppercase letters, find the length of 
  * the longest palindromes that can be built with those letters.
  * 
@@ -24,6 +24,7 @@
  * One longest palindrome that can be built is "dccaccd", whose length is 7.
  ***************************************************************************************/
 
+// 4 ms, faster than 83.12% of C++, 8.6 MB, less than 100.00% of C++
 class Solution {
 public:
     int longestPalindrome(string s) {
@@ -46,5 +47,21 @@ public:
         }
         
         return hasOdd ? result + 1 : result;
+    }
+};
+
+
+
+// 4 ms, faster than 83.12% of C++, 9 MB, less than 33.33% of C++
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        unordered_map<char,int> dictmap;
+        for(auto c:s)dictmap[c]++;
+        int n = 0;
+        for(auto item:dictmap){
+            if(item.second%2==1)n++;
+        }
+        return s.size() - (n>0 ? n-1 : 0);
     }
 };
