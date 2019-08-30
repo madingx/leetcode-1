@@ -6,6 +6,7 @@
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
 |1140|[Stone Game II](https://leetcode.com/problems/stone-game-ii/) | [C++](./algorithms/cpp/StoneGame/StoneGameII.cpp)|Medium|
+|1114|[Print in Order](https://leetcode.com/problems/print-in-order/) | [C++](./algorithms/cpp/printinOrder/PrintinOrder.cpp)|Easy|
 |1043|[Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/) | [C++](./algorithms/cpp/removeAllAdjacentDuplicatesInString/RemoveAllAdjacentDuplicatesInString.cpp)|Medium|
 |1030|[Matrix Cells in Distance Order](https://leetcode.com/problems/matrix-cells-in-distance-order/) | [C++](./algorithms/cpp/matrixCellsinDistanceOrder/MatrixCellsinDistanceOrder.cpp)|Easy|
 |1029|[Two City Scheduling](https://leetcode.com/problems/two-city-scheduling/) | [C++](./algorithms/cpp/twoCityScheduling/TwoCityScheduling.cpp)|Easy|
@@ -132,6 +133,7 @@
 |521|[Longest Uncommon Subsequence I](https://leetcode.com/problems/longest-uncommon-subsequence-i/) | [C++](./algorithms/cpp/longestUncommonSubsequence/LongestUncommonSubsequenceI.cpp)|Easy|
 |520|[Detect Capital](https://leetcode.com/problems/detect-capital/) | [C++](./algorithms/cpp/detectCapital/DetectCapital.cpp)|Easy|
 |518|[Coin Change 2](https://leetcode.com/problems/coin-change-2/) | [C++](./algorithms/cpp/coinChange/CoinChange2.cpp)|Medium|
+|515|[Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row/) | [C++](./algorithms/cpp/findLargestValueinEachTreeRow/FindLargestValueinEachTreeRow.cpp)|Medium|
 |513|[Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/) | [C++](./algorithms/cpp/findBottomLeftTreeValue/FindBottomLeftTreeValue.cpp)|Medium|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](./algorithms/cpp/fibonacciNumber/FibonacciNumber.cpp),[Python](./algorithms/python/FibonacciNumber/fib.py)|Easy|
 |508|[Most Frequent Subtree Sum](https://leetcode.com/problems/most-frequent-subtree-sum/) | [C++](./algorithms/cpp/mostFrequentSubtreeSum/MostFrequentSubtreeSum.cpp)|Medium|
