@@ -92,6 +92,7 @@
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](./algorithms/cpp/kthLargestElementinaStream/KthLargestElementinaStream.cpp)|Medium|
 |700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](./algorithms/cpp/searchinaBinarySearchTree/SearchinaBinarySearchTree.cpp)|Easy|
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [C++](./algorithms/cpp/maxAreaOfIsland/MaxAreaOfIsland.cpp)|Medium|
+|698|[Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) | [C++](./algorithms/cpp/partitiontoKEqualSumSubsets/PartitiontoKEqualSumSubsets.cpp)|Medium|
 |692|[Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | [C++](./algorithms/cpp/topKFrequentWords/TopKFrequentWords.cpp)|Medium|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [Python](./algorithms/python/LongestUnivaluePath/longestUnivaluePath.py)|Easy|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [C++](./algorithms/cpp/redundantConnection/RedundantConnection.cpp),[Python](./algorithms/python/RedundantConnection/findRedundantConnection.py)|Medium|
