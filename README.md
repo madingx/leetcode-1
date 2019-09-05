@@ -94,6 +94,7 @@
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [C++](./algorithms/cpp/maxAreaOfIsland/MaxAreaOfIsland.cpp)|Medium|
 |698|[Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) | [C++](./algorithms/cpp/partitiontoKEqualSumSubsets/PartitiontoKEqualSumSubsets.cpp)|Medium|
 |692|[Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | [C++](./algorithms/cpp/topKFrequentWords/TopKFrequentWords.cpp)|Medium|
+|690|[Employee Importance](https://leetcode.com/problems/employee-importance/) | [C++](./algorithms/python/employeeImportance/EmployeeImportance.cpp)|Easy|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [Python](./algorithms/python/LongestUnivaluePath/longestUnivaluePath.py)|Easy|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [C++](./algorithms/cpp/redundantConnection/RedundantConnection.cpp),[Python](./algorithms/python/RedundantConnection/findRedundantConnection.py)|Medium|
 |682|[Baseball Game](https://leetcode.com/problems/baseball-game/) | [C++](./algorithms/cpp/baseballGame/BaseballGame.cpp)|Easy|
