@@ -71,6 +71,7 @@
 |811|[Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) | [C++](./algorithms/cpp/subdomainVisitCount/SubdomainVisitCount.cpp)|Easy|
 |804|[Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/description/) | [C++](./algorithms/cpp/uniqueMorseCodeWords/UniqueMorseCodeWords.cpp)|Easy|
 |802|[Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) | [C++](./algorithms/cpp/findEventualSafeStates/FindEventualSafeStates.cpp)|Medium|
+|788|[Rotated Digits](https://leetcode.com/problems/rotated-digits/) | [C++](./algorithms/cpp/rotatedDigits/RotatedDigits.cpp)|Easy|
 |785|[Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) | [C++](./algorithms/cpp/isGraphBipartite/IsGraphBipartite.cpp)|Medium|
 |784|[Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) | [C++](./algorithms/cpp/letterCasePermutation/LetterCasePermutation.cpp)|Easy|
 |781|[Rabbits in Forest](https://leetcode.com/problems/rabbits-in-forest/) | [C++](./algorithms/cpp/rabbitsinForest/RabbitsinForest.cpp)|Medium|
@@ -89,6 +90,7 @@
 |717|[1-bit and 2-bit Characters](https://leetcode.com/problems/1-bit-and-2-bit-characters/) | [Python](./algorithms/python/1-bitAnd2-bitCharacters/isOneBitCharacter.py)|Easy|
 |714|[Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee) | [C++](./algorithms/cpp/bestTimeToBuyAndSellStock/BestTimeToBuyAndSellStockWithTransactionFee.cpp)|Medium|
 |712|[Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) | [C++](./algorithms/cpp/minimumASCIIDeleteSumForTwoStrings/MinimumAsciiDeleteSumForTwoStrings.cpp)|Medium|
+|705|[Design HashSet](https://leetcode.com/problems/design-hashset/) | [C++](./algorithms/cpp/designHashSet/DesignHashSet.cpp)|Easy|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](./algorithms/cpp/kthLargestElementinaStream/KthLargestElementinaStream.cpp)|Medium|
 |700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](./algorithms/cpp/searchinaBinarySearchTree/SearchinaBinarySearchTree.cpp)|Easy|
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [C++](./algorithms/cpp/maxAreaOfIsland/MaxAreaOfIsland.cpp)|Medium|
