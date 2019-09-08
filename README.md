@@ -79,6 +79,7 @@
 |767|[Reorganize String](https://leetcode.com/problems/reorganize-string/) | [C++](./algorithms/cpp/reorganizeString/ReorganizeString.cpp)|Medium|
 |765|[Couples Holding Hands](https://leetcode.com/problems/couples-holding-hands/submissions/) | [C++](./algorithms/cpp/couplesHoldingHands/CouplesHoldingHands.cpp)|Hard|
 |763|[Partition Labels](https://leetcode.com/problems/partition-labels/) | [C++](./algorithms/cpp/partitionLabels/PartitionLabels.cpp)|Medium|
+|748|[Shortest Completing Word](https://leetcode.com/problems/shortest-completing-word/) | [C++](./algorithms/cpp/shortestCompletingWord/ShortestCompletingWord.cpp)|Easy|
 |747|[Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/) | [Python](./algorithms/python/LargestNumberAtLeastTwiceOfOthers/dominantIndex.py)|Easy|
 |746|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | [C++](./algorithms/cpp/minCostClimbingStairs/MinCostClimbingStairs.cpp), [Python](./algorithms/python/MinCostClimbingStairs/minCostClimbingStairs.py)|Easy|
 |743|[Network Delay Time](https://leetcode.com/problems/network-delay-time/) | [C++](./algorithms/cpp/networkDelayTime/NetworkDelayTime.cpp)|Medium|
