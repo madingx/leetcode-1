@@ -1,9 +1,9 @@
 // Source : https://leetcode.com/problems/two-city-scheduling/
-// Author : Hao Chen
+// Author : Hao Chen, Mading
 // Date   : 2019-04-21
 
 /***************************************************************************************************** 
- *
+ * 1029. Two City Scheduling [Easy]
  * There are 2N people a company is planning to interview. The cost of flying the i-th person to city 
  * A is costs[i][0], and the cost of flying the i-th person to city B is costs[i][1].
  * 
@@ -29,7 +29,7 @@
  * 	1 <= costs[i][0], costs[i][1] <= 1000
  ******************************************************************************************************/
 
-
+// 8 ms, faster than 40.01% of C++, 9.4 MB, less than 84.21% of C++.
 class Solution {
 private:
     static int diff(vector<int>& x) {
@@ -51,5 +51,30 @@ public:
             result += (costs[i][0] + costs[len-i-1][1]);
         }
         return result;
+    }
+};
+
+
+
+
+
+
+// 0 ms, faster than 100.00% of C++, 9.3 MB, less than 94.74% of C++.
+bool cmp(vector<int> &x, vector<int> &y) {
+        return (x[0]-x[1]) > (y[0] - y[1]);
+    }
+class Solution {    
+public:
+    int twoCitySchedCost(vector<vector<int>>& costs) {
+        sort(costs.begin(),costs.end(),cmp);
+        int s = 0;
+        int i = 0;
+        for(i = 0;i<costs.size()/2;i++){
+            s+=costs[i][1];
+        }
+        for(;i<costs.size();i++){
+            s+=costs[i][0];
+        }
+        return s;
     }
 };
