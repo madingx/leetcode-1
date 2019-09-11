@@ -126,6 +126,7 @@
 |561|[Array Partition I](https://leetcode.com/problems/array-partition-i/) | [C++](./algorithms/cpp/arrayPartitionI/ArrayPartitionI.cpp)|Easy|
 |559|[Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) | [C++](./algorithms/cpp/minimumDepthOfBinaryTree/maximumDepthOfnAryTree.cpp)|Easy|
 |554|[Brick Wall](https://leetcode.com/problems/brick-wall/) | [C++](./algorithms/cpp/brickWall/BrickWall.cpp)|Medium|
+|553|[Optimal Division](https://leetcode.com/problems/optimal-division/) | [C++](./algorithms/cpp/optimalDivision/OptimalDivision.cpp)|Medium|
 |547|[Friend Circles](https://leetcode.com/problems/friend-circles/) | [C++](./algorithms/cpp/friendCircles/FriendCircles.cpp)|Medium|
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | [Python](./algorithms/python/DiameterOfBinaryTree/diameterOfBinaryTree.py)|Easy|
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [Python](./algorithms/python/ConvertBSTtoGreaterTree/convertBST.py)|Easy|
