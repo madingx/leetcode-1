@@ -71,6 +71,7 @@
 |811|[Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) | [C++](./algorithms/cpp/subdomainVisitCount/SubdomainVisitCount.cpp)|Easy|
 |804|[Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/description/) | [C++](./algorithms/cpp/uniqueMorseCodeWords/UniqueMorseCodeWords.cpp)|Easy|
 |802|[Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) | [C++](./algorithms/cpp/findEventualSafeStates/FindEventualSafeStates.cpp)|Medium|
+|789|[Escape The Ghosts](https://leetcode.com/problems/escape-the-ghosts/) | [C++](./algorithms/cpp/escapeTheGhosts/EscapeTheGhosts.cpp)|Medium|
 |788|[Rotated Digits](https://leetcode.com/problems/rotated-digits/) | [C++](./algorithms/cpp/rotatedDigits/RotatedDigits.cpp)|Easy|
 |785|[Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) | [C++](./algorithms/cpp/isGraphBipartite/IsGraphBipartite.cpp)|Medium|
 |784|[Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) | [C++](./algorithms/cpp/letterCasePermutation/LetterCasePermutation.cpp)|Easy|
@@ -512,6 +513,7 @@
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
 |627|[Swap Salary](https://leetcode.com/problems/swap-salary/)| [MySQL](./database/SwapSalary.sql)|Easy|
+|626|[Exchange Seats](https://leetcode.com/problems/exchange-seats/)| [MySQL](./database/ExchangeSeats.sql)|Medium|
 |595|[Big Countries](https://leetcode.com/problems/big-countries/)| [MySQL](./database/BigCountries.sql)|Easy|
 |182|[Duplicate Emails](https://leetcode.com/problems/duplicate-emails/)| [MySQL](./database/ConsecutiveNumbers.sql)|Easy|
 |180|[Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)| [MySQL](./database/ConsecutiveNumbers.sql)|Medium|
