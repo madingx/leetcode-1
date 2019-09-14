@@ -39,6 +39,7 @@
 |968|[Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/) | [C++](./algorithms/cpp/binaryTreeCameras/BinaryTreeCameras.cpp)|Hard|
 |959|[Regions Cut By Slashes](https://leetcode.com/problems/regions-cut-by-slashes/) | [C++](./algorithms/cpp/regionsCutBySlashes/RegionsCutBySlashes.cpp)|Medium|
 |958|[Check Completeness of a Binary Tree](https://leetcode.com/problems/check-completeness-of-a-binary-tree/) | [Python](./algorithms/python/CheckCompletenessOfABinaryTree/isCompleteTree.py)|Medium|
+|953|[Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/) | [cpp](./algorithms/python/verifyinganAlienDictionary/VerifyinganAlienDictionary.cpp)|Easy|
 |951|[Flip Equivalent Binary Trees](https://leetcode.com/problems/flip-equivalent-binary-trees/) | [Python](./algorithms/python/FlipEquivalentBinaryTrees/flipEquiv.py)|Medium|
 |950|[Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/) | [C++](./algorithms/cpp/revealCardsInIncreasingOrder/RevealCardsInIncreasingOrder.cpp),[Python](./algorithms/python/RevealCardsInIncreasingOrder/deckRevealedIncreasing.py)|Medium|
 |947|[Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/) | [C++](./algorithms/cpp/mostStonesRemovedwithSameRoworColumn/MostStonesRemovedwithSameRoworColumn.cpp)|Medium|
