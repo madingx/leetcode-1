@@ -1,9 +1,9 @@
 // Source : https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/
-// Author : Hao Chen
+// Author : Hao Chen,Mading
 // Date   : 2019-01-30
 
 /***************************************************************************************************** 
- *
+ * 712. Minimum ASCII Delete Sum for Two Strings [Medium]
  * Given two strings s1, s2, find the lowest ASCII sum of deleted characters to make two strings equal.
  * 
  * Example 1:
@@ -29,6 +29,7 @@
  * All elements of each string will have an ASCII value in [97, 122]. 
  ******************************************************************************************************/
 
+// 32 ms, faster than 34.40% of C++, 17.4 MB, less than 77.78% of C++.
 class Solution {
 public:
     int minimumDeleteSum(string s1, string s2) {
@@ -51,5 +52,32 @@ public:
 
         return dp[s1.size()][s2.size()];
 
+    }
+};
+
+
+// 20 ms, faster than 93.02% of C++, 17.6 MB, less than 44.44% of C++.
+class Solution {
+    int res;
+public:
+    int minimumDeleteSum(string s1, string s2) {
+        int n1 = s1.length(), n2 = s2.length();
+        vector<vector<int>> dp(n1+1, vector<int>(n2+1, 0));
+        for(int i = 1; i <= n1; i++){
+            for(int j = 1; j <= n2; j++){
+                if(s1[i-1] == s2[j-1]){
+                    dp[i][j] = dp[i-1][j-1]+2*s1[i-1];
+                }
+                else{
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+        int sum1 = 0, sum2 = 0;
+        for(int i = 0; i < n1; i++)
+            sum1 += s1[i];
+        for(int i = 0; i < n2; i++)
+            sum2 += s2[i];
+        return sum1+sum2-dp[n1][n2];
     }
 };
