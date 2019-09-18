@@ -1,26 +1,139 @@
-// Source : https://oj.leetcode.com/problems/4sum/
+// Source : https://leetcode.com/problems/4sum/
 // Author : Hao Chen
 // Date   : 2014-07-03
 
 /********************************************************************************** 
-* 
-* Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? 
-* Find all unique quadruplets in the array which gives the sum of target.
-* 
+* 18. 4Sum [Medium]
+* Given an array nums of n integers and an integer target, are there elements a, b, c, 
+* and d in nums such that a + b + c + d = target? Find all unique quadruplets 
+* in the array which gives the sum of target.
+
 * Note:
-* 
-* Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)
+
 * The solution set must not contain duplicate quadruplets.
-* 
-*     For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
-* 
-*     A solution set is:
-*     (-1,  0, 0, 1)
-*     (-2, -1, 1, 2)
-*     (-2,  0, 0, 2)
+
+* Example:
+
+* Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+
+* A solution set is:
+* [
+*   [-1,  0, 0, 1],
+*   [-2, -1, 1, 2],
+*   [-2,  0, 0, 2]
+* ]
 * 
 *               
 **********************************************************************************/
+
+// 12 ms, faster than 89.68% of C++， 8.9 MB, less than 100.00% of C++ 
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> total;
+        int n = nums.size();
+        if(n<4)  return total;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n-3;i++)
+        {
+            if(i>0&&nums[i]==nums[i-1]) continue;
+            if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]>target) break;
+            if(nums[i]+nums[n-3]+nums[n-2]+nums[n-1]<target) continue;
+            for(int j=i+1;j<n-2;j++)
+            {
+                if(j>i+1&&nums[j]==nums[j-1]) continue;
+                if(nums[i]+nums[j]+nums[j+1]+nums[j+2]>target) break;
+                if(nums[i]+nums[j]+nums[n-2]+nums[n-1]<target) continue;
+                int left=j+1,right=n-1;
+                while(left<right){
+                    int sum=nums[left]+nums[right]+nums[i]+nums[j];
+                    if(sum<target) left++;
+                    else if(sum>target) right--;
+                    else{
+                        total.push_back(vector<int>{nums[i],nums[j],nums[left],nums[right]});
+                        do{left++;}while(nums[left]==nums[left-1]&&left<right);
+                        do{right--;}while(nums[right]==nums[right+1]&&left<right);
+                    }
+                }
+            }
+        }
+        return total;
+    }
+};
+
+
+
+
+// 40 ms, faster than 54.63% of C++， 9.1 MB, less than 100.00% of C++
+class Solution {
+public:
+    vector<vector<int> > fourSum(vector<int> &num, int target) {
+    
+        vector<vector<int> > res;
+    
+        if (num.empty())
+            return res;
+    
+        std::sort(num.begin(),num.end());
+    
+        for (int i = 0; i < num.size(); i++) {
+        
+            int target_3 = target - num[i];
+        
+            for (int j = i + 1; j < num.size(); j++) {
+            
+                int target_2 = target_3 - num[j];
+            
+                int front = j + 1;
+                int back = num.size() - 1;
+            
+                while(front < back) {
+                
+                    int two_sum = num[front] + num[back];
+                
+                    if (two_sum < target_2) front++;
+                
+                    else if (two_sum > target_2) back--;
+                
+                    else {
+                    
+                        vector<int> quadruplet(4, 0);
+                        quadruplet[0] = num[i];
+                        quadruplet[1] = num[j];
+                        quadruplet[2] = num[front];
+                        quadruplet[3] = num[back];
+                        res.push_back(quadruplet);
+                    
+                        // Processing the duplicates of number 3
+                        while (front < back && num[front] == quadruplet[2]) ++front;
+                    
+                        // Processing the duplicates of number 4
+                        while (front < back && num[back] == quadruplet[3]) --back;
+                
+                    }
+                }
+                
+                // Processing the duplicates of number 2
+                while(j + 1 < num.size() && num[j + 1] == num[j]) ++j;
+            }
+        
+            // Processing the duplicates of number 1
+            while (i + 1 < num.size() && num[i + 1] == num[i]) ++i;
+        
+        }
+    
+        return res;
+    
+    }
+};
+
+
+
+
+
+
+
+
 
 #include <iostream>
 #include <vector>
