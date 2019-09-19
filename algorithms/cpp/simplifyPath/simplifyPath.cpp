@@ -1,9 +1,9 @@
-// Source : https://oj.leetcode.com/problems/simplify-path/
+// Source : https://leetcode.com/problems/simplify-path/
 // Author : Hao Chen
 // Date   : 2014-10-09
 
 /********************************************************************************** 
-* 
+* 71. Simplify Path [Medium]
 * Given an absolute path for a file (Unix-style), simplify it.
 * 
 * For example,
@@ -20,6 +20,38 @@
 * 
 *               
 **********************************************************************************/
+
+// 4 ms, faster than 97.37% of C++, 10.1 MB, less than 64.29% of C++
+class Solution {
+public:
+    string simplifyPath(string path) {
+        list<string> path_stack;
+        
+        char * str_path = new char[path.size()+1];
+        strncpy(str_path, path.c_str(), path.size());
+        str_path[path.size()] = '\0';
+        
+        char *str = strtok(str_path, "/");
+        while (str != NULL) {            
+            if (std::string(str) == "..") {
+                if (path_stack.size())
+                    path_stack.pop_back();
+            } else if (std::string(str) != ".") {
+                path_stack.push_back(str);
+            }
+            
+            str = strtok(NULL, "/");
+        }
+        
+        string result;    
+        for (auto e : path_stack){
+            result += "/";
+            result += e;
+        }
+       
+        return result.size() ? result : "/";
+    }
+};
 
 #include <iostream>
 #include <string>
