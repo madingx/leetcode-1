@@ -1,4 +1,4 @@
-// Source : https://leetcode.com/problems/move-zeroes/description/
+// Source : https://leetcode.com/problems/move-zeroes/
 // Author : Calinescu Valentin, Hao Chen, Mading
 // Date   : 2015-10-21
 // 
@@ -7,7 +7,7 @@
 // Date   : 2017-11-13
 
 /*************************************************************************************** 
- * 283. Move Zeroes
+ * 283. Move Zeroes [Easy]
  * 
  * Given an array nums, write a function to move all 0's to the end of it while 
  * maintaining the relative order of the non-zero elements.
@@ -23,6 +23,25 @@
  * Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
  *               
  ***************************************************************************************/
+
+// 16 ms, faster than 61.50% of C++, 9.5 MB, less than 69.44% of C++
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int k=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i] != 0){
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        for(int i=k;i<nums.size();i++){
+            nums[i] = 0;
+        }
+        
+    }
+};
+
 
 
 
