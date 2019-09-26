@@ -3,7 +3,7 @@
 // Date   : 2016-08-24
 
 /*************************************************************************************** 
- *
+ * 385. Mini Parser [Medium]
  * Given a nested list of integers represented as a string, implement a parser to 
  * deserialize it.
  * 
@@ -66,6 +66,11 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
+
+
+
+
+// 20 ms, faster than 56.92% of C++, 15.8 MB, less than 40.00% of C++
 class Solution {
 public:
     NestedInteger deserialize(string s) {
@@ -112,5 +117,39 @@ private:
     }
     bool isnum(char& c) {
         return (c >='0' && c <='9');
+    }
+};
+
+
+
+// 12 ms, faster than 98.76% of C++, 15.6 MB, less than 40.00% of C++
+class Solution {
+public:
+    NestedInteger deserialize(bool list, string::iterator& iter, string::iterator end) {
+        if (list) {
+            NestedInteger ret;
+            iter++;
+            while (*iter != ']') {
+                if (*iter == '[') ret.add(deserialize(true, iter, end));
+                else if (*iter == ',') { iter++; continue; }
+                else ret.add(deserialize(false, iter, end));
+            }
+            iter++;
+            return ret;
+        } else {
+            string s;
+            while (*iter != ',' && *iter != '[' && *iter != ']' && iter != end) {
+                s += *iter;
+                iter++;
+            }
+            return NestedInteger(stoi(s.c_str()));
+        }
+    }
+    NestedInteger deserialize(string s) {
+        int mode = 0; // 0: unkown 1: integet 2: list
+        string cur = "";
+        auto iter = s.begin();
+        if (*iter == '[') return deserialize(true, iter, s.end());
+        return deserialize(false, iter, s.end());
     }
 };
