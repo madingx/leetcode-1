@@ -112,6 +112,10 @@ public:
             pre = cur;             // pre = 1
             cur = cur->next;       // cur = 3
         }
+        // 这两步为省略1=>3一步的替代方案
+        // if(!head){pre->next = NULL;}
+        // else{head->next = NULL;} 
+        
         return tmp.next;
     }
 };
