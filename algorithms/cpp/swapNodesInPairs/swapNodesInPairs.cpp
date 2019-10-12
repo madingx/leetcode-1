@@ -1,16 +1,15 @@
-// Source : https://oj.leetcode.com/problems/swap-nodes-in-pairs/
+// Source : https://leetcode.com/problems/swap-nodes-in-pairs/
 // Author : Hao Chen
 // Date   : 2014-06-22
 
 /********************************************************************************** 
-* 
+* 24. Swap Nodes in Pairs [Medium]
+
 * Given a linked list, swap every two adjacent nodes and return its head.
-* 
-* For example,
+* You may not modify the values in the list's nodes, only nodes itself may be changed. 
+
+* Example:
 * Given 1->2->3->4, you should return the list as 2->1->4->3.
-* 
-* Your algorithm should use only constant space. You may not modify the values in the list, 
-* only nodes itself can be changed.
 * 
 *               
 **********************************************************************************/
@@ -90,4 +89,47 @@ public:
          }
          return head;
      }
+};
+
+
+
+
+
+
+// 4 ms, faster than 68.55% of C++,8.5 MB, less than 100.00% of C++
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        if(!head) return NULL;
+        ListNode tmp(0);
+        tmp.next = head;
+        ListNode *pre = &tmp, *cur = head;
+        while(cur && cur->next){
+            pre->next = cur->next;
+            pre = pre->next;
+            cur->next = pre->next;
+            pre->next = cur;
+            pre = cur;
+            cur = cur->next;
+        }
+        return tmp.next;
+    }
+};
+
+
+// 4 ms, faster than 68.55% of C++,8.5 MB, less than 100.00% of C++
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        if(head == NULL)
+            return NULL;
+        if(head->next == NULL)
+            return head;
+        
+        ListNode* next = head->next;
+        head->next = swapPairs(next->next);
+        next->next = head;
+        
+        return next;
+    }
 };
