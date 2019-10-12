@@ -105,12 +105,12 @@ public:
         tmp.next = head;
         ListNode *pre = &tmp, *cur = head;
         while(cur && cur->next){
-            pre->next = cur->next;
-            pre = pre->next;
-            cur->next = pre->next;
-            pre->next = cur;
-            pre = cur;
-            cur = cur->next;
+            pre->next = cur->next; // 0=>2
+            pre = pre->next;       // pre = 2
+            cur->next = pre->next; // 1=>3 //如果不写这步： 1将继续指向2，有可能无法以NULL结束链表
+            pre->next = cur;       // 2=>1
+            pre = cur;             // pre = 1
+            cur = cur->next;       // cur = 3
         }
         return tmp.next;
     }
