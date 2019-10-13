@@ -1,27 +1,71 @@
-// Source : https://oj.leetcode.com/problems/reverse-nodes-in-k-group/
-// Author : Hao Chen
+// Source : https://leetcode.com/problems/reverse-nodes-in-k-group/
+// Author : Hao Chen,Mading
 // Date   : 2014-07-05
 
 /********************************************************************************** 
-* 
-* Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
-* 
-* If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
-* 
-* You may not alter the values in the nodes, only nodes itself may be changed.
-* 
-* Only constant memory is allowed.
-* 
-* For example,
-* Given this linked list: 1->2->3->4->5
-* 
+* 25. Reverse Nodes in k-Group [Hard]
+
+* Given a linked list, reverse the nodes of a linked list k at 
+* a time and return its modified list.
+
+* k is a positive integer and is less than or equal to the 
+* length of the linked list. If the number of nodes is not 
+* a multiple of k then left-out nodes in the end should remain as it is.
+
+* Example,
+* Given this linked list: 1->2->3->4->5 
 * For k = 2, you should return: 2->1->4->3->5
-* 
 * For k = 3, you should return: 3->2->1->4->5
+
+* Note:
+* Only constant extra memory is allowed.
+* You may not alter the values in the list's nodes, only nodes itself may be changed.
 * 
 *               
 **********************************************************************************/
 
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
+
+// Mading
+// 20 ms, faster than 70.04% of C++, 9.8 MB, less than 83.87% of C++
+class Solution {
+    ListNode* reverseKGroupResc(ListNode* &pre,ListNode* cur, int k,bool &flag) {
+        if(!cur && k>0){flag = false;return cur;}
+        if(!cur || k<=0)return cur;
+        ListNode* nextgroup = reverseKGroupResc(pre,cur->next,k-1,flag);
+        if(!flag)return nextgroup;
+        cur->next = nextgroup;
+        pre->next = cur;
+        pre = pre->next;       
+        return nextgroup;
+    }
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        ListNode prehead = ListNode(0);
+        prehead.next = head;
+        ListNode *pre = &prehead;
+        while(head){        
+            bool flag = true;
+            head = reverseKGroupResc(pre,head,k,flag);
+        }
+        return prehead.next;
+        
+    }
+};
+
+
+
+
+//Hao Chen
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -35,6 +79,8 @@ struct ListNode {
 
 ListNode *reverseList(ListNode *&head, int k);
 
+
+// 20 ms, faster than 70.04% of C++, 9.8 MB, less than 77.42% of C++
 ListNode *reverseKGroup(ListNode *head, int k) {
 
     if (k<=0) return head;
