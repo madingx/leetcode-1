@@ -12,6 +12,7 @@
 |1029|[Two City Scheduling](https://leetcode.com/problems/two-city-scheduling/) | [C++](./algorithms/cpp/twoCityScheduling/TwoCityScheduling.cpp)|Easy|
 |1028|[Recover a Tree From Preorder Traversal](https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/) | [C++](./algorithms/cpp/recoverATreeFromPreorderTraversal/recoverATreeFromPreorderTraversal.cpp)|Hard|
 |1025|[Divisor Game](https://leetcode.com/problems/divisor-game/) | [C++](./algorithms/cpp/divisorGame/DivisorGame.cpp)|Easy|
+|1024|[Video Stitching](https://leetcode.com/problems/video-stitching/) | [C++](./algorithms/cpp/videoStitching/VideoStitching.cpp)|Medium|
 |1023|[Camelcase Matching](https://leetcode.com/problems/camelcase-matching/) | [C++](./algorithms/cpp/CamelcaseMatching/CamelcaseMatching.cpp)|Medium|
 |1018|[Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/) | [C++](./algorithms/cpp/binaryPrefixDivisibleBy5/BinaryPrefixDivisibleBy5.cpp)|Easy|
 |1002|[Find Common Characters](https://leetcode.com/problems/find-common-characters/) | [C++](./algorithms/cpp/findCommonCharacters/FindCommonCharacters.cpp)|Easy|
