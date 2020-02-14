@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|1345|[Jump Game IV](https://leetcode.com/problems/jump-game-iv/) | [C++](./algorithms/cpp/jumpGame/jumpGame.IV.cpp)|Hard|
 |1140|[Stone Game II](https://leetcode.com/problems/stone-game-ii/) | [C++](./algorithms/cpp/StoneGame/StoneGameII.cpp)|Medium|
 |1114|[Print in Order](https://leetcode.com/problems/print-in-order/) | [C++](./algorithms/cpp/printinOrder/PrintinOrder.cpp)|Easy|
 |1043|[Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/) | [C++](./algorithms/cpp/removeAllAdjacentDuplicatesInString/RemoveAllAdjacentDuplicatesInString.cpp)|Medium|
