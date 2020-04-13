@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|1411|[Number of Ways to Paint N × 3 Grid](https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/) | [Python](./algorithms/python/numberofWaystoPaintN3Grid/NumberofWaystoPaintN3Grid.py)|Hard|
 |1345|[Jump Game IV](https://leetcode.com/problems/jump-game-iv/) | [C++](./algorithms/cpp/jumpGame/jumpGame.IV.cpp)|Hard|
 |1140|[Stone Game II](https://leetcode.com/problems/stone-game-ii/) | [C++](./algorithms/cpp/StoneGame/StoneGameII.cpp)|Medium|
 |1114|[Print in Order](https://leetcode.com/problems/print-in-order/) | [C++](./algorithms/cpp/printinOrder/PrintinOrder.cpp)|Easy|
