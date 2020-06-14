@@ -5,6 +5,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
+|1477|[Find Two Non-overlapping Sub-arrays Each With Target Sum](https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/) | [Python](./algorithms/python/findTwoNonOverlappingSubarraysEachWithTargetSum/FindTwoNonOverlappingSubarraysEachWithTargetSum.py)|Medium|
 |1411|[Number of Ways to Paint N × 3 Grid](https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/) | [Python](./algorithms/python/numberofWaystoPaintN3Grid/NumberofWaystoPaintN3Grid.py)|Hard|
 |1345|[Jump Game IV](https://leetcode.com/problems/jump-game-iv/) | [C++](./algorithms/cpp/jumpGame/jumpGame.IV.cpp)|Hard|
 |1140|[Stone Game II](https://leetcode.com/problems/stone-game-ii/) | [C++](./algorithms/cpp/StoneGame/StoneGameII.cpp)|Medium|
